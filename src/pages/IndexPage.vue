@@ -1,6 +1,6 @@
 <template>
   <q-page padding>
-    <!-- Поиск: full width + низкий -->
+    <!-- Поиск -->
     <div class="q-mb-md">
       <q-input
         v-model="search"
@@ -14,9 +14,6 @@
         :placeholder="$t('common.searchPlaceholder')"
         class="full-width pill-input"
       >
-        <template #append>
-          <q-icon name="search" />
-        </template>
       </q-input>
 
       <div class="text-caption text-grey-7 q-mt-xs">
@@ -30,7 +27,7 @@
       <div class="q-ml-md">{{ $t('common.loading') }}</div>
     </div>
 
-    <!-- Сетка карточек (квадрат + оверлей) -->
+    <!-- Сетка карточек (уже отсортирована по алфавиту) -->
     <div v-else class="grid">
       <q-card
         v-for="art in filtered"
@@ -38,7 +35,7 @@
         flat
         bordered
         class="artifact-card cursor-pointer"
-        @click="open(art)"
+        @click="openRoot(art)"
         :aria-label="$t('common.open', { name: art.name })"
       >
         <div class="thumb">
@@ -79,9 +76,21 @@
           </div>
 
           <div class="col-12 col-sm-8">
-            <div class="row items-center justify-between">
-              <div class="text-h5 q-mb-xs">{{ selected?.name }}</div>
-              <q-btn flat round icon="close" @click="show = false" />
+            <!-- Верхняя панель попапа: навигация по истории и закрытие -->
+            <div class="row items-center justify-between q-mb-sm">
+              <div class="row items-center q-gutter-xs">
+                <q-btn flat round dense icon="chevron_left" :disable="!hasBack" @click="goBack" />
+                <q-btn
+                  flat
+                  round
+                  dense
+                  icon="chevron_right"
+                  :disable="!hasForward"
+                  @click="goForward"
+                />
+                <div class="text-h5 q-ml-sm">{{ selected?.name }}</div>
+              </div>
+              <q-btn flat round dense icon="close" @click="closeDialog" />
             </div>
 
             <div class="q-mb-sm">
@@ -104,23 +113,78 @@
             <div v-if="(selected?.bonuses || []).length">
               <div class="text-subtitle2 q-mb-xs">{{ $t('fields.bonuses') }}</div>
               <div class="q-gutter-xs">
-                <q-chip
-                  v-for="(b, i) in selected.bonuses"
-                  :key="i"
-                  dense
-                  outline
-                  :title="b.source"
-                >
+                <q-chip v-for="(b, i) in selected.bonuses" :key="i" dense outline :title="b.source">
                   {{ prettyBonus(b) }}
                 </q-chip>
               </div>
             </div>
 
+            <!-- Если это КОМБО — показать его компоненты мини-карточками (отсортированы по имени) -->
+            <div v-if="isCombo(selected) && comboIndex[selected.name]" class="q-mt-md">
+              <div class="text-subtitle2 q-mb-xs">Компоненты комбо</div>
+              <div class="mini-grid">
+                <div
+                  v-for="c in getSortedComponents(selected.name)"
+                  :key="c.id"
+                  class="mini-card"
+                  @click.stop="navigateToId(c.id)"
+                >
+                  <div class="mini-thumb">
+                    <q-img
+                      :src="byId[c.id]?.image || '/images/placeholder.png'"
+                      fit="cover"
+                      :ratio="1"
+                      class="mini-img"
+                      :alt="byId[c.id]?.name || c.name"
+                    >
+                      <template #error>
+                        <q-img
+                          src="/images/placeholder.png"
+                          :ratio="1"
+                          fit="contain"
+                          class="mini-img"
+                        />
+                      </template>
+                    </q-img>
+                    <div class="mini-name">{{ byId[c.id]?.name || c.name }}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Если это КОМПОНЕНТ — показать мини-карточки комбо (отсортированы по имени) -->
             <div v-if="(selected?.leadsTo || []).length" class="q-mt-md">
-              <div class="text-subtitle2 q-mb-xs">{{ $t('fields.leadsTo') }}</div>
-              <ul class="q-pl-md q-my-none">
-                <li v-for="(c, i) in selected.leadsTo" :key="i">{{ c }}</li>
-              </ul>
+              <div class="text-subtitle2 q-mb-xs">Входит в комбо</div>
+              <div class="mini-grid">
+                <div
+                  v-for="comboName in sortedLeadsTo"
+                  :key="comboName"
+                  class="mini-card"
+                  :class="{ 'is-disabled': !byName[comboName] }"
+                  @click.stop="byName[comboName] && navigateToId(byName[comboName].id)"
+                  :title="byName[comboName] ? '' : 'Нет записи артефакта-комбо в JSON'"
+                >
+                  <div class="mini-thumb">
+                    <q-img
+                      :src="byName[comboName]?.image || '/images/placeholder.png'"
+                      fit="cover"
+                      :ratio="1"
+                      class="mini-img"
+                      :alt="comboName"
+                    >
+                      <template #error>
+                        <q-img
+                          src="/images/placeholder.png"
+                          :ratio="1"
+                          fit="contain"
+                          class="mini-img"
+                        />
+                      </template>
+                    </q-img>
+                    <div class="mini-name">{{ comboName }}</div>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div v-if="selected?.combinationRaw" class="q-mt-md">
@@ -131,31 +195,98 @@
         </div>
 
         <q-separator class="q-my-md" />
-        <!-- нижнюю кнопку "Закрыть" убрали — есть крестик сверху -->
       </q-card>
     </q-dialog>
   </q-page>
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 
 const loading = ref(true)
 const search = ref('')
 const artifacts = ref([])
 
 const show = ref(false)
-const selected = ref(null)
 
-function open(art) {
-  selected.value = art
+/* ===== История в попапе ===== */
+const history = ref([]) // [{...artifact}]
+const histIndex = ref(-1) // текущая позиция
+const selected = computed(() => history.value[histIndex.value] || null)
+
+function openRoot(art) {
+  history.value = [art]
+  histIndex.value = 0
   show.value = true
+}
+function navigateToId(id) {
+  const a = byId.value[id]
+  if (!a) return
+  if (histIndex.value < history.value.length - 1) {
+    history.value = history.value.slice(0, histIndex.value + 1)
+  }
+  history.value.push(a)
+  histIndex.value++
+}
+function goBack() {
+  if (histIndex.value > 0) histIndex.value--
+}
+function goForward() {
+  if (histIndex.value < history.value.length - 1) histIndex.value++
+}
+function closeDialog() {
+  show.value = false
+  history.value = []
+  histIndex.value = -1
+}
+const hasBack = computed(() => histIndex.value > 0)
+const hasForward = computed(
+  () => histIndex.value >= 0 && histIndex.value < history.value.length - 1,
+)
+
+/* ===== Индексы и комбо ===== */
+const byId = ref({})
+const byName = ref({})
+const comboIndex = ref({})
+
+function isCombo(a) {
+  if (!a) return false
+  return a.rarity === 'combo' || !!comboIndex.value[a.name]
 }
 
 onMounted(async () => {
   try {
     const res = await fetch('/artifacts.json')
-    artifacts.value = await res.json()
+    const data = await res.json()
+    artifacts.value = data
+
+    const idMap = {},
+      nameMap = {}
+    for (const a of data) {
+      idMap[a.id] = a
+      nameMap[a.name] = a
+    }
+    byId.value = idMap
+    byName.value = nameMap
+
+    const combos = {}
+    for (const a of data) {
+      const list = Array.isArray(a.leadsTo) ? a.leadsTo : []
+      for (const comboName of list) {
+        if (!combos[comboName]) combos[comboName] = { comboId: null, components: [] }
+        combos[comboName].components.push({ id: a.id, name: a.name })
+      }
+    }
+    for (const name in combos) {
+      if (nameMap[name]) combos[name].comboId = nameMap[name].id
+      const seen = new Set()
+      combos[name].components = combos[name].components.filter(
+        (c) => !seen.has(c.id) && seen.add(c.id),
+      )
+    }
+    comboIndex.value = combos
+
+    window.addEventListener('keydown', onKey)
   } catch (e) {
     console.error('Не удалось загрузить artifacts.json', e)
     artifacts.value = []
@@ -163,21 +294,57 @@ onMounted(async () => {
     loading.value = false
   }
 })
+onBeforeUnmount(() => window.removeEventListener('keydown', onKey))
+function onKey(e) {
+  if (!show.value) return
+  if (e.key === 'ArrowLeft') {
+    e.preventDefault()
+    goBack()
+  } else if (e.key === 'ArrowRight') {
+    e.preventDefault()
+    goForward()
+  } else if (e.key === 'Escape') {
+    e.preventDefault()
+    closeDialog()
+  }
+}
+
+/* ===== Сортировка и поиск ===== */
+const coll = new Intl.Collator(['ru', 'en'], { sensitivity: 'base', numeric: true })
 
 const filtered = computed(() => {
   const q = search.value.trim().toLowerCase()
-  if (!q) return artifacts.value
-  return artifacts.value.filter(a =>
-    a.name?.toLowerCase().includes(q) ||
-    a.id?.toLowerCase().includes(q) ||
-    a.slot?.toLowerCase().includes(q) ||
-    a.rarity?.toLowerCase().includes(q)
-  )
+  const list = q
+    ? artifacts.value.filter(
+        (a) =>
+          a.name?.toLowerCase().includes(q) ||
+          a.id?.toLowerCase().includes(q) ||
+          a.slot?.toLowerCase().includes(q) ||
+          a.rarity?.toLowerCase().includes(q),
+      )
+    : artifacts.value
+  return [...list].sort((a, b) => coll.compare(a?.name || '', b?.name || ''))
 })
 
+const sortedLeadsTo = computed(() =>
+  (selected.value?.leadsTo ? [...selected.value.leadsTo] : []).sort((a, b) => coll.compare(a, b)),
+)
+
+function getSortedComponents(comboName) {
+  const comps = comboIndex.value[comboName]?.components || []
+  return [...comps].sort((a, b) =>
+    coll.compare(byId.value[a.id]?.name || a.name || '', byId.value[b.id]?.name || b.name || ''),
+  )
+}
+
+/* ===== Вспомогательное ===== */
 function prettyBonus(b) {
-  const val = (b.value === 0 && b.kind === 'special')
-    ? '' : (b.scale === 'percent' ? `${b.value}%` : `+${b.value}`)
+  const val =
+    b.value === 0 && b.kind === 'special'
+      ? ''
+      : b.scale === 'percent'
+        ? `${b.value}%`
+        : `+${b.value}`
   const stat = b.stat ? ` ${b.stat}` : ''
   return `${val}${stat}`.trim() || b.source || 'bonus'
 }
@@ -185,14 +352,12 @@ function prettyBonus(b) {
 
 <style scoped>
 /* FULL-WIDTH поиск */
-.full-width { width: 100%; }
-
-/* Слегка «приплюснутая» высота в dense-режиме */
-.pill-input.q-field--dense .q-field__control {
-  min-height: 40px; /* по умолчанию dense ~ 44px, можно ещё уменьшить */
+.full-width {
+  width: 100%;
 }
-
-/* Пилюля */
+.pill-input.q-field--dense .q-field__control {
+  min-height: 40px;
+}
 .pill-input .q-field__control {
   border-radius: 9999px;
 }
@@ -208,7 +373,9 @@ function prettyBonus(b) {
 .artifact-card {
   overflow: hidden;
   border-radius: 12px;
-  transition: transform 120ms ease, box-shadow 120ms ease;
+  transition:
+    transform 120ms ease,
+    box-shadow 120ms ease;
   will-change: transform;
   transform-origin: center center;
 }
@@ -218,24 +385,86 @@ function prettyBonus(b) {
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
   }
   .artifact-card:hover .name-overlay {
-    background-image: linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0.3));
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.3));
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .artifact-card { transition: none; }
+  .artifact-card {
+    transition: none;
+  }
 }
 
 /* Квадратные превью + подпись */
-.thumb { position: relative; aspect-ratio: 1 / 1; }
-.thumb-img { width: 100%; height: 100%; }
+.thumb {
+  position: relative;
+  aspect-ratio: 1 / 1;
+}
+.thumb-img {
+  width: 100%;
+  height: 100%;
+}
 .name-overlay {
-  position: absolute; left: 0; right: 0; bottom: 0;
-  padding: 6px 8px; text-align: center; color: #fff;
-  background: rgba(0,0,0,0.6);
-  font-size: 13px; line-height: 1.2;
-  background-image: linear-gradient(to top, rgba(0,0,0,0.65), rgba(0,0,0,0.2));
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 6px 8px;
+  text-align: center;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.6);
+  font-size: 13px;
+  line-height: 1.2;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.2));
 }
 
 /* Картинки и прочие скругления в попапе */
-.rounded-borders { border-radius: 12px; }
+.rounded-borders {
+  border-radius: 12px;
+}
+
+/* ---- Мини-карточки для компонентов/комбо ---- */
+.mini-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+  gap: 8px;
+}
+.mini-card {
+  cursor: pointer;
+  border-radius: 10px;
+  overflow: hidden;
+  transition:
+    transform 110ms ease,
+    box-shadow 110ms ease;
+}
+.mini-card:hover {
+  transform: translateY(-1px) scale(1.015);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+.mini-card.is-disabled {
+  cursor: default;
+  opacity: 0.7;
+}
+.mini-thumb {
+  position: relative;
+  aspect-ratio: 1 / 1;
+}
+.mini-img {
+  width: 100%;
+  height: 100%;
+}
+.mini-name {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 4px 6px;
+  text-align: center;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.6);
+  font-size: 11px;
+  line-height: 1.1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 </style>
