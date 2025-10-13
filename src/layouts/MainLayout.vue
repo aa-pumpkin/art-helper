@@ -1,81 +1,73 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
+  <q-layout view="hHh lpR fFf">
     <q-header elevated>
       <q-toolbar>
-        <q-btn flat dense round icon="menu" aria-label="Menu" @click="toggleLeftDrawer" />
+        <q-toolbar-title>{{ $t('app.title') }}</q-toolbar-title>
 
-        <q-toolbar-title> Quasar App </q-toolbar-title>
+        <!-- Переключатель языка справа -->
+        <q-btn-dropdown
+          flat
+          dense
+          no-caps
+          :label="labelFor(locale)"
+          icon="language"
+        >
+          <q-list style="min-width: 150px">
+            <q-item clickable v-close-popup @click="setLocale('ru')">
+              <q-item-section avatar>🇷🇺</q-item-section>
+              <q-item-section>Русский</q-item-section>
+            </q-item>
+            <q-item clickable v-close-popup @click="setLocale('en')">
+              <q-item-section avatar>🇬🇧</q-item-section>
+              <q-item-section>English</q-item-section>
+            </q-item>
+          </q-list>
+        </q-btn-dropdown>
 
-        <div>Quasar v{{ $q.version }}</div>
+        <q-btn flat round dense icon="info" @click="showInfo = true" />
       </q-toolbar>
     </q-header>
-
-    <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
-      <q-list>
-        <q-item-label header> Essential Links </q-item-label>
-
-        <EssentialLink v-for="link in linksList" :key="link.title" v-bind="link" />
-      </q-list>
-    </q-drawer>
 
     <q-page-container>
       <router-view />
     </q-page-container>
+
+    <q-dialog v-model="showInfo">
+      <q-card>
+        <q-card-section>
+          <div class="text-h6">{{ $t('app.about') }}</div>
+        </q-card-section>
+        <q-card-section>
+          <div>
+            PWA-просмотрщик артефактов HoTA. Данные: <code>public/artifacts.json</code>,
+            картинки: <code>public/images/artifacts/</code>.
+          </div>
+        </q-card-section>
+        <q-card-actions align="right">
+          <q-btn flat :label="$t('app.close')" v-close-popup />
+        </q-card-actions>
+      </q-card>
+    </q-dialog>
   </q-layout>
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import EssentialLink from 'components/EssentialLink.vue'
+import { ref, watch } from 'vue'
+import { useI18n } from 'vue-i18n'
 
-const linksList = [
-  {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev',
-  },
-  {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework',
-  },
-  {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev',
-  },
-  {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev',
-  },
-  {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev',
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev',
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev',
-  },
-]
+const showInfo = ref(false)
 
-const leftDrawerOpen = ref(false)
+const { locale } = useI18n()
 
-function toggleLeftDrawer() {
-  leftDrawerOpen.value = !leftDrawerOpen.value
+function setLocale(l) {
+  locale.value = l
+  localStorage.setItem('locale', l)
 }
+
+function labelFor(l) {
+  return l === 'ru' ? 'RU' : 'EN'
+}
+
+// следим за изменением языка и сохраняем (на случай внешних переключений)
+watch(locale, (l) => localStorage.setItem('locale', l))
 </script>
