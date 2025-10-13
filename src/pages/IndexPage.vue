@@ -14,6 +14,9 @@
         :placeholder="$t('common.searchPlaceholder')"
         class="full-width pill-input"
       >
+        <template #append>
+          <q-icon name="search" />
+        </template>
       </q-input>
 
       <div class="text-caption text-grey-7 q-mt-xs">
@@ -27,7 +30,7 @@
       <div class="q-ml-md">{{ $t('common.loading') }}</div>
     </div>
 
-    <!-- Сетка карточек (уже отсортирована по алфавиту) -->
+    <!-- Сетка карточек -->
     <div v-else class="grid">
       <q-card
         v-for="art in filtered"
@@ -36,14 +39,14 @@
         bordered
         class="artifact-card cursor-pointer"
         @click="openRoot(art)"
-        :aria-label="$t('common.open', { name: art.name })"
+        :aria-label="$t('common.open', { name: displayName(art) })"
       >
         <div class="thumb">
           <q-img
             :src="art.image"
             loading="lazy"
             spinner-color="primary"
-            :alt="art.name"
+            :alt="displayName(art)"
             decoding="async"
             fit="cover"
             class="thumb-img"
@@ -53,7 +56,7 @@
             </template>
           </q-img>
           <div class="name-overlay">
-            {{ art.name }}
+            {{ displayName(art) }}
           </div>
         </div>
       </q-card>
@@ -76,7 +79,7 @@
           </div>
 
           <div class="col-12 col-sm-8">
-            <!-- Верхняя панель попапа: навигация по истории и закрытие -->
+            <!-- Верхняя панель попапа -->
             <div class="row items-center justify-between q-mb-sm">
               <div class="row items-center q-gutter-xs">
                 <q-btn flat round dense icon="chevron_left" :disable="!hasBack" @click="goBack" />
@@ -88,7 +91,7 @@
                   :disable="!hasForward"
                   @click="goForward"
                 />
-                <div class="text-h5 q-ml-sm">{{ selected?.name }}</div>
+                <div class="text-h5 q-ml-sm">{{ displayName(selected) }}</div>
               </div>
               <q-btn flat round dense icon="close" @click="closeDialog" />
             </div>
@@ -105,9 +108,9 @@
               </q-chip>
             </div>
 
-            <div v-if="selected?.effect" class="q-mb-md">
+            <div v-if="displayEffect(selected)" class="q-mb-md">
               <div class="text-subtitle2 q-mb-xs">{{ $t('fields.effect') }}</div>
-              <div class="text-body2">{{ selected.effect }}</div>
+              <div class="text-body2">{{ displayEffect(selected) }}</div>
             </div>
 
             <div v-if="(selected?.bonuses || []).length">
@@ -119,7 +122,7 @@
               </div>
             </div>
 
-            <!-- Если это КОМБО — показать его компоненты мини-карточками (отсортированы по имени) -->
+            <!-- Если это КОМБО -->
             <div v-if="isCombo(selected) && comboIndex[selected.name]" class="q-mt-md">
               <div class="text-subtitle2 q-mb-xs">Компоненты комбо</div>
               <div class="mini-grid">
@@ -135,7 +138,7 @@
                       fit="cover"
                       :ratio="1"
                       class="mini-img"
-                      :alt="byId[c.id]?.name || c.name"
+                      :alt="displayName(byId[c.id] || c)"
                     >
                       <template #error>
                         <q-img
@@ -146,13 +149,13 @@
                         />
                       </template>
                     </q-img>
-                    <div class="mini-name">{{ byId[c.id]?.name || c.name }}</div>
+                    <div class="mini-name">{{ displayName(byId[c.id] || c) }}</div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- Если это КОМПОНЕНТ — показать мини-карточки комбо (отсортированы по имени) -->
+            <!-- Если это КОМПОНЕНТ -->
             <div v-if="(selected?.leadsTo || []).length" class="q-mt-md">
               <div class="text-subtitle2 q-mb-xs">Входит в комбо</div>
               <div class="mini-grid">
@@ -162,7 +165,6 @@
                   class="mini-card"
                   :class="{ 'is-disabled': !byName[comboName] }"
                   @click.stop="byName[comboName] && navigateToId(byName[comboName].id)"
-                  :title="byName[comboName] ? '' : 'Нет записи артефакта-комбо в JSON'"
                 >
                   <div class="mini-thumb">
                     <q-img
@@ -181,15 +183,17 @@
                         />
                       </template>
                     </q-img>
-                    <div class="mini-name">{{ comboName }}</div>
+                    <div class="mini-name">
+                      {{ displayName(byName[comboName] || { id: comboName, name: comboName }) }}
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div v-if="selected?.combinationRaw" class="q-mt-md">
+            <div v-if="displayCombRaw(selected)" class="q-mt-md">
               <div class="text-subtitle2 q-mb-xs">{{ $t('fields.combinationRaw') }}</div>
-              <div class="text-body2">{{ selected.combinationRaw }}</div>
+              <div class="text-body2">{{ displayCombRaw(selected) }}</div>
             </div>
           </div>
         </div>
@@ -201,19 +205,40 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
+import { ref, computed, onMounted, onBeforeUnmount, watch } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { locale } = useI18n()
 
 const loading = ref(true)
 const search = ref('')
 const artifacts = ref([])
-
 const show = ref(false)
 
-/* ===== История в попапе ===== */
-const history = ref([]) // [{...artifact}]
-const histIndex = ref(-1) // текущая позиция
-const selected = computed(() => history.value[histIndex.value] || null)
+/* ===== Переводы артефактов ===== */
+const artTr = ref({})
+async function loadArtifactTranslations(lang) {
+  try {
+    const res = await fetch(`/i18n/artifacts.${lang}.json`, { cache: 'no-store' })
+    if (!res.ok) throw new Error('no file')
+    artTr.value = await res.json()
+  } catch {
+    artTr.value = {}
+  }
+}
 
+function tArt(art, key) {
+  if (!art) return ''
+  return (artTr.value[art.id] && artTr.value[art.id][key]) || art[key] || ''
+}
+const displayName = (art) => tArt(art, 'name')
+const displayEffect = (art) => tArt(art, 'effect')
+const displayCombRaw = (art) => tArt(art, 'combinationRaw')
+
+/* ===== История ===== */
+const history = ref([])
+const histIndex = ref(-1)
+const selected = computed(() => history.value[histIndex.value] || null)
 function openRoot(art) {
   history.value = [art]
   histIndex.value = 0
@@ -286,6 +311,7 @@ onMounted(async () => {
     }
     comboIndex.value = combos
 
+    await loadArtifactTranslations(locale.value)
     window.addEventListener('keydown', onKey)
   } catch (e) {
     console.error('Не удалось загрузить artifacts.json', e)
@@ -295,6 +321,7 @@ onMounted(async () => {
   }
 })
 onBeforeUnmount(() => window.removeEventListener('keydown', onKey))
+watch(locale, (l) => loadArtifactTranslations(l))
 function onKey(e) {
   if (!show.value) return
   if (e.key === 'ArrowLeft') {
@@ -311,29 +338,26 @@ function onKey(e) {
 
 /* ===== Сортировка и поиск ===== */
 const coll = new Intl.Collator(['ru', 'en'], { sensitivity: 'base', numeric: true })
-
 const filtered = computed(() => {
   const q = search.value.trim().toLowerCase()
   const list = q
     ? artifacts.value.filter(
         (a) =>
-          a.name?.toLowerCase().includes(q) ||
+          displayName(a).toLowerCase().includes(q) ||
           a.id?.toLowerCase().includes(q) ||
           a.slot?.toLowerCase().includes(q) ||
           a.rarity?.toLowerCase().includes(q),
       )
     : artifacts.value
-  return [...list].sort((a, b) => coll.compare(a?.name || '', b?.name || ''))
+  return [...list].sort((a, b) => coll.compare(displayName(a), displayName(b)))
 })
-
 const sortedLeadsTo = computed(() =>
   (selected.value?.leadsTo ? [...selected.value.leadsTo] : []).sort((a, b) => coll.compare(a, b)),
 )
-
 function getSortedComponents(comboName) {
   const comps = comboIndex.value[comboName]?.components || []
   return [...comps].sort((a, b) =>
-    coll.compare(byId.value[a.id]?.name || a.name || '', byId.value[b.id]?.name || b.name || ''),
+    coll.compare(displayName(byId.value[a.id] || a), displayName(byId.value[b.id] || b)),
   )
 }
 
@@ -351,7 +375,6 @@ function prettyBonus(b) {
 </script>
 
 <style scoped>
-/* FULL-WIDTH поиск */
 .full-width {
   width: 100%;
 }
@@ -362,39 +385,25 @@ function prettyBonus(b) {
   border-radius: 9999px;
 }
 
-/* Сетка карточек */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   gap: 12px;
 }
 
-/* Карточка и ховер */
 .artifact-card {
   overflow: hidden;
   border-radius: 12px;
   transition:
     transform 120ms ease,
     box-shadow 120ms ease;
-  will-change: transform;
-  transform-origin: center center;
 }
 @media (hover: hover) and (pointer: fine) {
   .artifact-card:hover {
     transform: translateY(-2px) scale(1.02);
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
   }
-  .artifact-card:hover .name-overlay {
-    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.3));
-  }
 }
-@media (prefers-reduced-motion: reduce) {
-  .artifact-card {
-    transition: none;
-  }
-}
-
-/* Квадратные превью + подпись */
 .thumb {
   position: relative;
   aspect-ratio: 1 / 1;
@@ -414,15 +423,11 @@ function prettyBonus(b) {
   background: rgba(0, 0, 0, 0.6);
   font-size: 13px;
   line-height: 1.2;
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.2));
 }
-
-/* Картинки и прочие скругления в попапе */
 .rounded-borders {
   border-radius: 12px;
 }
 
-/* ---- Мини-карточки для компонентов/комбо ---- */
 .mini-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
@@ -440,18 +445,6 @@ function prettyBonus(b) {
   transform: translateY(-1px) scale(1.015);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
-.mini-card.is-disabled {
-  cursor: default;
-  opacity: 0.7;
-}
-.mini-thumb {
-  position: relative;
-  aspect-ratio: 1 / 1;
-}
-.mini-img {
-  width: 100%;
-  height: 100%;
-}
 .mini-name {
   position: absolute;
   left: 0;
@@ -463,8 +456,5 @@ function prettyBonus(b) {
   background: rgba(0, 0, 0, 0.6);
   font-size: 11px;
   line-height: 1.1;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 </style>
