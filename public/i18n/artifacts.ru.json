@@ -1,7 +1,470 @@
 {
+  "admirals-hat": {
+    "name": "Шляпа Адмирала"
+  },
+  "ambassadors-sash": {
+    "name": "Пояс Посланника"
+  },
+  "amulet-of-the-undertaker": {
+    "name": "Амулет Undertaker"
+  },
+  "angel-feather-arrows": {
+    "name": "Ангела Feather Стрелы"
+  },
+  "angel-wings": {
+    "name": "Ангела Wings"
+  },
+  "angelic-alliance": {
+    "name": "Ангельский Союз"
+  },
+  "armageddons-blade": {
+    "name": "Клинок Армагеддона"
+  },
+  "armor-of-the-damned": {
+    "name": "Доспехи Проклятых"
+  },
+  "armor-of-wonder": {
+    "name": "Доспехи of Wonder"
+  },
+  "arms-of-legion": {
+    "name": "Arms of Legion"
+  },
+  "badge-of-courage": {
+    "name": "Знак of Отваги"
+  },
+  "bird-of-perception": {
+    "name": "Bird of Perception"
+  },
+  "blackshard-of-the-dead-knight": {
+    "name": "Blackshard Dead Knight"
+  },
+  "boots-of-levitation": {
+    "name": "Сапоги of Левитации"
+  },
+  "boots-of-polarity": {
+    "name": "Сапоги of Polarity"
+  },
+  "boots-of-speed": {
+    "name": "Сапоги of Скорости"
+  },
+  "bow-of-elven-cherrywood": {
+    "name": "Лук of Elven Cherrywood"
+  },
+  "bow-of-the-sharpshooter": {
+    "name": "Лук Снайпера"
+  },
+  "bowstring-of-the-unicorns-mane": {
+    "name": "Mane Bowstring of the Unicornа"
+  },
+  "breastplate-of-brimstone": {
+    "name": "Нагрудник of Серного Камня"
+  },
+  "breastplate-of-petrified-wood": {
+    "name": "Нагрудник of Petrified Wood"
+  },
+  "buckler-of-the-gnoll-king": {
+    "name": "Buckler Gnoll King"
+  },
+  "cape-of-conjuring": {
+    "name": "Плащ of Conjuring"
+  },
+  "cape-of-silence": {
+    "name": "Плащ of Silence"
+  },
+  "cape-of-velocity": {
+    "name": "Плащ of Стремительности"
+  },
+  "cards-of-prophecy": {
+    "name": "Cards of Prophecy"
+  },
+  "celestial-necklace-of-bliss": {
+    "name": "Небесное Ожерелье of Блаженства"
+  },
   "centaurs-axe": {
-    "name": "Секира кентавра",
-    "effect": "+2 к навыку «Атака»",
-    "combinationRaw": ""
+    "name": "Топор Кентавра"
+  },
+  "charm-of-eclipse": {
+    "name": "Charm of Eclipse"
+  },
+  "charm-of-mana": {
+    "name": "Charm of Mana"
+  },
+  "cloak-of-the-undead-king": {
+    "name": "Плащ Короля Нежити"
+  },
+  "clover-of-fortune": {
+    "name": "Clover of Fortune"
+  },
+  "collar-of-conjuring": {
+    "name": "Collar of Conjuring"
+  },
+  "cornucopia": {
+    "name": "Рог Изобилия"
+  },
+  "crest-of-valor": {
+    "name": "Герб of Доблести"
+  },
+  "crown-of-dragontooth": {
+    "name": "Корона of Dragontooth"
+  },
+  "crown-of-the-five-seas": {
+    "name": "Корона Five Seas"
+  },
+  "crown-of-the-supreme-magi": {
+    "name": "Корона Supreme Magi"
+  },
+  "dead-mans-boots": {
+    "name": "Сапоги Dead Manа"
+  },
+  "demons-horseshoe": {
+    "name": "Horseshoe Demonа"
+  },
+  "diplomats-cloak": {
+    "name": "Плащ Дипломата"
+  },
+  "diplomats-ring": {
+    "name": "Кольцо Дипломата"
+  },
+  "dragon-scale-armor": {
+    "name": "Дракона Scale Доспехи"
+  },
+  "dragon-scale-shield": {
+    "name": "Дракона Scale Щит"
+  },
+  "dragon-wing-tabard": {
+    "name": "Дракона Wing Плащ"
+  },
+  "dragonbone-greaves": {
+    "name": "Драконьей Кости Наколенники"
+  },
+  "elixir-of-life": {
+    "name": "Эликсир Жизни"
+  },
+  "emblem-of-cognizance": {
+    "name": "Emblem of Cognizance"
+  },
+  "endless-bag-of-gold": {
+    "name": "Бесконечный Мешок of Gold"
+  },
+  "endless-purse-of-gold": {
+    "name": "Бесконечный Кошель of Gold"
+  },
+  "endless-sack-of-gold": {
+    "name": "Бесконечный Sack of Gold"
+  },
+  "equestrians-gloves": {
+    "name": "Перчатки Equestrianа"
+  },
+  "everflowing-crystal-cloak": {
+    "name": "Бесконечного Crystal Плащ"
+  },
+  "everpouring-vial-of-mercury": {
+    "name": "Бесконечной Сосуд of Mercury"
+  },
+  "eversmoking-ring-of-sulfur": {
+    "name": "Eversmoking Кольцо of Sulfur"
+  },
+  "garniture-of-interference": {
+    "name": "Garniture of Interference"
+  },
+  "glyph-of-gallantry": {
+    "name": "Знак of Рыцарства"
+  },
+  "golden-bow": {
+    "name": "Golden Лук"
+  },
+  "golden-goose": {
+    "name": "Golden Goose"
+  },
+  "greater-gnolls-flail": {
+    "name": "Кистень Greater Gnollа"
+  },
+  "head-of-legion": {
+    "name": "Head of Legion"
+  },
+  "hellstorm-helmet": {
+    "name": "Сатанинской Ярости Шлем"
+  },
+  "helm-of-chaos": {
+    "name": "Шлем of Хаоса"
+  },
+  "helm-of-heavenly-enlightenment": {
+    "name": "Шлем of Небесного Просвещения"
+  },
+  "helm-of-the-alabaster-unicorn": {
+    "name": "Шлем Alabaster Unicorn"
+  },
+  "hideous-mask": {
+    "name": "Hideous Mask"
+  },
+  "horn-of-the-abyss": {
+    "name": "Рог Бездны"
+  },
+  "hourglass-of-the-evil-hour": {
+    "name": "Hourglass Evil Hour"
+  },
+  "inexhaustible-cart-of-lumber": {
+    "name": "Неиссякаемая Телега of Lumber"
+  },
+  "inexhaustible-cart-of-ore": {
+    "name": "Неиссякаемая Телега of Ore"
+  },
+  "ironfist-of-the-ogre": {
+    "name": "Ironfist Огр"
+  },
+  "ladybird-of-luck": {
+    "name": "Ladybird of Luck"
+  },
+  "legs-of-legion": {
+    "name": "Legs of Legion"
+  },
+  "lions-shield-of-courage": {
+    "name": "Shield of Courage Lionа"
+  },
+  "loins-of-legion": {
+    "name": "Loins of Legion"
+  },
+  "mystic-orb-of-mana": {
+    "name": "Mystic Сфера of Mana"
+  },
+  "necklace-of-dragonteeth": {
+    "name": "Ожерелье of Зубов Дракона"
+  },
+  "necklace-of-ocean-guidance": {
+    "name": "Ожерелье of Океана Guidance"
+  },
+  "necklace-of-swiftness": {
+    "name": "Ожерелье of Быстроты"
+  },
+  "ogres-club-of-havoc": {
+    "name": "Club of Havoc Огра"
+  },
+  "orb-of-driving-rain": {
+    "name": "Сфера of Driving Rain"
+  },
+  "orb-of-inhibition": {
+    "name": "Сфера of Запрещения"
+  },
+  "orb-of-silt": {
+    "name": "Сфера of Илистого Озера"
+  },
+  "orb-of-tempestuous-fire": {
+    "name": "Сфера of Tempestuous Огня"
+  },
+  "orb-of-the-firmament": {
+    "name": "Сфера Небесного Свода"
+  },
+  "orb-of-vulnerability": {
+    "name": "Сфера of Уязвимости"
+  },
+  "pendant-of-courage": {
+    "name": "Амулет of Отваги"
+  },
+  "pendant-of-death": {
+    "name": "Амулет of Смерти"
+  },
+  "pendant-of-dispassion": {
+    "name": "Амулет of Dispassion"
+  },
+  "pendant-of-downfall": {
+    "name": "Амулет of Downfall"
+  },
+  "pendant-of-free-will": {
+    "name": "Амулет of Free Will"
+  },
+  "pendant-of-holiness": {
+    "name": "Амулет of Holiness"
+  },
+  "pendant-of-life": {
+    "name": "Амулет of Жизни"
+  },
+  "pendant-of-negativity": {
+    "name": "Амулет of Отрицательности"
+  },
+  "pendant-of-reflection": {
+    "name": "Амулет of Reflection"
+  },
+  "pendant-of-second-sight": {
+    "name": "Амулет of Second Sight"
+  },
+  "pendant-of-total-recall": {
+    "name": "Амулет of Total Recall"
+  },
+  "plate-of-dying-light": {
+    "name": "Латы of Dying Light"
+  },
+  "power-of-the-dragon-father": {
+    "name": "Сила Отца Драконов"
+  },
+  "quiet-eye-of-the-dragon": {
+    "name": "Quiet Eye Дракона"
+  },
+  "recanters-cloak": {
+    "name": "Плащ Recanterа"
+  },
+  "red-dragon-flame-tongue": {
+    "name": "Red Дракона Flame Tongue"
+  },
+  "rib-cage": {
+    "name": "Rib Cage"
+  },
+  "ring-of-conjuring": {
+    "name": "Кольцо of Conjuring"
+  },
+  "ring-of-infinite-gems": {
+    "name": "Кольцо of Бесконечных Gems"
+  },
+  "ring-of-life": {
+    "name": "Кольцо of Жизни"
+  },
+  "ring-of-oblivion": {
+    "name": "Кольцо of Oblivion"
+  },
+  "ring-of-suppression": {
+    "name": "Кольцо of Suppression"
+  },
+  "ring-of-the-magi": {
+    "name": "Кольцо Мага"
+  },
+  "ring-of-the-wayfarer": {
+    "name": "Кольцо Wayfarer"
+  },
+  "ring-of-vitality": {
+    "name": "Кольцо of Жизненной Силы"
+  },
+  "royal-armor-of-nix": {
+    "name": "Royal Доспехи of Nix"
+  },
+  "runes-of-imminency": {
+    "name": "Runes of Imminency"
+  },
+  "sandals-of-the-saint": {
+    "name": "Sandals Saint"
+  },
+  "scales-of-the-greater-basilisk": {
+    "name": "Scales Greater Basilisk"
+  },
+  "sea-captains-hat": {
+    "name": "Шляпа Sea Captainа"
+  },
+  "seal-of-sunset": {
+    "name": "Seal of Sunset"
+  },
+  "sentinels-shield": {
+    "name": "Щит Sentinelа"
+  },
+  "shackles-of-war": {
+    "name": "Shackles of War"
+  },
+  "shamans-puppet": {
+    "name": "Puppet Shamanа"
+  },
+  "shield-of-naval-glory": {
+    "name": "Щит of Naval Glory"
+  },
+  "shield-of-the-damned": {
+    "name": "Щит Проклятых"
+  },
+  "shield-of-the-dwarven-lords": {
+    "name": "Щит Dwarven Lords"
+  },
+  "shield-of-the-yawning-dead": {
+    "name": "Щит Yawning Dead"
+  },
+  "skull-helmet": {
+    "name": "Skull Шлем"
+  },
+  "sleepkeeper": {
+    "name": "Sleepkeeper"
+  },
+  "speculum": {
+    "name": "Speculum"
+  },
+  "spellbinders-hat": {
+    "name": "Шляпа Заклинателя"
+  },
+  "sphere-of-permanence": {
+    "name": "Сфера of Постоянства"
+  },
+  "spirit-of-oppression": {
+    "name": "Spirit of Oppression"
+  },
+  "spyglass": {
+    "name": "Подзорная труба"
+  },
+  "statesmans-medal": {
+    "name": "Медаль Государственника"
+  },
+  "statue-of-legion": {
+    "name": "Statue of Legion"
+  },
+  "still-eye-of-the-dragon": {
+    "name": "Still Eye Дракона"
+  },
+  "stoic-watchman": {
+    "name": "Stoic Watchman"
+  },
+  "surcoat-of-counterpoise": {
+    "name": "Surcoat of Counterpoise"
+  },
+  "sword-of-hellfire": {
+    "name": "Меч of Ада"
+  },
+  "sword-of-judgement": {
+    "name": "Меч of Judgement"
+  },
+  "talisman-of-mana": {
+    "name": "Talisman of Mana"
+  },
+  "targ-of-the-rampaging-ogre": {
+    "name": "Targ Rampaging Ogre"
+  },
+  "thunder-helmet": {
+    "name": "Небесного Грома Шлем"
+  },
+  "titans-cuirass": {
+    "name": "Кираса Титана"
+  },
+  "titans-gladius": {
+    "name": "Гладиус Титана"
+  },
+  "titans-thunder": {
+    "name": "Гром Титана"
+  },
+  "tome-of-air": {
+    "name": "Книга of Воздуха"
+  },
+  "tome-of-earth": {
+    "name": "Книга of Земли"
+  },
+  "tome-of-fire": {
+    "name": "Книга of Огня"
+  },
+  "tome-of-water": {
+    "name": "Книга of Воды"
+  },
+  "torso-of-legion": {
+    "name": "Torso of Legion"
+  },
+  "trident-of-dominion": {
+    "name": "Trident of Dominion"
+  },
+  "tunic-of-the-cyclops-king": {
+    "name": "Туника Cyclops King"
+  },
+  "vampires-cowl": {
+    "name": "Cowl Vampireа"
+  },
+  "vial-of-dragon-blood": {
+    "name": "Сосуд of Дракона Blood"
+  },
+  "vial-of-lifeblood": {
+    "name": "Сосуд Крови Жизни"
+  },
+  "wayfarers-boots": {
+    "name": "Сапоги Wayfarerа"
+  },
+  "wizards-well": {
+    "name": "Источник Волшебника"
   }
 }
