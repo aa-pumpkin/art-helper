@@ -30,7 +30,7 @@
       <div class="q-ml-md">{{ $t('common.loading') }}</div>
     </div>
 
-    <!-- Сетка карточек -->
+    <!-- Сетка карточек (слегка больше) -->
     <div v-else class="grid">
       <q-card
         v-for="art in filtered"
@@ -66,20 +66,32 @@
       {{ $t('common.nothingFound') }}
     </div>
 
-    <!-- Попап -->
+    <!-- Попап: во весь экран, без sticky, контент компактный -->
     <q-dialog v-model="show" maximized transition-show="slide-up" transition-hide="slide-down">
-      <q-card class="q-pa-md">
+      <q-card class="q-pa-md popup-full">
         <div class="row items-start q-col-gutter-md">
-          <div class="col-12 col-sm-4">
-            <q-img :src="selected?.image" :ratio="1" class="rounded-borders" decoding="async">
+          <!-- Левая колонка: маленькая картинка -->
+          <div class="col-12 col-sm-auto flex justify-center">
+            <q-img
+              :src="selected?.image"
+              :ratio="1"
+              class="rounded-borders popup-thumb"
+              decoding="async"
+            >
               <template #error>
-                <q-img src="/images/placeholder.png" :ratio="1" fit="contain" />
+                <q-img
+                  src="/images/placeholder.png"
+                  :ratio="1"
+                  fit="contain"
+                  class="rounded-borders popup-thumb"
+                />
               </template>
             </q-img>
           </div>
 
-          <div class="col-12 col-sm-8">
-            <!-- Верхняя панель попапа -->
+          <!-- Правая колонка: весь текст, без внутренних скроллов -->
+          <div class="col-12 col-sm">
+            <!-- Верхняя панель: навигация и крестик -->
             <div class="row items-center justify-between q-mb-sm">
               <div class="row items-center q-gutter-xs">
                 <q-btn flat round dense icon="chevron_left" :disable="!hasBack" @click="goBack" />
@@ -96,24 +108,26 @@
               <q-btn flat round dense icon="close" @click="closeDialog" />
             </div>
 
-            <div class="q-mb-sm">
-              <q-chip square color="primary" text-color="white" class="q-mr-xs">
-                {{ $t('fields.slot') }}: {{ selected?.slot }}
-              </q-chip>
-              <q-chip square outline class="q-mr-xs">
-                {{ $t('fields.rarity') }}: {{ selected?.rarity }}
-              </q-chip>
-              <q-chip v-if="selected?.cost != null" square outline>
-                {{ $t('fields.cost') }}: {{ selected?.cost }}
-              </q-chip>
+            <div class="row items-center q-col-gutter-sm q-mb-sm">
+              <div>
+                <q-chip square color="primary" text-color="white"
+                  >{{ $t('fields.slot') }}: {{ selected?.slot }}</q-chip
+                >
+              </div>
+              <div>
+                <q-chip square outline>{{ $t('fields.rarity') }}: {{ selected?.rarity }}</q-chip>
+              </div>
+              <div v-if="selected?.cost != null">
+                <q-chip square outline>{{ $t('fields.cost') }}: {{ selected?.cost }}</q-chip>
+              </div>
             </div>
 
-            <div v-if="displayEffect(selected)" class="q-mb-md">
+            <div v-if="displayEffect(selected)" class="q-mb-sm">
               <div class="text-subtitle2 q-mb-xs">{{ $t('fields.effect') }}</div>
               <div class="text-body2">{{ displayEffect(selected) }}</div>
             </div>
 
-            <div v-if="(selected?.bonuses || []).length">
+            <div v-if="(selected?.bonuses || []).length" class="q-mb-sm">
               <div class="text-subtitle2 q-mb-xs">{{ $t('fields.bonuses') }}</div>
               <div class="q-gutter-xs">
                 <q-chip v-for="(b, i) in selected.bonuses" :key="i" dense outline :title="b.source">
@@ -122,8 +136,8 @@
               </div>
             </div>
 
-            <!-- Если это КОМБО -->
-            <div v-if="isCombo(selected) && comboIndex[selected.name]" class="q-mt-md">
+            <!-- Комбо → компоненты -->
+            <div v-if="isCombo(selected) && comboIndex[selected.name]" class="q-mt-sm">
               <div class="text-subtitle2 q-mb-xs">Компоненты комбо</div>
               <div class="mini-grid">
                 <div
@@ -155,8 +169,8 @@
               </div>
             </div>
 
-            <!-- Если это КОМПОНЕНТ -->
-            <div v-if="(selected?.leadsTo || []).length" class="q-mt-md">
+            <!-- Компонент → список комбо -->
+            <div v-if="(selected?.leadsTo || []).length" class="q-mt-sm">
               <div class="text-subtitle2 q-mb-xs">Входит в комбо</div>
               <div class="mini-grid">
                 <div
@@ -191,14 +205,12 @@
               </div>
             </div>
 
-            <div v-if="displayCombRaw(selected)" class="q-mt-md">
+            <div v-if="displayCombRaw(selected)" class="q-mt-sm">
               <div class="text-subtitle2 q-mb-xs">{{ $t('fields.combinationRaw') }}</div>
               <div class="text-body2">{{ displayCombRaw(selected) }}</div>
             </div>
           </div>
         </div>
-
-        <q-separator class="q-my-md" />
       </q-card>
     </q-dialog>
   </q-page>
@@ -226,10 +238,9 @@ async function loadArtifactTranslations(lang) {
     artTr.value = {}
   }
 }
-
 function tArt(art, key) {
   if (!art) return ''
-  return (artTr.value[art.id] && artTr.value[art.id][key]) || art[key] || ''
+  return artTr.value[art.id]?.[key] ?? art[key] ?? ''
 }
 const displayName = (art) => tArt(art, 'name')
 const displayEffect = (art) => tArt(art, 'effect')
@@ -247,9 +258,8 @@ function openRoot(art) {
 function navigateToId(id) {
   const a = byId.value[id]
   if (!a) return
-  if (histIndex.value < history.value.length - 1) {
+  if (histIndex.value < history.value.length - 1)
     history.value = history.value.slice(0, histIndex.value + 1)
-  }
   history.value.push(a)
   histIndex.value++
 }
@@ -273,10 +283,8 @@ const hasForward = computed(
 const byId = ref({})
 const byName = ref({})
 const comboIndex = ref({})
-
 function isCombo(a) {
-  if (!a) return false
-  return a.rarity === 'combo' || !!comboIndex.value[a.name]
+  return !!a && (a.rarity === 'combo' || !!comboIndex.value[a.name])
 }
 
 onMounted(async () => {
@@ -375,6 +383,7 @@ function prettyBonus(b) {
 </script>
 
 <style scoped>
+/* Поиск */
 .full-width {
   width: 100%;
 }
@@ -385,25 +394,28 @@ function prettyBonus(b) {
   border-radius: 9999px;
 }
 
+/* Сетка карточек — немного крупнее */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); /* было 120px */
+  gap: 10px;
 }
-
 .artifact-card {
   overflow: hidden;
   border-radius: 12px;
   transition:
-    transform 120ms ease,
-    box-shadow 120ms ease;
+    transform 110ms ease,
+    box-shadow 110ms ease;
+  will-change: transform;
 }
 @media (hover: hover) and (pointer: fine) {
   .artifact-card:hover {
-    transform: translateY(-2px) scale(1.02);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    transform: translateY(-1px) scale(1.015); /* как у mini-card */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12); /* как у mini-card */
   }
 }
+
+/* Квадратные превью + подпись */
 .thumb {
   position: relative;
   aspect-ratio: 1 / 1;
@@ -411,6 +423,8 @@ function prettyBonus(b) {
 .thumb-img {
   width: 100%;
   height: 100%;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
 }
 .name-overlay {
   position: absolute;
@@ -421,16 +435,31 @@ function prettyBonus(b) {
   text-align: center;
   color: #fff;
   background: rgba(0, 0, 0, 0.6);
-  font-size: 13px;
+  font-size: 12px;
   line-height: 1.2;
 }
 .rounded-borders {
   border-radius: 12px;
 }
 
+/* ------ Fullscreen dialog content ------ */
+.popup-full {
+  /* убираем любые внутренние ограничения по высоте */
+  height: auto;
+  max-height: none;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.18);
+}
+
+/* Картинка в попапе — компактная */
+.popup-thumb {
+  width: clamp(120px, 22vw, 200px);
+  max-width: 100%;
+}
+
+/* Мини-карточки */
 .mini-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(92px, 1fr));
   gap: 8px;
 }
 .mini-card {
@@ -445,6 +474,20 @@ function prettyBonus(b) {
   transform: translateY(-1px) scale(1.015);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
+.mini-card.is-disabled {
+  cursor: default;
+  opacity: 0.7;
+}
+.mini-thumb {
+  position: relative;
+  aspect-ratio: 1 / 1;
+}
+.mini-img {
+  width: 100%;
+  height: 100%;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
+}
 .mini-name {
   position: absolute;
   left: 0;
@@ -456,5 +499,8 @@ function prettyBonus(b) {
   background: rgba(0, 0, 0, 0.6);
   font-size: 11px;
   line-height: 1.1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 </style>
