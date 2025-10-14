@@ -14,11 +14,8 @@
         :placeholder="$t('common.searchPlaceholder')"
         class="full-width pill-input"
       >
-        <template #append>
-          <q-icon name="search" />
-        </template>
+        <template #append><q-icon name="search" /></template>
       </q-input>
-
       <div class="text-caption text-grey-7 q-mt-xs">
         {{ $t('common.foundCount', { n: filtered.length }) }}
       </div>
@@ -30,7 +27,7 @@
       <div class="q-ml-md">{{ $t('common.loading') }}</div>
     </div>
 
-    <!-- Сетка карточек (слегка больше) -->
+    <!-- Сетка карточек -->
     <div v-else class="grid">
       <q-card
         v-for="art in filtered"
@@ -51,13 +48,11 @@
             fit="cover"
             class="thumb-img"
           >
-            <template #error>
-              <q-img src="/images/placeholder.png" fit="contain" class="thumb-img" />
-            </template>
+            <template #error
+              ><q-img src="/images/placeholder.png" fit="contain" class="thumb-img"
+            /></template>
           </q-img>
-          <div class="name-overlay">
-            {{ displayName(art) }}
-          </div>
+          <div class="name-overlay">{{ displayName(art) }}</div>
         </div>
       </q-card>
     </div>
@@ -66,151 +61,151 @@
       {{ $t('common.nothingFound') }}
     </div>
 
-    <!-- Попап: во весь экран, без sticky, контент компактный -->
-    <q-dialog v-model="show" maximized transition-show="slide-up" transition-hide="slide-down">
-      <q-card class="q-pa-md popup-full">
-        <div class="row items-start q-col-gutter-md">
-          <!-- Левая колонка: маленькая картинка -->
-          <div class="col-12 col-sm-auto flex justify-center">
-            <q-img
-              :src="selected?.image"
-              :ratio="1"
-              class="rounded-borders popup-thumb"
-              decoding="async"
-            >
-              <template #error>
-                <q-img
-                  src="/images/placeholder.png"
-                  :ratio="1"
-                  fit="contain"
-                  class="rounded-borders popup-thumb"
-                />
-              </template>
-            </q-img>
-          </div>
-
-          <!-- Правая колонка: весь текст, без внутренних скроллов -->
-          <div class="col-12 col-sm">
-            <!-- Верхняя панель: навигация и крестик -->
-            <div class="row items-center justify-between q-mb-sm">
-              <div class="row items-center q-gutter-xs">
-                <q-btn flat round dense icon="chevron_left" :disable="!hasBack" @click="goBack" />
-                <q-btn
-                  flat
-                  round
-                  dense
-                  icon="chevron_right"
-                  :disable="!hasForward"
-                  @click="goForward"
-                />
-                <div class="text-h5 q-ml-sm">{{ displayName(selected) }}</div>
-              </div>
-              <q-btn flat round dense icon="close" @click="closeDialog" />
+    <!-- Диалог -->
+    <q-dialog v-model="show" transition-show="scale" transition-hide="scale">
+      <!-- жёстко 80vw -->
+      <q-card class="q-pa-md popup-card" style="width: 80vw; max-width: 80vw">
+        <div class="popup-scroll">
+          <div class="row items-start q-col-gutter-md no-wrap-fix">
+            <!-- Левая колонка -->
+            <div class="col-12 col-sm-auto flex justify-center min-w-0">
+              <q-img
+                :src="selected?.image"
+                :ratio="1"
+                class="rounded-borders popup-thumb"
+                decoding="async"
+              >
+                <template #error
+                  ><q-img
+                    src="/images/placeholder.png"
+                    :ratio="1"
+                    fit="contain"
+                    class="rounded-borders popup-thumb"
+                /></template>
+              </q-img>
             </div>
 
-            <div class="row items-center q-col-gutter-sm q-mb-sm">
-              <div>
-                <q-chip square color="primary" text-color="white"
-                  >{{ $t('fields.slot') }}: {{ selected?.slot }}</q-chip
-                >
+            <!-- Правая колонка -->
+            <div class="col-12 col-sm min-w-0">
+              <!-- Заголовок + навигация + закрыть -->
+              <div class="row items-center justify-between q-mb-sm">
+                <div class="row items-center q-gutter-xs">
+                  <q-btn flat round dense icon="chevron_left" :disable="!hasBack" @click="goBack" />
+                  <q-btn
+                    flat
+                    round
+                    dense
+                    icon="chevron_right"
+                    :disable="!hasForward"
+                    @click="goForward"
+                  />
+                  <div class="text-h5 q-ml-sm ellipsis">{{ displayName(selected) }}</div>
+                </div>
+                <q-btn flat round dense icon="close" @click="closeDialog" />
               </div>
-              <div>
-                <q-chip square outline>{{ $t('fields.rarity') }}: {{ selected?.rarity }}</q-chip>
-              </div>
-              <div v-if="selected?.cost != null">
-                <q-chip square outline>{{ $t('fields.cost') }}: {{ selected?.cost }}</q-chip>
-              </div>
-            </div>
 
-            <div v-if="displayEffect(selected)" class="q-mb-sm">
-              <div class="text-subtitle2 q-mb-xs">{{ $t('fields.effect') }}</div>
-              <div class="text-body2">{{ displayEffect(selected) }}</div>
-            </div>
-
-            <div v-if="(selected?.bonuses || []).length" class="q-mb-sm">
-              <div class="text-subtitle2 q-mb-xs">{{ $t('fields.bonuses') }}</div>
-              <div class="q-gutter-xs">
-                <q-chip v-for="(b, i) in selected.bonuses" :key="i" dense outline :title="b.source">
-                  {{ prettyBonus(b) }}
-                </q-chip>
+              <!-- Бейджи: Slot / Rarity / Cost (плотные, как Slot) -->
+              <div class="row items-center q-col-gutter-sm q-mb-sm top-badges flex-wrap">
+                <q-badge class="badge pill q-mr-sm q-mb-xs" color="primary" text-color="white">
+                  {{ $t('fields.slot') }}: {{ selected?.slot ?? '-' }}
+                </q-badge>
+                <q-badge class="badge pill q-mr-sm q-mb-xs" color="secondary" text-color="white">
+                  {{ $t('fields.rarity') || 'Rarity' }}:
+                  {{ selected && selected.rarity !== undefined ? selected.rarity : '-' }}
+                </q-badge>
+                <q-badge class="badge pill q-mr-sm q-mb-xs" color="positive" text-color="white">
+                  {{ $t('fields.cost') || 'Cost' }}:
+                  {{ selected && selected.cost !== undefined ? selected.cost : '-' }}
+                </q-badge>
               </div>
-            </div>
 
-            <!-- Комбо → компоненты -->
-            <div v-if="isCombo(selected) && comboIndex[selected.name]" class="q-mt-sm">
-              <div class="text-subtitle2 q-mb-xs">Компоненты комбо</div>
-              <div class="mini-grid">
-                <div
-                  v-for="c in getSortedComponents(selected.name)"
-                  :key="c.id"
-                  class="mini-card"
-                  @click.stop="navigateToId(c.id)"
-                >
-                  <div class="mini-thumb">
-                    <q-img
-                      :src="byId[c.id]?.image || '/images/placeholder.png'"
-                      fit="cover"
-                      :ratio="1"
-                      class="mini-img"
-                      :alt="displayName(byId[c.id] || c)"
-                    >
-                      <template #error>
-                        <q-img
-                          src="/images/placeholder.png"
-                          :ratio="1"
-                          fit="contain"
-                          class="mini-img"
-                        />
-                      </template>
-                    </q-img>
-                    <div class="mini-name">{{ displayName(byId[c.id] || c) }}</div>
+              <!-- Эффект чипами (по запятым) -->
+              <div v-if="displayEffect(selected)" class="q-mb-sm">
+                <div class="text-subtitle2 q-mb-xs">{{ $t('fields.effect') }}</div>
+                <div class="chips-wrap">
+                  <q-chip
+                    v-for="(chip, i) in effectChips"
+                    :key="i"
+                    :color="chip.color"
+                    :text-color="chip.textColor"
+                    class="effect-chip"
+                    >{{ chip.text }}</q-chip
+                  >
+                </div>
+              </div>
+
+              <!-- Комбо → компоненты -->
+              <div v-if="isCombo(selected) && comboIndex[selected.name]" class="q-mt-sm">
+                <div class="text-subtitle2 q-mb-xs">Компоненты комбо</div>
+                <div class="mini-grid">
+                  <div
+                    v-for="c in getSortedComponents(selected.name)"
+                    :key="c.id"
+                    class="mini-card"
+                    @click.stop="navigateToId(c.id)"
+                  >
+                    <div class="mini-thumb">
+                      <q-img
+                        :src="byId[c.id]?.image || '/images/placeholder.png'"
+                        fit="cover"
+                        :ratio="1"
+                        class="mini-img"
+                        :alt="displayName(byId[c.id] || c)"
+                      >
+                        <template #error
+                          ><q-img
+                            src="/images/placeholder.png"
+                            :ratio="1"
+                            fit="contain"
+                            class="mini-img"
+                        /></template>
+                      </q-img>
+                      <div class="mini-name">{{ displayName(byId[c.id] || c) }}</div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <!-- Компонент → список комбо -->
-            <div v-if="(selected?.leadsTo || []).length" class="q-mt-sm">
-              <div class="text-subtitle2 q-mb-xs">Входит в комбо</div>
-              <div class="mini-grid">
-                <div
-                  v-for="comboName in sortedLeadsTo"
-                  :key="comboName"
-                  class="mini-card"
-                  :class="{ 'is-disabled': !byName[comboName] }"
-                  @click.stop="byName[comboName] && navigateToId(byName[comboName].id)"
-                >
-                  <div class="mini-thumb">
-                    <q-img
-                      :src="byName[comboName]?.image || '/images/placeholder.png'"
-                      fit="cover"
-                      :ratio="1"
-                      class="mini-img"
-                      :alt="comboName"
-                    >
-                      <template #error>
-                        <q-img
-                          src="/images/placeholder.png"
-                          :ratio="1"
-                          fit="contain"
-                          class="mini-img"
-                        />
-                      </template>
-                    </q-img>
-                    <div class="mini-name">
-                      {{ displayName(byName[comboName] || { id: comboName, name: comboName }) }}
+              <!-- Куда входит -->
+              <div v-if="(selected?.leadsTo || []).length" class="q-mt-sm">
+                <div class="text-subtitle2 q-mb-xs">Входит в комбо</div>
+                <div class="mini-grid">
+                  <div
+                    v-for="comboName in sortedLeadsTo"
+                    :key="comboName"
+                    class="mini-card"
+                    :class="{ 'is-disabled': !byName[comboName] }"
+                    @click.stop="byName[comboName] && navigateToId(byName[comboName].id)"
+                  >
+                    <div class="mini-thumb">
+                      <q-img
+                        :src="byName[comboName]?.image || '/images/placeholder.png'"
+                        fit="cover"
+                        :ratio="1"
+                        class="mini-img"
+                        :alt="comboName"
+                      >
+                        <template #error
+                          ><q-img
+                            src="/images/placeholder.png"
+                            :ratio="1"
+                            fit="contain"
+                            class="mini-img"
+                        /></template>
+                      </q-img>
+                      <div class="mini-name">
+                        {{ displayName(byName[comboName] || { id: comboName, name: comboName }) }}
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-
-            <div v-if="displayCombRaw(selected)" class="q-mt-sm">
-              <div class="text-subtitle2 q-mb-xs">{{ $t('fields.combinationRaw') }}</div>
-              <div class="text-body2">{{ displayCombRaw(selected) }}</div>
-            </div>
+            <!-- /right -->
           </div>
+          <!-- /row -->
         </div>
+        <!-- /scroll -->
       </q-card>
     </q-dialog>
   </q-page>
@@ -219,7 +214,6 @@
 <script setup>
 import { ref, computed, onMounted, onBeforeUnmount, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
-
 const { locale } = useI18n()
 
 const loading = ref(true)
@@ -227,7 +221,7 @@ const search = ref('')
 const artifacts = ref([])
 const show = ref(false)
 
-/* ===== Переводы артефактов ===== */
+/* переводы имён/эффектов */
 const artTr = ref({})
 async function loadArtifactTranslations(lang) {
   try {
@@ -244,9 +238,8 @@ function tArt(art, key) {
 }
 const displayName = (art) => tArt(art, 'name')
 const displayEffect = (art) => tArt(art, 'effect')
-const displayCombRaw = (art) => tArt(art, 'combinationRaw')
 
-/* ===== История ===== */
+/* история навигации */
 const history = ref([])
 const histIndex = ref(-1)
 const selected = computed(() => history.value[histIndex.value] || null)
@@ -279,7 +272,7 @@ const hasForward = computed(
   () => histIndex.value >= 0 && histIndex.value < history.value.length - 1,
 )
 
-/* ===== Индексы и комбо ===== */
+/* индексы и комбо */
 const byId = ref({})
 const byName = ref({})
 const comboIndex = ref({})
@@ -292,7 +285,6 @@ onMounted(async () => {
     const res = await fetch('/artifacts.json')
     const data = await res.json()
     artifacts.value = data
-
     const idMap = {},
       nameMap = {}
     for (const a of data) {
@@ -344,7 +336,7 @@ function onKey(e) {
   }
 }
 
-/* ===== Сортировка и поиск ===== */
+/* поиск/сортировка */
 const coll = new Intl.Collator(['ru', 'en'], { sensitivity: 'base', numeric: true })
 const filtered = computed(() => {
   const q = search.value.trim().toLowerCase()
@@ -369,21 +361,26 @@ function getSortedComponents(comboName) {
   )
 }
 
-/* ===== Вспомогательное ===== */
-function prettyBonus(b) {
-  const val =
-    b.value === 0 && b.kind === 'special'
-      ? ''
-      : b.scale === 'percent'
-        ? `${b.value}%`
-        : `+${b.value}`
-  const stat = b.stat ? ` ${b.stat}` : ''
-  return `${val}${stat}`.trim() || b.source || 'bonus'
-}
+/* эффект → чипы */
+const effectChips = computed(() => {
+  const raw = displayEffect(selected.value) || ''
+  const parts = raw
+    .split(/\s*,\s*/)
+    .map((s) => s.trim())
+    .filter(Boolean)
+  return parts.map((t) => {
+    const plus = /^\+/.test(t),
+      minus = /^-/.test(t)
+    return {
+      text: t,
+      color: plus ? 'positive' : minus ? 'negative' : 'grey-3',
+      textColor: plus || minus ? 'white' : 'dark',
+    }
+  })
+})
 </script>
 
 <style scoped>
-/* Поиск */
 .full-width {
   width: 100%;
 }
@@ -394,31 +391,32 @@ function prettyBonus(b) {
   border-radius: 9999px;
 }
 
-/* Сетка карточек — немного крупнее */
+/* сетка */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); /* было 120px */
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
   gap: 10px;
 }
+
+/* ховер */
 .artifact-card {
   overflow: hidden;
   border-radius: 12px;
   transition:
     transform 110ms ease,
     box-shadow 110ms ease;
-  will-change: transform;
 }
 @media (hover: hover) and (pointer: fine) {
   .artifact-card:hover {
-    transform: translateY(-1px) scale(1.015); /* как у mini-card */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12); /* как у mini-card */
+    transform: translateY(-1px) scale(1.015);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
   }
 }
 
-/* Квадратные превью + подпись */
+/* превью */
 .thumb {
   position: relative;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 1/1;
 }
 .thumb-img {
   width: 100%;
@@ -438,25 +436,63 @@ function prettyBonus(b) {
   font-size: 12px;
   line-height: 1.2;
 }
+
+/* попап */
+.popup-card {
+  max-height: 80vh;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.popup-scroll {
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 80vh;
+}
+.no-wrap-fix {
+  flex-wrap: wrap;
+}
+.min-w-0,
+.ellipsis {
+  min-width: 0;
+}
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* картинка */
 .rounded-borders {
   border-radius: 12px;
 }
-
-/* ------ Fullscreen dialog content ------ */
-.popup-full {
-  /* убираем любые внутренние ограничения по высоте */
-  height: auto;
-  max-height: none;
-  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.18);
-}
-
-/* Картинка в попапе — компактная */
 .popup-thumb {
-  width: clamp(120px, 22vw, 200px);
+  width: clamp(120px, 22vw, 220px);
   max-width: 100%;
 }
 
-/* Мини-карточки */
+/* бейджи */
+.badge {
+  font-weight: 600;
+}
+.badge.pill {
+  border-radius: 9999px;
+  padding: 6px 10px;
+}
+
+/* чипы эффекта */
+.chips-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.effect-chip {
+  font-size: 14px;
+}
+
+/* мини-карточки */
 .mini-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(92px, 1fr));
@@ -480,7 +516,7 @@ function prettyBonus(b) {
 }
 .mini-thumb {
   position: relative;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 1/1;
 }
 .mini-img {
   width: 100%;
