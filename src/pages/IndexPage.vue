@@ -451,6 +451,17 @@ const effectChips = computed(() => {
   overflow-x: hidden;
   max-height: 80vh;
 }
+/* Мобилка: делаем почти на всю ширину + safe-area отступы */
+@media (max-width: 599px) {
+  .popup-card {
+    width: calc(100vw - 16px) !important;
+    max-width: calc(100vw - 16px) !important;
+    margin: 8px;
+  }
+  .popup-scroll {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
 .no-wrap-fix {
   flex-wrap: wrap;
 }

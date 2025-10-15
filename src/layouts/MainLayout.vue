@@ -79,6 +79,7 @@ watch(locale, (l) => localStorage.setItem('locale', l))
   background: linear-gradient(180deg, #2f3b52, #2a3347);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
   color: #fff;
+  padding-top: env(safe-area-inset-top);
 }
 .app-title {
   font-weight: 700;
@@ -110,5 +111,9 @@ watch(locale, (l) => localStorage.setItem('locale', l))
   .app-title {
     font-size: 16px;
   }
+}
+
+.q-page-container {
+  padding-bottom: env(safe-area-inset-bottom);
 }
 </style>

@@ -41,3 +41,10 @@ quasar build
 ### Customize the configuration
 
 See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-config-js).
+
+# прод-сборка веба + синк + открыть студию
+
+quasar build -m capacitor -T android
+cd src-capacitor
+npx cap sync android
+npx cap open android
