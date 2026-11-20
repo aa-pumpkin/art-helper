@@ -4,6 +4,7 @@
     :maximized="$q.screen.lt.sm"
     transition-show="jump-up"
     transition-hide="jump-down"
+    :transition-duration="350"
     @update:model-value="$emit('update:modelValue', $event)"
     @hide="history = []"
   >
@@ -272,8 +273,8 @@ function effectClass(e) {
   background: var(--c-surface-2);
   border: 1px solid var(--c-border);
   transition:
-    background 120ms ease,
-    color 120ms ease;
+    background var(--dur-fast) var(--ease),
+    color var(--dur-fast) var(--ease);
 }
 .own-btn:focus-visible {
   outline: 2px solid var(--c-gold);

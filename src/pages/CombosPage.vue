@@ -49,7 +49,7 @@
           <div>{{ $t('common.nothingFound') }}</div>
         </div>
 
-        <div class="combo-list">
+        <TransitionGroup tag="div" name="combo" class="combo-list">
           <article
             v-for="row in rows"
             :key="row.id"
@@ -87,7 +87,7 @@
               />
             </div>
           </article>
-        </div>
+        </TransitionGroup>
       </template>
     </div>
 
@@ -96,7 +96,7 @@
 </template>
 
 <script setup>
-import { ref, computed, watch } from 'vue'
+import { ref, computed, watch, onBeforeUnmount } from 'vue'
 import { useQuasar } from 'quasar'
 import { useI18n } from 'vue-i18n'
 import ArtifactIcon from 'components/ArtifactIcon.vue'
@@ -116,8 +116,9 @@ const query = computed(() => (search.value || '').trim())
 const ownedCount = computed(() => Object.keys(owned.value).length)
 
 /*
- * Порядок сборников (ближе к готовности — выше) считается при открытии экрана
- * и при смене поиска, чтобы карточки не прыгали под пальцем после каждого тапа.
+ * Порядок сборников (ближе к готовности — выше). После отметки пересчитывается
+ * с паузой: можно отметить подряд несколько частей, а затем карточка плавно
+ * переезжает на своё место, а не прыгает под пальцем после каждого тапа.
  */
 const order = ref([])
 function computeOrder() {
@@ -130,6 +131,18 @@ function computeOrder() {
   )
 }
 watch([partsOf, query], computeOrder, { immediate: true })
+
+const RESORT_DELAY = 1000
+let resortTimer = null
+watch(
+  owned,
+  () => {
+    clearTimeout(resortTimer)
+    resortTimer = setTimeout(computeOrder, RESORT_DELAY)
+  },
+  { deep: true },
+)
+onBeforeUnmount(() => clearTimeout(resortTimer))
 
 const rows = computed(() => {
   const q = query.value
@@ -193,6 +206,16 @@ function confirmReset() {
   color: var(--c-muted);
 }
 
+/* карточка, поменявшая место, плавно переезжает; новые при поиске проявляются */
+.combo-move {
+  transition: transform var(--dur-slow) cubic-bezier(0.65, 0, 0.35, 1);
+}
+.combo-enter-active {
+  transition: opacity var(--dur) var(--ease);
+}
+.combo-enter-from {
+  opacity: 0;
+}
 .combo-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr));
@@ -200,6 +223,7 @@ function confirmReset() {
   margin-top: 14px;
 }
 .combo-card {
+  transition: border-color var(--dur) var(--ease);
   background: var(--c-surface);
   border: 1px solid var(--c-border);
   border-radius: 14px;
@@ -266,7 +290,7 @@ function confirmReset() {
   display: block;
   height: 100%;
   background: var(--s-owned);
-  transition: width 200ms ease;
+  transition: width var(--dur) var(--ease);
 }
 
 .parts {
