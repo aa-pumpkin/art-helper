@@ -1,4 +1,4 @@
-package org.capacitor.quasar.app;
+package io.github.aapumpkin.artificer;
 
 import android.os.Bundle;
 import android.view.View;

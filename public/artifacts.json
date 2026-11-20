@@ -108,10 +108,10 @@
     "effects": [
       "+3 Attack skill",
       "+3 Defense skill",
-      "+6 Power skill",
-      "+3 Knowledge skill",
+      "+3 Power skill",
+      "+6 Knowledge skill",
       "Expert Armageddon spell",
-      "Immune to Armageddon Spell"
+      "Allies are immune to Armageddon"
     ],
     "leadsTo": [],
     "image": "/images/artifacts/armageddons-blade.png"
@@ -130,6 +130,7 @@
       "+4 Knowledge skill",
       "Casts Expert Bloodlust, Counterstrike, Fire Shield and Haste on all allies for 50 rounds"
     ],
+    "bonus": ["Expert Haste, Bloodlust, Fire Shield and Counterstrike on all allies for 50 rounds"],
     "leadsTo": [],
     "image": "/images/artifacts/ironfist-of-the-ogre.png"
   },
@@ -145,9 +146,10 @@
       "+9 Defense skill",
       "+8 Power skill",
       "+8 Knowledge skill",
-      "Expert Titan's Lightning Bolt spell",
-      "Adds a permanent Spell Book"
+      "Titan's Lightning Bolt: 600 damage, no mana cost",
+      "Free Spell Book if the hero has none"
     ],
+    "bonus": ["Titan's Lightning Bolt: 600 damage, no mana cost", "Free Spell Book"],
     "leadsTo": [],
     "image": "/images/artifacts/titans-thunder.png"
   },
@@ -165,6 +167,10 @@
       "+21 Knowledge skill",
       "Casts Expert Prayer Spell on all allies for 10 rounds",
       "No morale penalty for mixing creatures from good and neutral towns (except Conflux)"
+    ],
+    "bonus": [
+      "Expert Prayer on all allies for 10 rounds",
+      "No morale penalty for mixing good and neutral creatures"
     ],
     "leadsTo": [],
     "image": "/images/artifacts/angelic-alliance.png"
@@ -392,6 +398,7 @@
       "+2 Knowledge skill",
       "Casts Expert Curse, Misfortune, Slow and Weakness on all enemies for 50 rounds"
     ],
+    "bonus": ["Expert Slow, Curse, Weakness and Misfortune on all enemies for 50 rounds"],
     "leadsTo": [],
     "image": "/images/artifacts/armor-of-the-damned.png"
   },
@@ -409,8 +416,9 @@
       "+16 Knowledge skill",
       "+1 Luck",
       "+1 Morale",
-      "Immunity to lvl 1-4 spells"
+      "Troops immune to level 1–4 spells (except Dispel)"
     ],
+    "bonus": ["+6 to all primary skills", "Troops immune to level 1–4 spells"],
     "leadsTo": [],
     "image": "/images/artifacts/power-of-the-dragon-father.png"
   },
@@ -555,6 +563,7 @@
       "Protects army from whirlpools",
       "No penalty for boarding/disembarking Boats (Movement converted between land and sea)"
     ],
+    "bonus": ["No movement loss when boarding or leaving a boat"],
     "leadsTo": [],
     "image": "/images/artifacts/admirals-hat.png"
   },
@@ -598,7 +607,7 @@
     "rarity": "major",
     "combo": false,
     "cost": 5000,
-    "effects": ["No movement penalty over rough terrain"],
+    "effects": ["No movement penalty on rough terrain"],
     "leadsTo": [],
     "image": "/images/artifacts/wayfarers-boots.png"
   },
@@ -758,8 +767,10 @@
     "cost": 12000,
     "effects": [
       "+30% Necromancy",
-      "Raise Skeletons/Walking Dead/Wights/Liches based on Necromancy level"
+      "Raises Walking Dead / Wights / Liches at Basic / Advanced / Expert Necromancy",
+      "Without Necromancy: 30% of fallen enemies rise as Skeletons"
     ],
+    "bonus": ["Raises stronger undead", "Works even without Necromancy"],
     "leadsTo": [],
     "note": "notAssembled",
     "image": "/images/artifacts/cloak-of-the-undead-king.png"
@@ -773,8 +784,13 @@
     "cost": 15000,
     "effects": [
       "-30% surrender cost",
-      "Allows retreat and surrender when battling neutral monsters or defending a town",
-      "3x diplomatic army strength"
+      "Surrender in battles against neutral monsters",
+      "Retreat and surrender when defending a town and after attacking or casting in the first round",
+      "Army looks 3× stronger to neutral monsters and the Thieves' Guild"
+    ],
+    "bonus": [
+      "Surrender to neutrals, retreat when defending a town",
+      "Army looks 3× stronger to neutrals"
     ],
     "leadsTo": [],
     "image": "/images/artifacts/diplomats-cloak.png"
@@ -987,6 +1003,7 @@
     "combo": true,
     "cost": 12000,
     "effects": ["+50% Magic Resistance"],
+    "bonus": ["+20% Magic Resistance (50% in total)"],
     "leadsTo": [],
     "note": "notRandom",
     "image": "/images/artifacts/pendant-of-reflection.png"
@@ -1142,6 +1159,7 @@
     "combo": true,
     "cost": 3000,
     "effects": ["+56 spell duration"],
+    "bonus": ["+50 spell duration"],
     "leadsTo": [],
     "image": "/images/artifacts/ring-of-the-magi.png"
   },
@@ -1197,6 +1215,7 @@
     "combo": true,
     "cost": 3000,
     "effects": ["Recover all spell points every day"],
+    "bonus": ["Restores all spell points every day (parts: +6/day)"],
     "leadsTo": [],
     "image": "/images/artifacts/wizards-well.png"
   },
@@ -1565,6 +1584,7 @@
       "No range and obstacle penalty",
       "Allied shooters may shoot while adjacent to enemies"
     ],
+    "bonus": ["No range and obstacle penalty", "Shooters fire even when blocked"],
     "leadsTo": [],
     "image": "/images/artifacts/bow-of-the-sharpshooter.png"
   },
@@ -1586,7 +1606,12 @@
     "rarity": "relic",
     "combo": true,
     "cost": 20000,
-    "effects": ["+4 Unit health", "+25% Unit health", "Allied units gain Regeneration"],
+    "effects": [
+      "+4 Unit health",
+      "+25% health to living units",
+      "Living units regenerate 50 health each round"
+    ],
+    "bonus": ["+25% health to living units", "Regeneration of 50 health each round"],
     "leadsTo": [],
     "image": "/images/artifacts/elixir-of-life.png"
   },
@@ -1631,6 +1656,7 @@
     "combo": true,
     "cost": 22500,
     "effects": ["+7000 Gold/day"],
+    "bonus": ["+4750 gold/day (7000 in total)"],
     "leadsTo": [],
     "image": "/images/artifacts/golden-goose.png"
   },
@@ -1675,6 +1701,7 @@
     "combo": true,
     "cost": 20000,
     "effects": ["+5 Mercury, Sulfur, Crystal and Gems/day"],
+    "bonus": ["+4 Mercury, Sulfur, Crystal and Gems/day"],
     "leadsTo": [],
     "image": "/images/artifacts/cornucopia.png"
   },
@@ -1685,7 +1712,7 @@
     "rarity": "treasure",
     "combo": false,
     "cost": 5000,
-    "effects": ["+5 level 2 Creature growth/week"],
+    "effects": ["+5 level 2 creature growth in the town where the hero ends the turn"],
     "leadsTo": ["Statue of Legion"],
     "image": "/images/artifacts/legs-of-legion.png"
   },
@@ -1696,7 +1723,7 @@
     "rarity": "minor",
     "combo": false,
     "cost": 5000,
-    "effects": ["+4 level 3 Creature growth/week"],
+    "effects": ["+4 level 3 creature growth in the town where the hero ends the turn"],
     "leadsTo": ["Statue of Legion"],
     "image": "/images/artifacts/loins-of-legion.png"
   },
@@ -1707,7 +1734,7 @@
     "rarity": "minor",
     "combo": false,
     "cost": 5000,
-    "effects": ["+3 level 4 Creature growth/week"],
+    "effects": ["+3 level 4 creature growth in the town where the hero ends the turn"],
     "leadsTo": ["Statue of Legion"],
     "image": "/images/artifacts/torso-of-legion.png"
   },
@@ -1718,7 +1745,7 @@
     "rarity": "major",
     "combo": false,
     "cost": 5000,
-    "effects": ["+2 level 5 Creature growth/week"],
+    "effects": ["+2 level 5 creature growth in the town where the hero ends the turn"],
     "leadsTo": ["Statue of Legion"],
     "image": "/images/artifacts/arms-of-legion.png"
   },
@@ -1729,7 +1756,7 @@
     "rarity": "major",
     "combo": false,
     "cost": 5000,
-    "effects": ["+1 level 6 Creature growth/week"],
+    "effects": ["+1 level 6 creature growth in the town where the hero ends the turn"],
     "leadsTo": ["Statue of Legion"],
     "image": "/images/artifacts/head-of-legion.png"
   },
@@ -1741,9 +1768,10 @@
     "combo": true,
     "cost": 25000,
     "effects": [
-      "+50% Creature growth/week",
-      "Gain component effects while the equipped hero is in town"
+      "+5/4/3/2/1 growth of level 2–6 creatures in the town where the hero stays",
+      "+50% creature growth in all your towns"
     ],
+    "bonus": ["+50% creature growth in all towns"],
     "leadsTo": [],
     "image": "/images/artifacts/statue-of-legion.png"
   },
@@ -1754,7 +1782,7 @@
     "rarity": "major",
     "combo": false,
     "cost": 5000,
-    "effects": ["Prevents retreat and surrender (only when both sides have heroes)"],
+    "effects": ["In battles against a hero, neither side can retreat or surrender"],
     "leadsTo": [],
     "image": "/images/artifacts/shackles-of-war.png"
   },

@@ -91,6 +91,23 @@ function effectsOf(idOrArt) {
   return translations.value[a.id]?.effects || a.effects || []
 }
 
+/** Что даёт сама сборка сверх суммы частей */
+function bonusOf(idOrArt) {
+  const a = typeof idOrArt === 'string' ? byId.value[idOrArt] : idOrArt
+  if (!a) return []
+  return translations.value[a.id]?.bonus || a.bonus || []
+}
+
+/** Слоты, которые занимает собранный артефакт: [{ slot, count }] в порядке SLOTS */
+function slotsOf(comboId) {
+  const counts = {}
+  for (const id of partsOf.value[comboId] || []) {
+    const s = byId.value[id]?.slot
+    if (s) counts[s] = (counts[s] || 0) + 1
+  }
+  return SLOTS.filter((s) => counts[s]).map((s) => ({ slot: s, count: counts[s] }))
+}
+
 function compareByName(a, b) {
   return collator.value.compare(nameOf(a), nameOf(b))
 }
@@ -129,6 +146,8 @@ export function useArtifacts() {
     reload: () => (loadPromise = loadData()),
     nameOf,
     effectsOf,
+    bonusOf,
+    slotsOf,
     compareByName,
     sortIds,
     matches,

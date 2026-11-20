@@ -1,11 +1,11 @@
-# HotA Артефакты (art-helper)
+# Артефактор (art-helper)
 
 Справочник артефактов Heroes of Might and Magic III: Horn of the Abyss и трекер сборных артефактов.
 Quasar (Vue 3), собирается как веб-приложение и как Android-приложение через Capacitor.
 
 ## Структура
 
-- `public/artifacts.json` — данные артефактов (англ.): слот, класс, цена, эффекты (у сборных — итог вместе с частями), `leadsTo` — в какие сборники входит, `note` — правило HotA по умолчанию (запрещён, не на случайных картах и т. п.; тексты в `src/i18n`). Сверено с HotA 1.8.1: h3hota.com/en/documentation, changelog, heroes.thelazy.net
+- `public/artifacts.json` — данные артефактов (англ.): слот, класс, цена, эффекты (у сборных — итог вместе с частями), `bonus` — что даёт сама сборка сверх частей, `leadsTo` — в какие сборники входит, `note` — правило HotA по умолчанию (запрещён, не на случайных картах и т. п.; тексты в `src/i18n`). Русские названия и эффекты сверены с текстами игры HotA 1.8.1 (`artraits.txt` из `HotA_lng.lod` и `HotA.dat`), правила по умолчанию — с h3hota.com/documentation и changelog
 - `public/i18n/artifacts.ru.json` — русские названия и эффекты по `id`
 - `public/images/artifacts/` — иконки артефактов
 - `src/i18n/index.js` — строки интерфейса (ru/en)

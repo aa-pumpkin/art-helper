@@ -1,5 +1,5 @@
 {
-  "appId": "org.capacitor.quasar.app",
-  "appName": "HotA Артефакты",
+  "appId": "io.github.aapumpkin.artificer",
+  "appName": "Артефактор",
   "webDir": "www"
 }

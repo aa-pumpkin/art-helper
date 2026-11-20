@@ -88,7 +88,7 @@ import { useRoute } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import { asset } from 'src/composables/useArtifacts'
 
-const brandIcon = asset('images/artifacts/horn-of-the-abyss.png')
+const brandIcon = asset('icon.svg')
 
 const showInfo = ref(false)
 const { locale } = useI18n()
@@ -155,9 +155,7 @@ watch(
 .brand-icon {
   width: 32px;
   height: 32px;
-  image-rendering: pixelated;
-  border-radius: 6px;
-  border: 1px solid var(--c-gold);
+  border-radius: 8px;
 }
 .brand-title {
   font-size: 17px;
@@ -202,9 +200,7 @@ watch(
 .about-icon {
   width: 44px;
   height: 44px;
-  image-rendering: pixelated;
-  border-radius: 8px;
-  border: 1px solid var(--c-gold);
+  border-radius: 10px;
 }
 .about-title {
   font-size: 18px;

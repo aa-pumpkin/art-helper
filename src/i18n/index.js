@@ -1,11 +1,11 @@
 const en = {
   app: {
-    title: 'HotA Artifacts',
+    title: 'Artificer',
     about: 'About',
     aboutText:
       'A companion for Heroes of Might and Magic III: Horn of the Abyss. Mark the parts you pick up and see which combination artifacts you can assemble.',
     aboutData: 'Progress is stored on this device only.',
-    dataVersion: 'Data checked against HotA {version}.',
+    dataVersion: 'Names and effects are checked against the game files, HotA {version}.',
     close: 'Close',
     language: 'Language',
   },
@@ -49,7 +49,9 @@ const en = {
     combo: 'Combination artifact',
     parts: 'Assembled from',
     partOf: 'Part of',
-    comboTotal: 'Total, including the parts',
+    comboTotal: 'Total with the parts',
+    bonus: 'Assembly adds',
+    occupies: 'Takes slots',
   },
   note: {
     notAssembled: 'Cannot be assembled by default — only on some templates and scenarios',
@@ -76,12 +78,12 @@ const en = {
 
 const ru = {
   app: {
-    title: 'HotA Артефакты',
+    title: 'Артефактор',
     about: 'О приложении',
     aboutText:
       'Помощник для Heroes of Might and Magic III: Horn of the Abyss. Отмечай подобранные части и смотри, какие сборные артефакты можно собрать.',
     aboutData: 'Прогресс хранится только на этом устройстве.',
-    dataVersion: 'Данные сверены с HotA {version}.',
+    dataVersion: 'Названия и эффекты сверены с файлами игры, HotA {version}.',
     close: 'Закрыть',
     language: 'Язык',
   },
@@ -125,7 +127,9 @@ const ru = {
     combo: 'Сборный артефакт',
     parts: 'Собирается из',
     partOf: 'Входит в',
-    comboTotal: 'Итог вместе с бонусами частей',
+    comboTotal: 'Итого вместе с частями',
+    bonus: 'Сборка добавляет',
+    occupies: 'Занимает слоты',
   },
   note: {
     notAssembled: 'По умолчанию не собирается — только на некоторых шаблонах и в сценариях',
