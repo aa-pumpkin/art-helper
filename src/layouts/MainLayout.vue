@@ -1,119 +1,214 @@
 <template>
-  <q-layout view="hHh lpR fFf">
-    <q-header elevated class="header">
-      <!-- Верхняя полоса -->
-      <q-toolbar class="q-px-md">
-        <q-toolbar-title class="row items-center no-wrap">
-          <div class="app-title">{{ $t('app.title') }}</div>
-        </q-toolbar-title>
+  <!-- шапка и вкладки неподвижны, прокручивается только середина -->
+  <div class="app-shell">
+    <header class="app-header">
+      <q-toolbar class="page-container header-bar">
+        <router-link to="/" class="brand">
+          <img src="/images/artifacts/horn-of-the-abyss.png" alt="" class="brand-icon" />
+          <span class="brand-title">{{ $t('app.title') }}</span>
+        </router-link>
 
-        <!-- Переключатель языка справа -->
-        <q-btn-dropdown flat dense no-caps :label="labelFor(locale)" icon="language">
-          <q-list style="min-width: 160px">
-            <q-item clickable v-close-popup @click="setLocale('ru')">
-              <q-item-section avatar>🇷🇺</q-item-section>
-              <q-item-section>Русский</q-item-section>
-            </q-item>
-            <q-item clickable v-close-popup @click="setLocale('en')">
-              <q-item-section avatar>🇬🇧</q-item-section>
-              <q-item-section>English</q-item-section>
-            </q-item>
-          </q-list>
-        </q-btn-dropdown>
-
-        <q-btn flat round dense icon="info" @click="showInfo = true" />
-      </q-toolbar>
-
-      <!-- Нижняя полоса: Табы (под хедером) -->
-      <q-toolbar class="tabs-bar q-px-none">
-        <q-tabs align="left" dense active-color="white" indicator-color="white" class="full-width">
-          <q-route-tab to="/" exact label="Артефакты" />
-          <q-route-tab to="/tracker" label="Трекер" />
+        <q-tabs
+          v-if="$q.screen.gt.xs"
+          dense
+          no-caps
+          inline-label
+          class="header-tabs"
+          indicator-color="primary"
+          active-color="primary"
+        >
+          <q-route-tab to="/" exact icon="auto_awesome" :label="$t('nav.combos')" />
+          <q-route-tab to="/all" icon="auto_stories" :label="$t('nav.all')" />
         </q-tabs>
-      </q-toolbar>
-    </q-header>
 
-    <q-page-container>
+        <q-space />
+
+        <q-btn
+          flat
+          dense
+          no-caps
+          class="lang-btn"
+          :label="locale === 'ru' ? 'RU' : 'EN'"
+          icon="translate"
+          :aria-label="$t('app.language')"
+          @click="toggleLocale"
+        />
+        <q-btn
+          flat
+          round
+          dense
+          icon="info_outline"
+          :aria-label="$t('app.about')"
+          @click="showInfo = true"
+        />
+      </q-toolbar>
+      <!-- сюда страницы телепортируют свою панель поиска: она часть закреплённой шапки -->
+      <div id="page-toolbar" />
+    </header>
+
+    <main ref="mainEl" class="app-main">
       <router-view />
-    </q-page-container>
+    </main>
+
+    <nav v-if="$q.screen.xs" class="app-footer">
+      <q-tabs
+        dense
+        no-caps
+        class="footer-tabs"
+        indicator-color="transparent"
+        active-color="primary"
+      >
+        <q-route-tab to="/" exact icon="auto_awesome" :label="$t('nav.combos')" />
+        <q-route-tab to="/all" icon="auto_stories" :label="$t('nav.all')" />
+      </q-tabs>
+    </nav>
 
     <q-dialog v-model="showInfo">
-      <q-card style="min-width: 320px">
-        <q-card-section>
-          <div class="text-h6">{{ $t('app.about') }}</div>
+      <q-card class="about-card">
+        <q-card-section class="row items-center no-wrap q-gutter-md">
+          <img src="/images/artifacts/horn-of-the-abyss.png" alt="" class="about-icon" />
+          <div class="about-title">{{ $t('app.title') }}</div>
         </q-card-section>
-        <q-card-section>
-          <div>
-            PWA-просмотрщик артефактов HoTA. Данные: <code>public/artifacts.json</code>, картинки:
-            <code>public/images/artifacts/</code>.
-          </div>
+        <q-card-section class="q-pt-none about-text">
+          <p>{{ $t('app.aboutText') }}</p>
+          <p class="text-muted">{{ $t('app.aboutData') }}</p>
         </q-card-section>
         <q-card-actions align="right">
-          <q-btn flat :label="$t('app.close')" v-close-popup />
+          <q-btn flat no-caps color="primary" :label="$t('app.close')" v-close-popup />
         </q-card-actions>
       </q-card>
     </q-dialog>
-  </q-layout>
+  </div>
 </template>
 
 <script setup>
 import { ref, watch } from 'vue'
+import { useRoute } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 
 const showInfo = ref(false)
 const { locale } = useI18n()
 
-function setLocale(l) {
-  locale.value = l
-  localStorage.setItem('locale', l)
+/* при переключении вкладок начинать сверху */
+const mainEl = ref(null)
+const route = useRoute()
+watch(
+  () => route.path,
+  () => mainEl.value?.scrollTo(0, 0),
+)
+
+function toggleLocale() {
+  locale.value = locale.value === 'ru' ? 'en' : 'ru'
 }
-function labelFor(l) {
-  return l === 'ru' ? 'RU' : 'EN'
-}
-watch(locale, (l) => localStorage.setItem('locale', l))
+
+watch(
+  locale,
+  (l) => {
+    document.documentElement.lang = l
+    try {
+      localStorage.setItem('locale', l)
+    } catch {
+      // нет доступа к localStorage
+    }
+  },
+  { immediate: true },
+)
 </script>
 
 <style scoped>
-.header {
-  /* лёгкий градиент и тонкая нижняя тень */
-  background: linear-gradient(180deg, #2f3b52, #2a3347);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
-  color: #fff;
+.app-shell {
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.app-main {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: none;
+}
+.app-header {
+  flex: none;
+  background: linear-gradient(180deg, #1d222c, #171b23);
+  border-bottom: 1px solid var(--c-border);
+  color: var(--c-text);
   padding-top: env(safe-area-inset-top);
 }
-.app-title {
+.header-bar {
+  min-height: 56px;
+  gap: 8px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: inherit;
+  text-decoration: none;
+  margin-right: 12px;
+}
+.brand-icon {
+  width: 32px;
+  height: 32px;
+  image-rendering: pixelated;
+  border-radius: 6px;
+  border: 1px solid var(--c-gold);
+}
+.brand-title {
+  font-size: 17px;
   font-weight: 700;
-  letter-spacing: 0.2px;
+  letter-spacing: 0.3px;
+  color: var(--c-gold-light);
+  white-space: nowrap;
 }
-
-/* нижняя полоса с табами */
-.tabs-bar {
-  background: transparent;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-  min-height: 44px;
+.header-tabs {
+  color: var(--c-muted);
 }
-.q-tabs .q-tab {
-  text-transform: none;
+.lang-btn {
+  color: var(--c-muted);
   font-weight: 600;
 }
-.q-tabs .q-tab__label {
-  font-size: 14px;
-}
-/* подчёркивание-индикатор потолще и с мягкими краями */
-.q-tabs .q-tab--active .q-tab__indicator {
-  height: 3px;
-  border-radius: 2px;
-}
 
-/* на маленьких экранах помещаем всё по краям */
-@media (max-width: 599px) {
-  .app-title {
-    font-size: 16px;
-  }
-}
-
-.q-page-container {
+.app-footer {
+  flex: none;
+  background: #171b23;
+  border-top: 1px solid var(--c-border);
   padding-bottom: env(safe-area-inset-bottom);
+}
+.footer-tabs {
+  color: var(--c-muted);
+}
+.footer-tabs :deep(.q-tab) {
+  flex: 1;
+  min-height: 58px;
+}
+.footer-tabs :deep(.q-tab__label) {
+  font-size: 12px;
+}
+
+.about-card {
+  width: 420px;
+  max-width: 92vw;
+  background: var(--c-surface);
+  color: var(--c-text);
+  border: 1px solid var(--c-border);
+  border-radius: 16px;
+}
+.about-icon {
+  width: 44px;
+  height: 44px;
+  image-rendering: pixelated;
+  border-radius: 8px;
+  border: 1px solid var(--c-gold);
+}
+.about-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--c-gold-light);
+}
+.about-text p {
+  margin: 0 0 10px;
+  line-height: 1.5;
 }
 </style>

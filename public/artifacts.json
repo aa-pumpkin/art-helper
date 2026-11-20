@@ -2,10 +2,13 @@
   {
     "id": "centaurs-axe",
     "name": "Centaur's Axe",
-    "slot": "Weapon",
-    "rarity": "Treasure",
+    "slot": "weapon",
+    "rarity": "treasure",
+    "combo": false,
     "cost": 2000,
-    "effect": "+2 Attack skill",
+    "effects": [
+      "+2 Attack skill"
+    ],
     "bonuses": [
       {
         "kind": "primary",
@@ -15,18 +18,19 @@
         "source": "+2 Attack skill"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/centaurs-axe.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/centaurs-axe.png"
   },
   {
     "id": "blackshard-of-the-dead-knight",
     "name": "Blackshard of the Dead Knight",
-    "slot": "WEAPON",
+    "slot": "weapon",
     "rarity": "minor",
+    "combo": false,
     "cost": 3000,
-    "effect": "+3 Attack skill",
+    "effects": [
+      "+3 Attack skill"
+    ],
     "bonuses": [
       {
         "kind": "primary",
@@ -36,18 +40,21 @@
         "source": "+3 Attack skill"
       }
     ],
-    "combinationRaw": "Part of Armor of the Damned",
-    "leadsTo": ["Armor of the Damned"],
-    "image": "/images/artifacts/blackshard-of-the-dead-knight.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Armor of the Damned"
+    ],
+    "image": "/images/artifacts/blackshard-of-the-dead-knight.png"
   },
   {
     "id": "greater-gnolls-flail",
     "name": "Greater Gnoll's Flail",
-    "slot": "WEAPON",
+    "slot": "weapon",
     "rarity": "minor",
+    "combo": false,
     "cost": 4000,
-    "effect": "+4 Attack skill",
+    "effects": [
+      "+4 Attack skill"
+    ],
     "bonuses": [
       {
         "kind": "primary",
@@ -57,18 +64,19 @@
         "source": "+4 Attack skill"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/greater-gnolls-flail.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/greater-gnolls-flail.png"
   },
   {
     "id": "ogres-club-of-havoc",
     "name": "Ogre's Club of Havoc",
-    "slot": "WEAPON",
+    "slot": "weapon",
     "rarity": "major",
+    "combo": false,
     "cost": 5000,
-    "effect": "+5 Attack skill",
+    "effects": [
+      "+5 Attack skill"
+    ],
     "bonuses": [
       {
         "kind": "primary",
@@ -78,18 +86,21 @@
         "source": "+5 Attack skill"
       }
     ],
-    "combinationRaw": "Part of Ironfist of the Ogre",
-    "leadsTo": ["Ironfist of the Ogre"],
-    "image": "/images/artifacts/ogres-club-of-havoc.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Ironfist of the Ogre"
+    ],
+    "image": "/images/artifacts/ogres-club-of-havoc.png"
   },
   {
     "id": "sword-of-hellfire",
     "name": "Sword of Hellfire",
-    "slot": "WEAPON",
+    "slot": "weapon",
     "rarity": "major",
+    "combo": false,
     "cost": 6000,
-    "effect": "+6 Attack skill",
+    "effects": [
+      "+6 Attack skill"
+    ],
     "bonuses": [
       {
         "kind": "primary",
@@ -99,18 +110,19 @@
         "source": "+6 Attack skill"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/sword-of-hellfire.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/sword-of-hellfire.png"
   },
   {
     "id": "trident-of-dominion",
     "name": "Trident of Dominion",
-    "slot": "WEAPON",
+    "slot": "weapon",
     "rarity": "major",
+    "combo": false,
     "cost": 7000,
-    "effect": "+7 Attack skill",
+    "effects": [
+      "+7 Attack skill"
+    ],
     "bonuses": [
       {
         "kind": "primary",
@@ -120,18 +132,20 @@
         "source": "+7 Attack skill"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/trident-of-dominion.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/trident-of-dominion.png"
   },
   {
     "id": "red-dragon-flame-tongue",
     "name": "Red Dragon Flame Tongue",
-    "slot": "WEAPON",
+    "slot": "weapon",
     "rarity": "minor",
+    "combo": false,
     "cost": 4000,
-    "effect": "+2 Attack skill, +2 Defense skill",
+    "effects": [
+      "+2 Attack skill",
+      "+2 Defense skill"
+    ],
     "bonuses": [
       {
         "kind": "primary",
@@ -148,18 +162,22 @@
         "source": "+2 Defense skill"
       }
     ],
-    "combinationRaw": "Part of Power of the Dragon Father",
-    "leadsTo": ["Power of the Dragon Father"],
-    "image": "/images/artifacts/red-dragon-flame-tongue.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Power of the Dragon Father"
+    ],
+    "image": "/images/artifacts/red-dragon-flame-tongue.png"
   },
   {
     "id": "titans-gladius",
     "name": "Titan's Gladius",
-    "slot": "WEAPON",
+    "slot": "weapon",
     "rarity": "relic",
+    "combo": false,
     "cost": 10000,
-    "effect": "+12 Attack skill, -3 Defense skill",
+    "effects": [
+      "+12 Attack skill",
+      "-3 Defense skill"
+    ],
     "bonuses": [
       {
         "kind": "primary",
@@ -176,18 +194,24 @@
         "source": "-3 Defense skill"
       }
     ],
-    "combinationRaw": "Part of Titan's Thunder",
-    "leadsTo": ["Titan's Thunder"],
-    "image": "/images/artifacts/titans-gladius.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Titan's Thunder"
+    ],
+    "image": "/images/artifacts/titans-gladius.png"
   },
   {
     "id": "sword-of-judgement",
     "name": "Sword of Judgement",
-    "slot": "WEAPON",
+    "slot": "weapon",
     "rarity": "relic",
+    "combo": false,
     "cost": 20000,
-    "effect": "+5 Attack skill, +5 Defense skill, +5 Power skill, +5 Knowledge skill",
+    "effects": [
+      "+5 Attack skill",
+      "+5 Defense skill",
+      "+5 Power skill",
+      "+5 Knowledge skill"
+    ],
     "bonuses": [
       {
         "kind": "primary",
@@ -218,18 +242,26 @@
         "source": "+5 Knowledge skill"
       }
     ],
-    "combinationRaw": "Part of Angelic Alliance",
-    "leadsTo": ["Angelic Alliance"],
-    "image": "/images/artifacts/sword-of-judgement.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Angelic Alliance"
+    ],
+    "image": "/images/artifacts/sword-of-judgement.png"
   },
   {
     "id": "armageddons-blade",
     "name": "Armageddon's Blade",
-    "slot": "WEAPON",
+    "slot": "weapon",
     "rarity": "relic",
+    "combo": false,
     "cost": 50000,
-    "effect": "+3 Attack skill, +3 Defense skill, +6 Power skill, +3 Knowledge skill, Expert Armageddon Spell Immunity to Armageddon Spell",
+    "effects": [
+      "+3 Attack skill",
+      "+3 Defense skill",
+      "+3 Power skill",
+      "+6 Knowledge skill",
+      "Expert Armageddon spell",
+      "Immune to Armageddon Spell"
+    ],
     "bonuses": [
       {
         "kind": "primary",
@@ -248,30 +280,35 @@
       {
         "kind": "primary",
         "stat": "power",
-        "value": 6,
+        "value": 3,
         "scale": "flat",
-        "source": "+6 Power skill"
+        "source": "+3 Power skill"
       },
       {
         "kind": "primary",
         "stat": "knowledge",
-        "value": 3,
+        "value": 6,
         "scale": "flat",
-        "source": "+3 Knowledge skill• Expert Armageddon• Immunity to Armageddon"
+        "source": "+6 Knowledge skill"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/armageddons-blade.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/armageddons-blade.png"
   },
   {
     "id": "ironfist-of-the-ogre",
     "name": "Ironfist of the Ogre",
-    "slot": "COMBO",
+    "slot": "weapon",
     "rarity": "relic",
+    "combo": true,
     "cost": 20000,
-    "effect": "+5 Attack skill, +5 Defense skill, +4 Power skill, +4 Knowledge skill, Casts Expert Bloodlust Spell,  Counterstrike Spell, Fire Shield Spell, and Haste Spell on all allies for 50 rounds",
+    "effects": [
+      "+5 Attack skill",
+      "+5 Defense skill",
+      "+4 Power skill",
+      "+4 Knowledge skill",
+      "Casts Expert Bloodlust, Counterstrike, Fire Shield and Haste on all allies for 50 rounds"
+    ],
     "bonuses": [
       {
         "kind": "primary",
@@ -323,18 +360,24 @@
         "source": "Haste on all allies for 50 rounds"
       }
     ],
-    "combinationRaw": "Weapon/Shield/Helm/Torso",
     "leadsTo": [],
-    "image": "/images/artifacts/ironfist-of-the-ogre.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/ironfist-of-the-ogre.png"
   },
   {
     "id": "titans-thunder",
     "name": "Titan's Thunder",
-    "slot": "COMBO",
+    "slot": "weapon",
     "rarity": "relic",
+    "combo": true,
     "cost": 40000,
-    "effect": "+9 Attack skill, +9 Defense skill, +8 Power skill, +8 Knowledge skill, Expert Titan's Lightning Bolt Spell, Adds a permanent Spell Book",
+    "effects": [
+      "+9 Attack skill",
+      "+9 Defense skill",
+      "+8 Power skill",
+      "+8 Knowledge skill",
+      "Expert Titan's Lightning Bolt spell",
+      "Adds a permanent Spell Book"
+    ],
     "bonuses": [
       {
         "kind": "primary",
@@ -365,18 +408,24 @@
         "source": "+8 Knowledge skill• Expert Titan's Lightning Bolt• Adds a permanent Spell Book"
       }
     ],
-    "combinationRaw": "Weapon/Helm/Torso/Shield",
     "leadsTo": [],
-    "image": "/images/artifacts/titans-thunder.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/titans-thunder.png"
   },
   {
     "id": "angelic-alliance",
     "name": "Angelic Alliance",
-    "slot": "COMBO",
+    "slot": "weapon",
     "rarity": "relic",
+    "combo": true,
     "cost": 84000,
-    "effect": "+21 Attack skill, +21 Defense skill, +21 Power skill, +21 Knowledge skill, Casts Expert Prayer Spell on all allies for 10 rounds, No alignment penalty for mixing creatures from good and neutral towns",
+    "effects": [
+      "+21 Attack skill",
+      "+21 Defense skill",
+      "+21 Power skill",
+      "+21 Knowledge skill",
+      "Casts Expert Prayer Spell on all allies for 10 rounds",
+      "No alignment penalty for mixing creatures from good and neutral towns"
+    ],
     "bonuses": [
       {
         "kind": "primary",
@@ -414,18 +463,19 @@
         "source": "neutral towns (except for Conflux)"
       }
     ],
-    "combinationRaw": "Weapon/Torso/Necklace/Helm/Shield/Feet",
     "leadsTo": [],
-    "image": "/images/artifacts/angelic-alliance.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/angelic-alliance.png"
   },
   {
     "id": "shield-of-the-dwarven-lords",
     "name": "Shield of the Dwarven Lords",
-    "slot": "SHIELD",
+    "slot": "shield",
     "rarity": "treasure",
+    "combo": false,
     "cost": 2000,
-    "effect": "+2 Defense skill",
+    "effects": [
+      "+2 Defense skill"
+    ],
     "bonuses": [
       {
         "kind": "primary",
@@ -435,18 +485,19 @@
         "source": "+2 Defense skill"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/shield-of-the-dwarven-lords.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/shield-of-the-dwarven-lords.png"
   },
   {
     "id": "shield-of-the-yawning-dead",
     "name": "Shield of the Yawning Dead",
-    "slot": "SHIELD",
+    "slot": "shield",
     "rarity": "minor",
+    "combo": false,
     "cost": 3000,
-    "effect": "+3 Defense skill",
+    "effects": [
+      "+3 Defense skill"
+    ],
     "bonuses": [
       {
         "kind": "primary",
@@ -456,18 +507,21 @@
         "source": "+3 Defense skill"
       }
     ],
-    "combinationRaw": "Part of Armor of the Damned",
-    "leadsTo": ["Armor of the Damned"],
-    "image": "/images/artifacts/shield-of-the-yawning-dead.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Armor of the Damned"
+    ],
+    "image": "/images/artifacts/shield-of-the-yawning-dead.png"
   },
   {
     "id": "buckler-of-the-gnoll-king",
     "name": "Buckler of the Gnoll King",
-    "slot": "SHIELD",
+    "slot": "shield",
     "rarity": "minor",
+    "combo": false,
     "cost": 4000,
-    "effect": "+4 Defense skill",
+    "effects": [
+      "+4 Defense skill"
+    ],
     "bonuses": [
       {
         "kind": "primary",
@@ -477,18 +531,19 @@
         "source": "+4 Defense skill"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/buckler-of-the-gnoll-king.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/buckler-of-the-gnoll-king.png"
   },
   {
     "id": "targ-of-the-rampaging-ogre",
     "name": "Targ of the Rampaging Ogre",
-    "slot": "SHIELD",
+    "slot": "shield",
     "rarity": "major",
+    "combo": false,
     "cost": 5000,
-    "effect": "+5 Defense skill",
+    "effects": [
+      "+5 Defense skill"
+    ],
     "bonuses": [
       {
         "kind": "primary",
@@ -498,18 +553,21 @@
         "source": "+5 Defense skill"
       }
     ],
-    "combinationRaw": "Part of Ironfist of the Ogre",
-    "leadsTo": ["Ironfist of the Ogre"],
-    "image": "/images/artifacts/targ-of-the-rampaging-ogre.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Ironfist of the Ogre"
+    ],
+    "image": "/images/artifacts/targ-of-the-rampaging-ogre.png"
   },
   {
     "id": "shield-of-the-damned",
     "name": "Shield of the Damned",
-    "slot": "SHIELD",
+    "slot": "shield",
     "rarity": "major",
+    "combo": false,
     "cost": 6000,
-    "effect": "+6 Defense skill",
+    "effects": [
+      "+6 Defense skill"
+    ],
     "bonuses": [
       {
         "kind": "primary",
@@ -519,18 +577,19 @@
         "source": "+6 Defense skill"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/shield-of-the-damned.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/shield-of-the-damned.png"
   },
   {
     "id": "shield-of-naval-glory",
     "name": "Shield of Naval Glory",
-    "slot": "SHIELD",
+    "slot": "shield",
     "rarity": "major",
+    "combo": false,
     "cost": 7000,
-    "effect": "+7 Defense skill",
+    "effects": [
+      "+7 Defense skill"
+    ],
     "bonuses": [
       {
         "kind": "primary",
@@ -540,18 +599,20 @@
         "source": "+7 Defense skill"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/shield-of-naval-glory.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/shield-of-naval-glory.png"
   },
   {
     "id": "dragon-scale-shield",
     "name": "Dragon Scale Shield",
-    "slot": "SHIELD",
+    "slot": "shield",
     "rarity": "major",
+    "combo": false,
     "cost": 6000,
-    "effect": "+3 Attack skill, +3 Defense skill",
+    "effects": [
+      "+3 Attack skill",
+      "+3 Defense skill"
+    ],
     "bonuses": [
       {
         "kind": "primary",
@@ -568,18 +629,24 @@
         "source": "+3 Defense skill"
       }
     ],
-    "combinationRaw": "Part of Power of the Dragon Father",
-    "leadsTo": ["Power of the Dragon Father"],
-    "image": "/images/artifacts/dragon-scale-shield.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Power of the Dragon Father"
+    ],
+    "image": "/images/artifacts/dragon-scale-shield.png"
   },
   {
     "id": "lions-shield-of-courage",
     "name": "Lion's Shield of Courage",
-    "slot": "SHIELD",
+    "slot": "shield",
     "rarity": "relic",
+    "combo": false,
     "cost": 16000,
-    "effect": "+4 Attack skill, +4 Defense skill, +4 Power skill, +4 Knowledge skill",
+    "effects": [
+      "+4 Attack skill",
+      "+4 Defense skill",
+      "+4 Power skill",
+      "+4 Knowledge skill"
+    ],
     "bonuses": [
       {
         "kind": "primary",
@@ -610,18 +677,22 @@
         "source": "+4 Knowledge skill"
       }
     ],
-    "combinationRaw": "Part of Angelic Alliance",
-    "leadsTo": ["Angelic Alliance"],
-    "image": "/images/artifacts/lions-shield-of-courage.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Angelic Alliance"
+    ],
+    "image": "/images/artifacts/lions-shield-of-courage.png"
   },
   {
     "id": "sentinels-shield",
     "name": "Sentinel's Shield",
-    "slot": "SHIELD",
+    "slot": "shield",
     "rarity": "relic",
+    "combo": false,
     "cost": 10000,
-    "effect": "-3 Attack skill, +12 Defense skill",
+    "effects": [
+      "-3 Attack skill",
+      "+12 Defense skill"
+    ],
     "bonuses": [
       {
         "kind": "primary",
@@ -638,18 +709,21 @@
         "source": "+12 Defense skill"
       }
     ],
-    "combinationRaw": "Part of Titan's Thunder",
-    "leadsTo": ["Titan's Thunder"],
-    "image": "/images/artifacts/sentinels-shield.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Titan's Thunder"
+    ],
+    "image": "/images/artifacts/sentinels-shield.png"
   },
   {
     "id": "breastplate-of-petrified-wood",
     "name": "Breastplate of Petrified Wood",
-    "slot": "TORSO",
+    "slot": "torso",
     "rarity": "treasure",
+    "combo": false,
     "cost": 1000,
-    "effect": "+1 Power skill",
+    "effects": [
+      "+1 Power skill"
+    ],
     "bonuses": [
       {
         "kind": "primary",
@@ -659,18 +733,19 @@
         "source": "+1 Power skill"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/breastplate-of-petrified-wood.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/breastplate-of-petrified-wood.png"
   },
   {
     "id": "rib-cage",
     "name": "Rib Cage",
-    "slot": "TORSO",
+    "slot": "torso",
     "rarity": "minor",
+    "combo": false,
     "cost": 3000,
-    "effect": "+2 Power skill",
+    "effects": [
+      "+2 Power skill"
+    ],
     "bonuses": [
       {
         "kind": "primary",
@@ -680,18 +755,21 @@
         "source": "+2 Power skill"
       }
     ],
-    "combinationRaw": "Part of Armor of the Damned",
-    "leadsTo": ["Armor of the Damned"],
-    "image": "/images/artifacts/rib-cage.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Armor of the Damned"
+    ],
+    "image": "/images/artifacts/rib-cage.png"
   },
   {
     "id": "scales-of-the-greater-basilisk",
     "name": "Scales of the Greater Basilisk",
-    "slot": "TORSO",
+    "slot": "torso",
     "rarity": "minor",
+    "combo": false,
     "cost": 4000,
-    "effect": "+3 Power skill",
+    "effects": [
+      "+3 Power skill"
+    ],
     "bonuses": [
       {
         "kind": "primary",
@@ -701,18 +779,19 @@
         "source": "+3 Power skill"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/scales-of-the-greater-basilisk.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/scales-of-the-greater-basilisk.png"
   },
   {
     "id": "tunic-of-the-cyclops-king",
     "name": "Tunic of the Cyclops King",
-    "slot": "TORSO",
+    "slot": "torso",
     "rarity": "major",
+    "combo": false,
     "cost": 5000,
-    "effect": "+4 Power skill",
+    "effects": [
+      "+4 Power skill"
+    ],
     "bonuses": [
       {
         "kind": "primary",
@@ -722,18 +801,21 @@
         "source": "+4 Power skill"
       }
     ],
-    "combinationRaw": "Part of Ironfist of the Ogre",
-    "leadsTo": ["Ironfist of the Ogre"],
-    "image": "/images/artifacts/tunic-of-the-cyclops-king.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Ironfist of the Ogre"
+    ],
+    "image": "/images/artifacts/tunic-of-the-cyclops-king.png"
   },
   {
     "id": "breastplate-of-brimstone",
     "name": "Breastplate of Brimstone",
-    "slot": "TORSO",
+    "slot": "torso",
     "rarity": "major",
+    "combo": false,
     "cost": 6000,
-    "effect": "+5 Power skill",
+    "effects": [
+      "+5 Power skill"
+    ],
     "bonuses": [
       {
         "kind": "primary",
@@ -743,18 +825,19 @@
         "source": "+5 Power skill"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/breastplate-of-brimstone.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/breastplate-of-brimstone.png"
   },
   {
     "id": "royal-armor-of-nix",
     "name": "Royal Armor of Nix",
-    "slot": "TORSO",
+    "slot": "torso",
     "rarity": "major",
+    "combo": false,
     "cost": 7000,
-    "effect": "+6 Power skill",
+    "effects": [
+      "+6 Power skill"
+    ],
     "bonuses": [
       {
         "kind": "primary",
@@ -764,18 +847,22 @@
         "source": "+6 Power skill"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/royal-armor-of-nix.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/royal-armor-of-nix.png"
   },
   {
     "id": "armor-of-wonder",
     "name": "Armor of Wonder",
-    "slot": "TORSO",
+    "slot": "torso",
     "rarity": "minor",
+    "combo": false,
     "cost": 4000,
-    "effect": "+1 Attack skill, +1 Defense skill, +1 Power skill, +1 Knowledge skill",
+    "effects": [
+      "+1 Attack skill",
+      "+1 Defense skill",
+      "+1 Power skill",
+      "+1 Knowledge skill"
+    ],
     "bonuses": [
       {
         "kind": "primary",
@@ -806,18 +893,21 @@
         "source": "+1 Knowledge skill"
       }
     ],
-    "combinationRaw": "Part of Angelic Alliance",
-    "leadsTo": ["Angelic Alliance"],
-    "image": "/images/artifacts/armor-of-wonder.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Angelic Alliance"
+    ],
+    "image": "/images/artifacts/armor-of-wonder.png"
   },
   {
     "id": "plate-of-dying-light",
     "name": "Plate of Dying Light",
-    "slot": "TORSO",
+    "slot": "torso",
     "rarity": "relic",
+    "combo": false,
     "cost": 10000,
-    "effect": "-25% enemy Power skill",
+    "effects": [
+      "-25% enemy Power skill"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -827,18 +917,20 @@
         "source": "-25% enemy Power skill"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/plate-of-dying-light.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/plate-of-dying-light.png"
   },
   {
     "id": "dragon-scale-armor",
     "name": "Dragon Scale Armor",
-    "slot": "TORSO",
+    "slot": "torso",
     "rarity": "relic",
+    "combo": false,
     "cost": 8000,
-    "effect": "+4 Attack skill, +4 Defense skill",
+    "effects": [
+      "+4 Attack skill",
+      "+4 Defense skill"
+    ],
     "bonuses": [
       {
         "kind": "primary",
@@ -855,18 +947,22 @@
         "source": "+4 Defense skill"
       }
     ],
-    "combinationRaw": "Part of Power of the Dragon Father",
-    "leadsTo": ["Power of the Dragon Father"],
-    "image": "/images/artifacts/dragon-scale-armor.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Power of the Dragon Father"
+    ],
+    "image": "/images/artifacts/dragon-scale-armor.png"
   },
   {
     "id": "titans-cuirass",
     "name": "Titan's Cuirass",
-    "slot": "TORSO",
+    "slot": "torso",
     "rarity": "relic",
+    "combo": false,
     "cost": 10000,
-    "effect": "+10 Power skill, -2 Knowledge skill",
+    "effects": [
+      "+10 Power skill",
+      "-2 Knowledge skill"
+    ],
     "bonuses": [
       {
         "kind": "primary",
@@ -883,18 +979,25 @@
         "source": "-2 Knowledge skill"
       }
     ],
-    "combinationRaw": "Part of Titan's Thunder",
-    "leadsTo": ["Titan's Thunder"],
-    "image": "/images/artifacts/titans-cuirass.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Titan's Thunder"
+    ],
+    "image": "/images/artifacts/titans-cuirass.png"
   },
   {
     "id": "armor-of-the-damned",
     "name": "Armor of the Damned",
-    "slot": "COMBO",
+    "slot": "torso",
     "rarity": "relic",
+    "combo": true,
     "cost": 12000,
-    "effect": "+3 Attack skill, +3 Defense skill, +2 Power skill, +2 Knowledge skill, Casts Expert Curse Spell, Misfortune Spell, Slow Spell, and Weakness Spell on all enemies for 50 rounds",
+    "effects": [
+      "+3 Attack skill",
+      "+3 Defense skill",
+      "+2 Power skill",
+      "+2 Knowledge skill",
+      "Casts Expert Curse, Misfortune, Slow and Weakness on all enemies for 50 rounds"
+    ],
     "bonuses": [
       {
         "kind": "primary",
@@ -946,18 +1049,25 @@
         "source": "Weakness on all enemies for 50 rounds"
       }
     ],
-    "combinationRaw": "Torso/Weapon/Shield/Helmet",
     "leadsTo": [],
-    "image": "/images/artifacts/armor-of-the-damned.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/armor-of-the-damned.png"
   },
   {
     "id": "power-of-the-dragon-father",
     "name": "Power of the Dragon Father",
-    "slot": "COMBO",
+    "slot": "torso",
     "rarity": "relic",
+    "combo": true,
     "cost": 42000,
-    "effect": "+16 Attack skill, +16 Defense skill, +16 Power skill, +16 Knowledge skill +1 Luck, +1 Morale, Immunity to lvl 1-4 spells",
+    "effects": [
+      "+16 Attack skill",
+      "+16 Defense skill",
+      "+16 Power skill",
+      "+16 Knowledge skill",
+      "+1 Luck",
+      "+1 Morale",
+      "Immunity to lvl 1-4 spells"
+    ],
     "bonuses": [
       {
         "kind": "primary",
@@ -995,18 +1105,19 @@
         "source": "+1 Morale• Immunity to lvl 1-4 spells"
       }
     ],
-    "combinationRaw": "Torso/All non-miscellaneous slots",
     "leadsTo": [],
-    "image": "/images/artifacts/power-of-the-dragon-father.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/power-of-the-dragon-father.png"
   },
   {
     "id": "helm-of-the-alabaster-unicorn",
     "name": "Helm of the Alabaster Unicorn",
-    "slot": "HEAD",
+    "slot": "head",
     "rarity": "treasure",
+    "combo": false,
     "cost": 1000,
-    "effect": "+1 Knowledge skill",
+    "effects": [
+      "+1 Knowledge skill"
+    ],
     "bonuses": [
       {
         "kind": "primary",
@@ -1016,18 +1127,19 @@
         "source": "+1 Knowledge skill"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/helm-of-the-alabaster-unicorn.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/helm-of-the-alabaster-unicorn.png"
   },
   {
     "id": "skull-helmet",
     "name": "Skull Helmet",
-    "slot": "HEAD",
+    "slot": "head",
     "rarity": "treasure",
+    "combo": false,
     "cost": 3000,
-    "effect": "+2 Knowledge skill",
+    "effects": [
+      "+2 Knowledge skill"
+    ],
     "bonuses": [
       {
         "kind": "primary",
@@ -1037,18 +1149,21 @@
         "source": "+2 Knowledge skill"
       }
     ],
-    "combinationRaw": "Part of Armor of the Damned",
-    "leadsTo": ["Armor of the Damned"],
-    "image": "/images/artifacts/skull-helmet.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Armor of the Damned"
+    ],
+    "image": "/images/artifacts/skull-helmet.png"
   },
   {
     "id": "helm-of-chaos",
     "name": "Helm of Chaos",
-    "slot": "HEAD",
+    "slot": "head",
     "rarity": "minor",
+    "combo": false,
     "cost": 4000,
-    "effect": "+3 Knowledge skill",
+    "effects": [
+      "+3 Knowledge skill"
+    ],
     "bonuses": [
       {
         "kind": "primary",
@@ -1058,18 +1173,19 @@
         "source": "+3 Knowledge skill"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/helm-of-chaos.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/helm-of-chaos.png"
   },
   {
     "id": "crown-of-the-supreme-magi",
     "name": "Crown of the Supreme Magi",
-    "slot": "HEAD",
+    "slot": "head",
     "rarity": "minor",
+    "combo": false,
     "cost": 5000,
-    "effect": "+4 Knowledge skill",
+    "effects": [
+      "+4 Knowledge skill"
+    ],
     "bonuses": [
       {
         "kind": "primary",
@@ -1079,18 +1195,21 @@
         "source": "+4 Knowledge skill"
       }
     ],
-    "combinationRaw": "Part of Ironfist of the Ogre",
-    "leadsTo": ["Ironfist of the Ogre"],
-    "image": "/images/artifacts/crown-of-the-supreme-magi.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Ironfist of the Ogre"
+    ],
+    "image": "/images/artifacts/crown-of-the-supreme-magi.png"
   },
   {
     "id": "hellstorm-helmet",
     "name": "Hellstorm Helmet",
-    "slot": "HEAD",
+    "slot": "head",
     "rarity": "major",
+    "combo": false,
     "cost": 6000,
-    "effect": "+5 Knowledge skill",
+    "effects": [
+      "+5 Knowledge skill"
+    ],
     "bonuses": [
       {
         "kind": "primary",
@@ -1100,18 +1219,19 @@
         "source": "+5 Knowledge skill"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/hellstorm-helmet.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/hellstorm-helmet.png"
   },
   {
     "id": "crown-of-the-five-seas",
     "name": "Crown of the Five Seas",
-    "slot": "HEAD",
+    "slot": "head",
     "rarity": "major",
+    "combo": false,
     "cost": 7000,
-    "effect": "+6 Knowledge skill",
+    "effects": [
+      "+6 Knowledge skill"
+    ],
     "bonuses": [
       {
         "kind": "primary",
@@ -1121,18 +1241,20 @@
         "source": "+6 Knowledge skill"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/crown-of-the-five-seas.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/crown-of-the-five-seas.png"
   },
   {
     "id": "crown-of-dragontooth",
     "name": "Crown of Dragontooth",
-    "slot": "HEAD",
+    "slot": "head",
     "rarity": "relic",
+    "combo": false,
     "cost": 8000,
-    "effect": "+4 Power skill, +4 Knowledge skill",
+    "effects": [
+      "+4 Power skill",
+      "+4 Knowledge skill"
+    ],
     "bonuses": [
       {
         "kind": "primary",
@@ -1149,18 +1271,22 @@
         "source": "+4 Knowledge skill"
       }
     ],
-    "combinationRaw": "Part of Power of the Dragon Father",
-    "leadsTo": ["Power of the Dragon Father"],
-    "image": "/images/artifacts/crown-of-dragontooth.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Power of the Dragon Father"
+    ],
+    "image": "/images/artifacts/crown-of-dragontooth.png"
   },
   {
     "id": "thunder-helmet",
     "name": "Thunder Helmet",
-    "slot": "HEAD",
+    "slot": "head",
     "rarity": "relic",
+    "combo": false,
     "cost": 10000,
-    "effect": "-2 Power skill, +10 Knowledge skill",
+    "effects": [
+      "-2 Power skill",
+      "+10 Knowledge skill"
+    ],
     "bonuses": [
       {
         "kind": "primary",
@@ -1177,18 +1303,24 @@
         "source": "+10 Knowledge skill"
       }
     ],
-    "combinationRaw": "Part of Titan's Thunder",
-    "leadsTo": ["Titan's Thunder"],
-    "image": "/images/artifacts/thunder-helmet.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Titan's Thunder"
+    ],
+    "image": "/images/artifacts/thunder-helmet.png"
   },
   {
     "id": "sea-captains-hat",
     "name": "Sea Captain's Hat",
-    "slot": "HEAD",
+    "slot": "head",
     "rarity": "relic",
+    "combo": false,
     "cost": 15000,
-    "effect": "+500 Movement points at sea, Summon Boat Spell, Scuttle Boat Spell, Protects army from whirlpools",
+    "effects": [
+      "+500 Movement points at sea",
+      "Summon Boat Spell",
+      "Scuttle Boat Spell",
+      "Protects army from whirlpools"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -1198,18 +1330,24 @@
         "source": "+500 Movement points at sea• Summon Boat• Scuttle Boat• Protects army from whirlpools"
       }
     ],
-    "combinationRaw": "Part of Admiral's Hat",
-    "leadsTo": ["Admiral's Hat"],
-    "image": "/images/artifacts/sea-captains-hat.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Admiral's Hat"
+    ],
+    "image": "/images/artifacts/sea-captains-hat.png"
   },
   {
     "id": "helm-of-heavenly-enlightenment",
     "name": "Helm of Heavenly Enlightenment",
-    "slot": "HEAD",
+    "slot": "head",
     "rarity": "relic",
+    "combo": false,
     "cost": 24000,
-    "effect": "+6 Attack skill, +6 Defense skill, +6 Power skill, +6 Knowledge skill",
+    "effects": [
+      "+6 Attack skill",
+      "+6 Defense skill",
+      "+6 Power skill",
+      "+6 Knowledge skill"
+    ],
     "bonuses": [
       {
         "kind": "primary",
@@ -1240,18 +1378,21 @@
         "source": "+6 Knowledge skill"
       }
     ],
-    "combinationRaw": "Part of Angelic Alliance",
-    "leadsTo": ["Angelic Alliance"],
-    "image": "/images/artifacts/helm-of-heavenly-enlightenment.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Angelic Alliance"
+    ],
+    "image": "/images/artifacts/helm-of-heavenly-enlightenment.png"
   },
   {
     "id": "spellbinders-hat",
     "name": "Spellbinder's Hat",
-    "slot": "HEAD",
+    "slot": "head",
     "rarity": "relic",
+    "combo": false,
     "cost": 30000,
-    "effect": "All lvl 5 Spells",
+    "effects": [
+      "All lvl 5 Spells"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -1261,18 +1402,23 @@
         "source": "All lvl 5 Spells"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/spellbinders-hat.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/spellbinders-hat.png"
   },
   {
     "id": "admirals-hat",
     "name": "Admiral's Hat",
-    "slot": "COMBO",
+    "slot": "head",
     "rarity": "relic",
+    "combo": true,
     "cost": 25000,
-    "effect": "+1500 Movement points at sea, Summon Boat Spell, Scuttle Boat Spell, Protects army from whirlpools, No penalty for boarding/disembarking Boats (Movement converted between land and sea)",
+    "effects": [
+      "+1500 Movement points at sea",
+      "Summon Boat Spell",
+      "Scuttle Boat Spell",
+      "Protects army from whirlpools",
+      "No penalty for boarding/disembarking Boats (Movement converted between land and sea)"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -1289,18 +1435,20 @@
         "source": "sea)"
       }
     ],
-    "combinationRaw": "Helmet/Necklace",
     "leadsTo": [],
-    "image": "/images/artifacts/admirals-hat.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/admirals-hat.png"
   },
   {
     "id": "dragonbone-greaves",
     "name": "Dragonbone Greaves",
-    "slot": "FEET",
+    "slot": "feet",
     "rarity": "treasure",
+    "combo": false,
     "cost": 2000,
-    "effect": "+1 Power skill, +1 Knowledge skill",
+    "effects": [
+      "+1 Power skill",
+      "+1 Knowledge skill"
+    ],
     "bonuses": [
       {
         "kind": "primary",
@@ -1317,18 +1465,24 @@
         "source": "+1 Knowledge skill"
       }
     ],
-    "combinationRaw": "Part of Power of the Dragon Father",
-    "leadsTo": ["Power of the Dragon Father"],
-    "image": "/images/artifacts/dragonbone-greaves.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Power of the Dragon Father"
+    ],
+    "image": "/images/artifacts/dragonbone-greaves.png"
   },
   {
     "id": "sandals-of-the-saint",
     "name": "Sandals of the Saint",
-    "slot": "FEET",
+    "slot": "feet",
     "rarity": "relic",
+    "combo": false,
     "cost": 8000,
-    "effect": "+2 Attack skill, +2 Defense skill, +2 Power skill, +2 Knowledge skill",
+    "effects": [
+      "+2 Attack skill",
+      "+2 Defense skill",
+      "+2 Power skill",
+      "+2 Knowledge skill"
+    ],
     "bonuses": [
       {
         "kind": "primary",
@@ -1359,18 +1513,21 @@
         "source": "+2 Knowledge skill"
       }
     ],
-    "combinationRaw": "Part of Angelic Alliance",
-    "leadsTo": ["Angelic Alliance"],
-    "image": "/images/artifacts/sandals-of-the-saint.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Angelic Alliance"
+    ],
+    "image": "/images/artifacts/sandals-of-the-saint.png"
   },
   {
     "id": "boots-of-speed",
     "name": "Boots of Speed",
-    "slot": "FEET",
+    "slot": "feet",
     "rarity": "minor",
+    "combo": false,
     "cost": 6000,
-    "effect": "+400 Movement points",
+    "effects": [
+      "+400 Movement points"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -1380,18 +1537,19 @@
         "source": "+400 Movement points"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/boots-of-speed.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/boots-of-speed.png"
   },
   {
     "id": "wayfarers-boots",
     "name": "Wayfarer's Boots",
-    "slot": "FEET",
+    "slot": "feet",
     "rarity": "major",
+    "combo": false,
     "cost": 5000,
-    "effect": "No movement penalty over rough terrain",
+    "effects": [
+      "No movement penalty over rough terrain"
+    ],
     "bonuses": [
       {
         "kind": "special",
@@ -1401,18 +1559,19 @@
         "source": "No movement penalty over rough terrain"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/wayfarers-boots.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/wayfarers-boots.png"
   },
   {
     "id": "dead-mans-boots",
     "name": "Dead Man's Boots",
-    "slot": "FEET",
+    "slot": "feet",
     "rarity": "major",
+    "combo": false,
     "cost": 6000,
-    "effect": "+7.5% Necromancy",
+    "effects": [
+      "+7.5% Necromancy"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -1422,18 +1581,21 @@
         "source": "+7.5% Necromancy"
       }
     ],
-    "combinationRaw": "Part of Cloak of the Undead King",
-    "leadsTo": ["Cloak of the Undead King"],
-    "image": "/images/artifacts/dead-mans-boots.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Cloak of the Undead King"
+    ],
+    "image": "/images/artifacts/dead-mans-boots.png"
   },
   {
     "id": "boots-of-polarity",
     "name": "Boots of Polarity",
-    "slot": "FEET",
+    "slot": "feet",
     "rarity": "relic",
+    "combo": false,
     "cost": 6000,
-    "effect": "+15% Magic Resistance",
+    "effects": [
+      "+15% Magic Resistance"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -1443,18 +1605,21 @@
         "source": "+15% Magic Resistance"
       }
     ],
-    "combinationRaw": "Part of Pendant of Reflection",
-    "leadsTo": ["Pendant of Reflection"],
-    "image": "/images/artifacts/boots-of-polarity.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Pendant of Reflection"
+    ],
+    "image": "/images/artifacts/boots-of-polarity.png"
   },
   {
     "id": "boots-of-levitation",
     "name": "Boots of Levitation",
-    "slot": "FEET",
+    "slot": "feet",
     "rarity": "relic",
+    "combo": false,
     "cost": 10000,
-    "effect": "Permanent Water Walk Spell",
+    "effects": [
+      "Permanent Water Walk Spell"
+    ],
     "bonuses": [
       {
         "kind": "special",
@@ -1464,18 +1629,20 @@
         "source": "Permanent Water Walk"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/boots-of-levitation.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/boots-of-levitation.png"
   },
   {
     "id": "dragon-wing-tabard",
     "name": "Dragon Wing Tabard",
-    "slot": "CAPE",
+    "slot": "cape",
     "rarity": "minor",
+    "combo": false,
     "cost": 4000,
-    "effect": "+2 Power skill, +2 Knowledge skill",
+    "effects": [
+      "+2 Power skill",
+      "+2 Knowledge skill"
+    ],
     "bonuses": [
       {
         "kind": "primary",
@@ -1492,18 +1659,21 @@
         "source": "+2 Knowledge skill"
       }
     ],
-    "combinationRaw": "Part of Power of the Dragon Father",
-    "leadsTo": ["Power of the Dragon Father"],
-    "image": "/images/artifacts/dragon-wing-tabard.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Power of the Dragon Father"
+    ],
+    "image": "/images/artifacts/dragon-wing-tabard.png"
   },
   {
     "id": "cape-of-conjuring",
     "name": "Cape of Conjuring",
-    "slot": "CAPE",
+    "slot": "cape",
     "rarity": "treasure",
+    "combo": false,
     "cost": 1500,
-    "effect": "+3 Spell duration",
+    "effects": [
+      "+3 Spell duration"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -1513,18 +1683,21 @@
         "source": "+3 Spell duration"
       }
     ],
-    "combinationRaw": "Part of Ring of the Magi",
-    "leadsTo": ["Ring of the Magi"],
-    "image": "/images/artifacts/cape-of-conjuring.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Ring of the Magi"
+    ],
+    "image": "/images/artifacts/cape-of-conjuring.png"
   },
   {
     "id": "vampires-cowl",
     "name": "Vampire's Cowl",
-    "slot": "CAPE",
+    "slot": "cape",
     "rarity": "minor",
+    "combo": false,
     "cost": 4000,
-    "effect": "+5% Necromancy",
+    "effects": [
+      "+5% Necromancy"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -1534,18 +1707,21 @@
         "source": "+5% Necromancy"
       }
     ],
-    "combinationRaw": "Part of Cloak of the Undead King",
-    "leadsTo": ["Cloak of the Undead King"],
-    "image": "/images/artifacts/vampires-cowl.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Cloak of the Undead King"
+    ],
+    "image": "/images/artifacts/vampires-cowl.png"
   },
   {
     "id": "surcoat-of-counterpoise",
     "name": "Surcoat of Counterpoise",
-    "slot": "CAPE",
+    "slot": "cape",
     "rarity": "major",
+    "combo": false,
     "cost": 4000,
-    "effect": "+10% Magic Resistance",
+    "effects": [
+      "+10% Magic Resistance"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -1555,18 +1731,21 @@
         "source": "+10% Magic Resistance"
       }
     ],
-    "combinationRaw": "Part of Pendant of Reflection",
-    "leadsTo": ["Pendant of Reflection"],
-    "image": "/images/artifacts/surcoat-of-counterpoise.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Pendant of Reflection"
+    ],
+    "image": "/images/artifacts/surcoat-of-counterpoise.png"
   },
   {
     "id": "ambassadors-sash",
     "name": "Ambassador's Sash",
-    "slot": "CAPE",
+    "slot": "cape",
     "rarity": "major",
+    "combo": false,
     "cost": 5000,
-    "effect": "-10% surrender cost",
+    "effects": [
+      "-10% surrender cost"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -1576,18 +1755,21 @@
         "source": "-10% surrender cost"
       }
     ],
-    "combinationRaw": "Part of Diplomat's Cloak",
-    "leadsTo": ["Diplomat's Cloak"],
-    "image": "/images/artifacts/ambassadors-sash.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Diplomat's Cloak"
+    ],
+    "image": "/images/artifacts/ambassadors-sash.png"
   },
   {
     "id": "everflowing-crystal-cloak",
     "name": "Everflowing Crystal Cloak",
-    "slot": "CAPE",
+    "slot": "cape",
     "rarity": "major",
+    "combo": false,
     "cost": 5000,
-    "effect": "+1 Crystal/day",
+    "effects": [
+      "+1 Crystal/day"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -1597,18 +1779,21 @@
         "source": "+1 Crystal /day"
       }
     ],
-    "combinationRaw": "Part of Cornucopia",
-    "leadsTo": ["Cornucopia"],
-    "image": "/images/artifacts/everflowing-crystal-cloak.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Cornucopia"
+    ],
+    "image": "/images/artifacts/everflowing-crystal-cloak.png"
   },
   {
     "id": "recanters-cloak",
     "name": "Recanter's Cloak",
-    "slot": "CAPE",
+    "slot": "cape",
     "rarity": "major",
+    "combo": false,
     "cost": 8000,
-    "effect": "Prevents casting lvl 3+ spells",
+    "effects": [
+      "Prevents casting lvl 3+ spells"
+    ],
     "bonuses": [
       {
         "kind": "special",
@@ -1618,18 +1803,19 @@
         "source": "Prevents casting lvl 3+ spells"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/recanters-cloak.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/recanters-cloak.png"
   },
   {
     "id": "cape-of-velocity",
     "name": "Cape of Velocity",
-    "slot": "CAPE",
+    "slot": "cape",
     "rarity": "major",
+    "combo": false,
     "cost": 10000,
-    "effect": "+2 Unit speed",
+    "effects": [
+      "+2 Unit speed"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -1639,18 +1825,19 @@
         "source": "+2 Unit speed"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/cape-of-velocity.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/cape-of-velocity.png"
   },
   {
     "id": "cape-of-silence",
     "name": "Cape of Silence",
-    "slot": "CAPE",
+    "slot": "cape",
     "rarity": "major",
+    "combo": false,
     "cost": 7500,
-    "effect": "Prevents casting lvl 1-2 spells",
+    "effects": [
+      "Prevents casting lvl 1-2 spells"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -1660,18 +1847,19 @@
         "source": "Prevents casting lvl 1-2 spells"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/cape-of-silence.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/cape-of-silence.png"
   },
   {
     "id": "angel-wings",
     "name": "Angel Wings",
-    "slot": "CAPE",
+    "slot": "cape",
     "rarity": "relic",
+    "combo": false,
     "cost": 20000,
-    "effect": "Permanent Fly Spell",
+    "effects": [
+      "Permanent Fly Spell"
+    ],
     "bonuses": [
       {
         "kind": "special",
@@ -1681,18 +1869,20 @@
         "source": "Permanent Fly"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/angel-wings.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/angel-wings.png"
   },
   {
     "id": "cloak-of-the-undead-king",
     "name": "Cloak of the Undead King",
-    "slot": "COMBO",
+    "slot": "cape",
     "rarity": "relic",
+    "combo": true,
     "cost": 12000,
-    "effect": "+15% Necromancy, Raise Skeletons/Walking Dead/Wights/Liches based on Necromancy level",
+    "effects": [
+      "+15% Necromancy",
+      "Raise Skeletons/Walking Dead/Wights/Liches based on Necromancy level"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -1702,18 +1892,21 @@
         "source": "• +15% Necromancy • Raise Skeletons/Walking Dead/Wights/Liches based on Necromancy level"
       }
     ],
-    "combinationRaw": "Cape/Necklace/Feet",
     "leadsTo": [],
-    "image": "/images/artifacts/cloak-of-the-undead-king.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/cloak-of-the-undead-king.png"
   },
   {
     "id": "diplomats-cloak",
     "name": "Diplomat's Cloak",
-    "slot": "COMBO",
+    "slot": "cape",
     "rarity": "relic",
+    "combo": true,
     "cost": 15000,
-    "effect": "-30% surrender cost, Allows retreat and surrender when battling neutral monsters or defending a town, 3x diplomatic army strength",
+    "effects": [
+      "-30% surrender cost",
+      "Allows retreat and surrender when battling neutral monsters or defending a town",
+      "3x diplomatic army strength"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -1730,18 +1923,20 @@
         "source": "surrender when battling neutral monsters or defending a town• 3x diplomatic army strength"
       }
     ],
-    "combinationRaw": "Cape/Necklace/Ring",
     "leadsTo": [],
-    "image": "/images/artifacts/diplomats-cloak.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/diplomats-cloak.png"
   },
   {
     "id": "necklace-of-dragonteeth",
     "name": "Necklace of Dragonteeth",
-    "slot": "NECK",
+    "slot": "neck",
     "rarity": "major",
+    "combo": false,
     "cost": 6000,
-    "effect": "+3 Power skill, +3 Knowledge skill",
+    "effects": [
+      "+3 Power skill",
+      "+3 Knowledge skill"
+    ],
     "bonuses": [
       {
         "kind": "primary",
@@ -1758,18 +1953,24 @@
         "source": "+3 Knowledge skill"
       }
     ],
-    "combinationRaw": "Part of Power of the Dragon Father",
-    "leadsTo": ["Power of the Dragon Father"],
-    "image": "/images/artifacts/necklace-of-dragonteeth.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Power of the Dragon Father"
+    ],
+    "image": "/images/artifacts/necklace-of-dragonteeth.png"
   },
   {
     "id": "celestial-necklace-of-bliss",
     "name": "Celestial Necklace of Bliss",
-    "slot": "NECK",
+    "slot": "neck",
     "rarity": "relic",
+    "combo": false,
     "cost": 12000,
-    "effect": "+3 Attack skill, +3 Defense skill, +3 Power skill, +3 Knowledge skill",
+    "effects": [
+      "+3 Attack skill",
+      "+3 Defense skill",
+      "+3 Power skill",
+      "+3 Knowledge skill"
+    ],
     "bonuses": [
       {
         "kind": "primary",
@@ -1800,18 +2001,21 @@
         "source": "+3 Knowledge skill"
       }
     ],
-    "combinationRaw": "Part of Angelic Alliance",
-    "leadsTo": ["Angelic Alliance"],
-    "image": "/images/artifacts/celestial-necklace-of-bliss.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Angelic Alliance"
+    ],
+    "image": "/images/artifacts/celestial-necklace-of-bliss.png"
   },
   {
     "id": "collar-of-conjuring",
     "name": "Collar of Conjuring",
-    "slot": "NECK",
+    "slot": "neck",
     "rarity": "treasure",
+    "combo": false,
     "cost": 500,
-    "effect": "+1 spell duration",
+    "effects": [
+      "+1 spell duration"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -1821,18 +2025,21 @@
         "source": "+1 spell duration"
       }
     ],
-    "combinationRaw": "Part of Ring of the Magi",
-    "leadsTo": ["Ring of the Magi"],
-    "image": "/images/artifacts/collar-of-conjuring.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Ring of the Magi"
+    ],
+    "image": "/images/artifacts/collar-of-conjuring.png"
   },
   {
     "id": "pendant-of-dispassion",
     "name": "Pendant of Dispassion",
-    "slot": "NECK",
+    "slot": "neck",
     "rarity": "treasure",
+    "combo": false,
     "cost": 1000,
-    "effect": "Immune to Berserk Spell",
+    "effects": [
+      "Immune to Berserk Spell"
+    ],
     "bonuses": [
       {
         "kind": "special",
@@ -1842,18 +2049,19 @@
         "source": "Immune to Berserk"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/pendant-of-dispassion.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/pendant-of-dispassion.png"
   },
   {
     "id": "pendant-of-free-will",
     "name": "Pendant of Free Will",
-    "slot": "NECK",
+    "slot": "neck",
     "rarity": "treasure",
+    "combo": false,
     "cost": 1000,
-    "effect": "Immune to Hypnotize Spell",
+    "effects": [
+      "Immune to Hypnotize Spell"
+    ],
     "bonuses": [
       {
         "kind": "special",
@@ -1863,18 +2071,19 @@
         "source": "Immune to Hypnotize"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/pendant-of-free-will.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/pendant-of-free-will.png"
   },
   {
     "id": "pendant-of-holiness",
     "name": "Pendant of Holiness",
-    "slot": "NECK",
+    "slot": "neck",
     "rarity": "treasure",
+    "combo": false,
     "cost": 1000,
-    "effect": "Immune to Curse Spell",
+    "effects": [
+      "Immune to Curse Spell"
+    ],
     "bonuses": [
       {
         "kind": "special",
@@ -1884,18 +2093,19 @@
         "source": "Immune to Curse"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/pendant-of-holiness.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/pendant-of-holiness.png"
   },
   {
     "id": "amulet-of-the-undertaker",
     "name": "Amulet of the Undertaker",
-    "slot": "NECK",
+    "slot": "neck",
     "rarity": "treasure",
+    "combo": false,
     "cost": 2000,
-    "effect": "+2.5% Necromancy",
+    "effects": [
+      "+2.5% Necromancy"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -1905,18 +2115,21 @@
         "source": "+2.5% Necromancy"
       }
     ],
-    "combinationRaw": "Part of Cloak of the Undead King",
-    "leadsTo": ["Cloak of the Undead King"],
-    "image": "/images/artifacts/amulet-of-the-undertaker.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Cloak of the Undead King"
+    ],
+    "image": "/images/artifacts/amulet-of-the-undertaker.png"
   },
   {
     "id": "pendant-of-life",
     "name": "Pendant of Life",
-    "slot": "NECK",
+    "slot": "neck",
     "rarity": "treasure",
+    "combo": false,
     "cost": 2500,
-    "effect": "Immune to Death Ripple Spell",
+    "effects": [
+      "Immune to Death Ripple Spell"
+    ],
     "bonuses": [
       {
         "kind": "special",
@@ -1926,18 +2139,19 @@
         "source": "Immune to Death Ripple"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/pendant-of-life.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/pendant-of-life.png"
   },
   {
     "id": "pendant-of-death",
     "name": "Pendant of Death",
-    "slot": "NECK",
+    "slot": "neck",
     "rarity": "treasure",
+    "combo": false,
     "cost": 2500,
-    "effect": "Immune to Destroy Undead Spell",
+    "effects": [
+      "Immune to Destroy Undead Spell"
+    ],
     "bonuses": [
       {
         "kind": "special",
@@ -1947,18 +2161,19 @@
         "source": "Immune to Destroy Undead"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/pendant-of-death.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/pendant-of-death.png"
   },
   {
     "id": "pendant-of-total-recall",
     "name": "Pendant of Total Recall",
-    "slot": "NECK",
+    "slot": "neck",
     "rarity": "treasure",
+    "combo": false,
     "cost": 3000,
-    "effect": "Immune to Forgetfulness Spell",
+    "effects": [
+      "Immune to Forgetfulness Spell"
+    ],
     "bonuses": [
       {
         "kind": "special",
@@ -1968,18 +2183,19 @@
         "source": "Immune to Forgetfulness"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/pendant-of-total-recall.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/pendant-of-total-recall.png"
   },
   {
     "id": "garniture-of-interference",
     "name": "Garniture of Interference",
-    "slot": "NECK",
+    "slot": "neck",
     "rarity": "major",
+    "combo": false,
     "cost": 2000,
-    "effect": "+5% Magic resistance",
+    "effects": [
+      "+5% Magic resistance"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -1989,18 +2205,21 @@
         "source": "+5% Magic resistance"
       }
     ],
-    "combinationRaw": "Part of Pendant of Reflection",
-    "leadsTo": ["Pendant of Reflection"],
-    "image": "/images/artifacts/garniture-of-interference.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Pendant of Reflection"
+    ],
+    "image": "/images/artifacts/garniture-of-interference.png"
   },
   {
     "id": "pendant-of-second-sight",
     "name": "Pendant of Second Sight",
-    "slot": "NECK",
+    "slot": "neck",
     "rarity": "major",
+    "combo": false,
     "cost": 5000,
-    "effect": "Immune to Blind Spell",
+    "effects": [
+      "Immune to Blind Spell"
+    ],
     "bonuses": [
       {
         "kind": "special",
@@ -2010,18 +2229,20 @@
         "source": "Immune to Blind"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/pendant-of-second-sight.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/pendant-of-second-sight.png"
   },
   {
     "id": "pendant-of-negativity",
     "name": "Pendant of Negativity",
-    "slot": "NECK",
+    "slot": "neck",
     "rarity": "major",
+    "combo": false,
     "cost": 5000,
-    "effect": "Immune to Lightning Bolt Spell, Immune to Chain Lightning Spell",
+    "effects": [
+      "Immune to Lightning Bolt Spell",
+      "Immune to Chain Lightning Spell"
+    ],
     "bonuses": [
       {
         "kind": "special",
@@ -2031,18 +2252,19 @@
         "source": "Immune to Lightning Bolt Immune to Chain Lightning"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/pendant-of-negativity.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/pendant-of-negativity.png"
   },
   {
     "id": "statesmans-medal",
     "name": "Statesman's Medal",
-    "slot": "NECK",
+    "slot": "neck",
     "rarity": "major",
+    "combo": false,
     "cost": 5000,
-    "effect": "-10% surrender cost",
+    "effects": [
+      "-10% surrender cost"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -2052,18 +2274,21 @@
         "source": "-10% surrender cost"
       }
     ],
-    "combinationRaw": "Part of Diplomat's Cloak",
-    "leadsTo": ["Diplomat's Cloak"],
-    "image": "/images/artifacts/statesmans-medal.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Diplomat's Cloak"
+    ],
+    "image": "/images/artifacts/statesmans-medal.png"
   },
   {
     "id": "necklace-of-swiftness",
     "name": "Necklace of Swiftness",
-    "slot": "NECK",
+    "slot": "neck",
     "rarity": "treasure",
+    "combo": false,
     "cost": 5000,
-    "effect": "+1 Unit speed",
+    "effects": [
+      "+1 Unit speed"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -2073,18 +2298,20 @@
         "source": "+1 Unit speed"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/necklace-of-swiftness.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/necklace-of-swiftness.png"
   },
   {
     "id": "pendant-of-courage",
     "name": "Pendant of Courage",
-    "slot": "NECK",
+    "slot": "neck",
     "rarity": "major",
+    "combo": false,
     "cost": 7000,
-    "effect": "+3 Luck, +3 Morale",
+    "effects": [
+      "+3 Luck",
+      "+3 Morale"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -2101,18 +2328,19 @@
         "source": "+3 Morale"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/pendant-of-courage.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/pendant-of-courage.png"
   },
   {
     "id": "pendant-of-downfall",
     "name": "Pendant of Downfall",
-    "slot": "NECK",
+    "slot": "neck",
     "rarity": "major",
+    "combo": false,
     "cost": 7000,
-    "effect": "-2 enemy Morale",
+    "effects": [
+      "-2 enemy Morale"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -2122,18 +2350,19 @@
         "source": "-2 enemy Morale"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/pendant-of-downfall.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/pendant-of-downfall.png"
   },
   {
     "id": "necklace-of-ocean-guidance",
     "name": "Necklace of Ocean Guidance",
-    "slot": "NECK",
+    "slot": "neck",
     "rarity": "major",
+    "combo": false,
     "cost": 10000,
-    "effect": "+1000 Movement points at sea",
+    "effects": [
+      "+1000 Movement points at sea"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -2143,18 +2372,21 @@
         "source": "+1000 Movement points at sea"
       }
     ],
-    "combinationRaw": "Part of Admiral's Hat",
-    "leadsTo": ["Admiral's Hat"],
-    "image": "/images/artifacts/necklace-of-ocean-guidance.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Admiral's Hat"
+    ],
+    "image": "/images/artifacts/necklace-of-ocean-guidance.png"
   },
   {
     "id": "pendant-of-reflection",
     "name": "Pendant of Reflection",
-    "slot": "COMBO",
+    "slot": "neck",
     "rarity": "relic",
+    "combo": true,
     "cost": 12000,
-    "effect": "+50% Magic Resistance",
+    "effects": [
+      "+50% Magic Resistance"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -2164,18 +2396,20 @@
         "source": "+50% Magic Resistance"
       }
     ],
-    "combinationRaw": "Necklace/Cape/Feet",
     "leadsTo": [],
-    "image": "/images/artifacts/pendant-of-reflection.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/pendant-of-reflection.png"
   },
   {
     "id": "still-eye-of-the-dragon",
     "name": "Still Eye of the Dragon",
-    "slot": "RING",
+    "slot": "ring",
     "rarity": "treasure",
+    "combo": false,
     "cost": 2000,
-    "effect": "+1 Luck, +1 Morale",
+    "effects": [
+      "+1 Luck",
+      "+1 Morale"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -2192,18 +2426,22 @@
         "source": "+1 Morale"
       }
     ],
-    "combinationRaw": "Part of Power of the Dragon Father",
-    "leadsTo": ["Power of the Dragon Father"],
-    "image": "/images/artifacts/still-eye-of-the-dragon.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Power of the Dragon Father"
+    ],
+    "image": "/images/artifacts/still-eye-of-the-dragon.png"
   },
   {
     "id": "quiet-eye-of-the-dragon",
     "name": "Quiet Eye of the Dragon",
-    "slot": "RING",
+    "slot": "ring",
     "rarity": "treasure",
+    "combo": false,
     "cost": 2000,
-    "effect": "+1 Attack skill, +1 Defense skill",
+    "effects": [
+      "+1 Attack skill",
+      "+1 Defense skill"
+    ],
     "bonuses": [
       {
         "kind": "primary",
@@ -2220,18 +2458,21 @@
         "source": "+1 Defense skill"
       }
     ],
-    "combinationRaw": "Part of Power of the Dragon Father",
-    "leadsTo": ["Power of the Dragon Father"],
-    "image": "/images/artifacts/quiet-eye-of-the-dragon.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Power of the Dragon Father"
+    ],
+    "image": "/images/artifacts/quiet-eye-of-the-dragon.png"
   },
   {
     "id": "ring-of-conjuring",
     "name": "Ring of Conjuring",
-    "slot": "RING",
+    "slot": "ring",
     "rarity": "treasure",
+    "combo": false,
     "cost": 1000,
-    "effect": "+2 spell duration",
+    "effects": [
+      "+2 spell duration"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -2241,18 +2482,21 @@
         "source": "+2 spell duration"
       }
     ],
-    "combinationRaw": "Part of Ring of the Magi",
-    "leadsTo": ["Ring of the Magi"],
-    "image": "/images/artifacts/ring-of-conjuring.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Ring of the Magi"
+    ],
+    "image": "/images/artifacts/ring-of-conjuring.png"
   },
   {
     "id": "ring-of-suppression",
     "name": "Ring of Suppression",
-    "slot": "RING",
+    "slot": "ring",
     "rarity": "treasure",
+    "combo": false,
     "cost": 4000,
-    "effect": "-1 enemy Morale",
+    "effects": [
+      "-1 enemy Morale"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -2262,18 +2506,19 @@
         "source": "-1 enemy Morale"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/ring-of-suppression.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/ring-of-suppression.png"
   },
   {
     "id": "equestrians-gloves",
     "name": "Equestrian's Gloves",
-    "slot": "RING",
+    "slot": "ring",
     "rarity": "minor",
+    "combo": false,
     "cost": 3000,
-    "effect": "+200 Movement points",
+    "effects": [
+      "+200 Movement points"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -2283,18 +2528,19 @@
         "source": "+200 300 Movement points"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/equestrians-gloves.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/equestrians-gloves.png"
   },
   {
     "id": "seal-of-sunset",
     "name": "Seal of Sunset",
-    "slot": "RING",
+    "slot": "ring",
     "rarity": "minor",
+    "combo": false,
     "cost": 5000,
-    "effect": "-10% enemy Power skill",
+    "effects": [
+      "-10% enemy Power skill"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -2304,18 +2550,19 @@
         "source": "-10% enemy Power skill"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/seal-of-sunset.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/seal-of-sunset.png"
   },
   {
     "id": "diplomats-ring",
     "name": "Diplomat's Ring",
-    "slot": "RING",
+    "slot": "ring",
     "rarity": "major",
+    "combo": false,
     "cost": 5000,
-    "effect": "-10% surrender cost",
+    "effects": [
+      "-10% surrender cost"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -2325,18 +2572,21 @@
         "source": "-10% surrender cost"
       }
     ],
-    "combinationRaw": "Part of Diplomat's Cloak",
-    "leadsTo": ["Diplomat's Cloak"],
-    "image": "/images/artifacts/diplomats-ring.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Diplomat's Cloak"
+    ],
+    "image": "/images/artifacts/diplomats-ring.png"
   },
   {
     "id": "ring-of-the-wayfarer",
     "name": "Ring of the Wayfarer",
-    "slot": "RING",
+    "slot": "ring",
     "rarity": "major",
+    "combo": false,
     "cost": 5000,
-    "effect": "+1 Unit speed",
+    "effects": [
+      "+1 Unit speed"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -2346,18 +2596,19 @@
         "source": "+1 Unit speed"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/ring-of-the-wayfarer.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/ring-of-the-wayfarer.png"
   },
   {
     "id": "ring-of-vitality",
     "name": "Ring of Vitality",
-    "slot": "RING",
+    "slot": "ring",
     "rarity": "treasure",
+    "combo": false,
     "cost": 5000,
-    "effect": "+1 Unit health",
+    "effects": [
+      "+1 Unit health"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -2367,18 +2618,21 @@
         "source": "+1 Unit health"
       }
     ],
-    "combinationRaw": "Part of Elixir of Life",
-    "leadsTo": ["Elixir of Life"],
-    "image": "/images/artifacts/ring-of-vitality.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Elixir of Life"
+    ],
+    "image": "/images/artifacts/ring-of-vitality.png"
   },
   {
     "id": "ring-of-life",
     "name": "Ring of Life",
-    "slot": "RING",
+    "slot": "ring",
     "rarity": "minor",
+    "combo": false,
     "cost": 5000,
-    "effect": "+1 Unit health",
+    "effects": [
+      "+1 Unit health"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -2388,18 +2642,21 @@
         "source": "+1 Unit health"
       }
     ],
-    "combinationRaw": "Part of Elixir of Life",
-    "leadsTo": ["Elixir of Life"],
-    "image": "/images/artifacts/ring-of-life.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Elixir of Life"
+    ],
+    "image": "/images/artifacts/ring-of-life.png"
   },
   {
     "id": "ring-of-infinite-gems",
     "name": "Ring of Infinite Gems",
-    "slot": "RING",
+    "slot": "ring",
     "rarity": "major",
+    "combo": false,
     "cost": 5000,
-    "effect": "+1 Gems/day",
+    "effects": [
+      "+1 Gems/day"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -2409,18 +2666,21 @@
         "source": "+1 Gems /day"
       }
     ],
-    "combinationRaw": "Part of Cornucopia",
-    "leadsTo": ["Cornucopia"],
-    "image": "/images/artifacts/ring-of-infinite-gems.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Cornucopia"
+    ],
+    "image": "/images/artifacts/ring-of-infinite-gems.png"
   },
   {
     "id": "eversmoking-ring-of-sulfur",
     "name": "Eversmoking Ring of Sulfur",
-    "slot": "RING",
+    "slot": "ring",
     "rarity": "major",
+    "combo": false,
     "cost": 5000,
-    "effect": "+1 Sulfur/day",
+    "effects": [
+      "+1 Sulfur/day"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -2430,18 +2690,21 @@
         "source": "+1 Sulfur /day"
       }
     ],
-    "combinationRaw": "Part of Cornucopia",
-    "leadsTo": ["Cornucopia"],
-    "image": "/images/artifacts/eversmoking-ring-of-sulfur.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Cornucopia"
+    ],
+    "image": "/images/artifacts/eversmoking-ring-of-sulfur.png"
   },
   {
     "id": "ring-of-oblivion",
     "name": "Ring of Oblivion",
-    "slot": "RING",
+    "slot": "ring",
     "rarity": "major",
+    "combo": false,
     "cost": 7500,
-    "effect": "All losses in combat are irrevocable",
+    "effects": [
+      "All losses in combat are irrevocable"
+    ],
     "bonuses": [
       {
         "kind": "special",
@@ -2451,18 +2714,19 @@
         "source": "All losses in combat are irrevocable"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/ring-of-oblivion.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/ring-of-oblivion.png"
   },
   {
     "id": "ring-of-the-magi",
     "name": "Ring of the Magi",
-    "slot": "COMBO",
+    "slot": "ring",
     "rarity": "relic",
+    "combo": true,
     "cost": 3000,
-    "effect": "+56 spell duration",
+    "effects": [
+      "+56 spell duration"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -2472,18 +2736,19 @@
         "source": "+56 spell duration"
       }
     ],
-    "combinationRaw": "Ring/Necklace/Cape",
     "leadsTo": [],
-    "image": "/images/artifacts/ring-of-the-magi.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/ring-of-the-magi.png"
   },
   {
     "id": "charm-of-eclipse",
     "name": "Charm of Eclipse",
-    "slot": "MISC",
+    "slot": "misc",
     "rarity": "minor",
+    "combo": false,
     "cost": 5000,
-    "effect": "-10% enemy Power skill",
+    "effects": [
+      "-10% enemy Power skill"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -2493,18 +2758,19 @@
         "source": "-10% enemy Power skill"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/charm-of-eclipse.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/charm-of-eclipse.png"
   },
   {
     "id": "charm-of-mana",
     "name": "Charm of Mana",
-    "slot": "MISC",
+    "slot": "misc",
     "rarity": "treasure",
+    "combo": false,
     "cost": 500,
-    "effect": "+1 Spell points/day",
+    "effects": [
+      "+1 Spell points/day"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -2514,18 +2780,21 @@
         "source": "+1 Spell points/day"
       }
     ],
-    "combinationRaw": "Part of Wizard's Well",
-    "leadsTo": ["Wizard's Well"],
-    "image": "/images/artifacts/charm-of-mana.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Wizard's Well"
+    ],
+    "image": "/images/artifacts/charm-of-mana.png"
   },
   {
     "id": "talisman-of-mana",
     "name": "Talisman of Mana",
-    "slot": "MISC",
+    "slot": "misc",
     "rarity": "treasure",
+    "combo": false,
     "cost": 1000,
-    "effect": "+2 Spell points/day",
+    "effects": [
+      "+2 Spell points/day"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -2535,18 +2804,21 @@
         "source": "+2 Spell points/day"
       }
     ],
-    "combinationRaw": "Part of Wizard's Well",
-    "leadsTo": ["Wizard's Well"],
-    "image": "/images/artifacts/talisman-of-mana.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Wizard's Well"
+    ],
+    "image": "/images/artifacts/talisman-of-mana.png"
   },
   {
     "id": "mystic-orb-of-mana",
     "name": "Mystic Orb of Mana",
-    "slot": "MISC",
+    "slot": "misc",
     "rarity": "treasure",
+    "combo": false,
     "cost": 1500,
-    "effect": "+3 Spell points/day",
+    "effects": [
+      "+3 Spell points/day"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -2556,18 +2828,21 @@
         "source": "+3 Spell points/day"
       }
     ],
-    "combinationRaw": "Part of Wizard's Well",
-    "leadsTo": ["Wizard's Well"],
-    "image": "/images/artifacts/mystic-orb-of-mana.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Wizard's Well"
+    ],
+    "image": "/images/artifacts/mystic-orb-of-mana.png"
   },
   {
     "id": "wizards-well",
     "name": "Wizard's Well",
-    "slot": "COMBO",
+    "slot": "misc",
     "rarity": "relic",
+    "combo": true,
     "cost": 3000,
-    "effect": "Recover all spell points every day",
+    "effects": [
+      "Recover all spell points every day"
+    ],
     "bonuses": [
       {
         "kind": "special",
@@ -2577,18 +2852,19 @@
         "source": "Recover all spell points every day"
       }
     ],
-    "combinationRaw": "Misc/Misc/Misc",
     "leadsTo": [],
-    "image": "/images/artifacts/wizards-well.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/wizards-well.png"
   },
   {
     "id": "orb-of-silt",
     "name": "Orb of Silt",
-    "slot": "MISC",
+    "slot": "misc",
     "rarity": "major",
+    "combo": false,
     "cost": 6000,
-    "effect": "+50% Earth spell damage",
+    "effects": [
+      "+50% Earth spell damage"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -2598,18 +2874,19 @@
         "source": "+50% Earth spell damage"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/orb-of-silt.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/orb-of-silt.png"
   },
   {
     "id": "orb-of-the-firmament",
     "name": "Orb of the Firmament",
-    "slot": "MISC",
+    "slot": "misc",
     "rarity": "major",
+    "combo": false,
     "cost": 6000,
-    "effect": "+50% Air spell damage",
+    "effects": [
+      "+50% Air spell damage"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -2619,18 +2896,19 @@
         "source": "+50% Air spell damage"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/orb-of-the-firmament.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/orb-of-the-firmament.png"
   },
   {
     "id": "orb-of-driving-rain",
     "name": "Orb of Driving Rain",
-    "slot": "MISC",
+    "slot": "misc",
     "rarity": "major",
+    "combo": false,
     "cost": 6000,
-    "effect": "+50% Water spell damage",
+    "effects": [
+      "+50% Water spell damage"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -2640,18 +2918,19 @@
         "source": "+50% Water spell damage"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/orb-of-driving-rain.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/orb-of-driving-rain.png"
   },
   {
     "id": "orb-of-tempestuous-fire",
     "name": "Orb of Tempestuous Fire",
-    "slot": "MISC",
+    "slot": "misc",
     "rarity": "major",
+    "combo": false,
     "cost": 6000,
-    "effect": "+50% Fire spell damage",
+    "effects": [
+      "+50% Fire spell damage"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -2661,18 +2940,19 @@
         "source": "+50% Fire spell damage"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/orb-of-tempestuous-fire.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/orb-of-tempestuous-fire.png"
   },
   {
     "id": "tome-of-earth",
     "name": "Tome of Earth",
-    "slot": "MISC",
+    "slot": "misc",
     "rarity": "relic",
+    "combo": false,
     "cost": 20000,
-    "effect": "All Earth spells",
+    "effects": [
+      "All Earth spells"
+    ],
     "bonuses": [
       {
         "kind": "special",
@@ -2682,18 +2962,19 @@
         "source": "All Earth spells"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/tome-of-earth.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/tome-of-earth.png"
   },
   {
     "id": "tome-of-air",
     "name": "Tome of Air",
-    "slot": "MISC",
+    "slot": "misc",
     "rarity": "relic",
+    "combo": false,
     "cost": 20000,
-    "effect": "All Air spells",
+    "effects": [
+      "All Air spells"
+    ],
     "bonuses": [
       {
         "kind": "special",
@@ -2703,18 +2984,19 @@
         "source": "All Air spells"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/tome-of-air.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/tome-of-air.png"
   },
   {
     "id": "tome-of-water",
     "name": "Tome of Water",
-    "slot": "MISC",
+    "slot": "misc",
     "rarity": "relic",
+    "combo": false,
     "cost": 20000,
-    "effect": "All Water spells",
+    "effects": [
+      "All Water spells"
+    ],
     "bonuses": [
       {
         "kind": "special",
@@ -2724,18 +3006,19 @@
         "source": "All Water spells"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/tome-of-water.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/tome-of-water.png"
   },
   {
     "id": "tome-of-fire",
     "name": "Tome of Fire",
-    "slot": "MISC",
+    "slot": "misc",
     "rarity": "relic",
+    "combo": false,
     "cost": 20000,
-    "effect": "All Fire spells",
+    "effects": [
+      "All Fire spells"
+    ],
     "bonuses": [
       {
         "kind": "special",
@@ -2745,18 +3028,19 @@
         "source": "All Fire spells"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/tome-of-fire.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/tome-of-fire.png"
   },
   {
     "id": "sphere-of-permanence",
     "name": "Sphere of Permanence",
-    "slot": "MISC",
+    "slot": "misc",
     "rarity": "major",
+    "combo": false,
     "cost": 7500,
-    "effect": "Immune to Dispel Spell",
+    "effects": [
+      "Immune to Dispel Spell"
+    ],
     "bonuses": [
       {
         "kind": "special",
@@ -2766,18 +3050,19 @@
         "source": "Immune to Dispel"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/sphere-of-permanence.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/sphere-of-permanence.png"
   },
   {
     "id": "orb-of-inhibition",
     "name": "Orb of Inhibition",
-    "slot": "MISC",
+    "slot": "misc",
     "rarity": "relic",
+    "combo": false,
     "cost": 20000,
-    "effect": "Prevents casting all spells",
+    "effects": [
+      "Prevents casting all spells"
+    ],
     "bonuses": [
       {
         "kind": "special",
@@ -2787,18 +3072,19 @@
         "source": "Prevents casting all spells"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/orb-of-inhibition.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/orb-of-inhibition.png"
   },
   {
     "id": "orb-of-vulnerability",
     "name": "Orb of Vulnerability",
-    "slot": "MISC",
+    "slot": "misc",
     "rarity": "relic",
+    "combo": false,
     "cost": 25000,
-    "effect": "Negate creatures' spell immunity",
+    "effects": [
+      "Negate creatures' spell immunity"
+    ],
     "bonuses": [
       {
         "kind": "special",
@@ -2808,18 +3094,19 @@
         "source": "Negate creatures' spell immunity"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/orb-of-vulnerability.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/orb-of-vulnerability.png"
   },
   {
     "id": "bird-of-perception",
     "name": "Bird of Perception",
-    "slot": "MISC",
+    "slot": "misc",
     "rarity": "treasure",
+    "combo": false,
     "cost": 1000,
-    "effect": "+5% Eagle Eye",
+    "effects": [
+      "+5% Eagle Eye"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -2829,18 +3116,19 @@
         "source": "+5% Eagle Eye"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/bird-of-perception.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/bird-of-perception.png"
   },
   {
     "id": "stoic-watchman",
     "name": "Stoic Watchman",
-    "slot": "MISC",
+    "slot": "misc",
     "rarity": "treasure",
+    "combo": false,
     "cost": 2000,
-    "effect": "+10% Eagle Eye",
+    "effects": [
+      "+10% Eagle Eye"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -2850,18 +3138,19 @@
         "source": "+10% Eagle Eye"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/stoic-watchman.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/stoic-watchman.png"
   },
   {
     "id": "emblem-of-cognizance",
     "name": "Emblem of Cognizance",
-    "slot": "MISC",
+    "slot": "misc",
     "rarity": "minor",
+    "combo": false,
     "cost": 3000,
-    "effect": "+15% Eagle Eye",
+    "effects": [
+      "+15% Eagle Eye"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -2871,18 +3160,19 @@
         "source": "+15% Eagle Eye"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/emblem-of-cognizance.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/emblem-of-cognizance.png"
   },
   {
     "id": "clover-of-fortune",
     "name": "Clover of Fortune",
-    "slot": "MISC",
+    "slot": "misc",
     "rarity": "treasure",
+    "combo": false,
     "cost": 1000,
-    "effect": "+1 Luck",
+    "effects": [
+      "+1 Luck"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -2892,18 +3182,19 @@
         "source": "+1 Luck"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/clover-of-fortune.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/clover-of-fortune.png"
   },
   {
     "id": "ladybird-of-luck",
     "name": "Ladybird of Luck",
-    "slot": "MISC",
+    "slot": "misc",
     "rarity": "treasure",
+    "combo": false,
     "cost": 1000,
-    "effect": "+1 Luck",
+    "effects": [
+      "+1 Luck"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -2913,18 +3204,19 @@
         "source": "+1 Luck"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/ladybird-of-luck.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/ladybird-of-luck.png"
   },
   {
     "id": "cards-of-prophecy",
     "name": "Cards of Prophecy",
-    "slot": "MISC",
+    "slot": "misc",
     "rarity": "treasure",
+    "combo": false,
     "cost": 1000,
-    "effect": "+1 Luck",
+    "effects": [
+      "+1 Luck"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -2934,18 +3226,19 @@
         "source": "+1 Luck"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/cards-of-prophecy.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/cards-of-prophecy.png"
   },
   {
     "id": "hourglass-of-the-evil-hour",
     "name": "Hourglass of the Evil Hour",
-    "slot": "MISC",
+    "slot": "misc",
     "rarity": "treasure",
+    "combo": false,
     "cost": 2000,
-    "effect": "Negates positive Luck",
+    "effects": [
+      "Negates positive Luck"
+    ],
     "bonuses": [
       {
         "kind": "special",
@@ -2955,18 +3248,19 @@
         "source": "Negates positive Luck"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/hourglass-of-the-evil-hour.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/hourglass-of-the-evil-hour.png"
   },
   {
     "id": "runes-of-imminency",
     "name": "Runes of Imminency",
-    "slot": "MISC",
+    "slot": "misc",
     "rarity": "treasure",
+    "combo": false,
     "cost": 2000,
-    "effect": "-1 enemy Luck",
+    "effects": [
+      "-1 enemy Luck"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -2976,18 +3270,19 @@
         "source": "-1 enemy Luck"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/runes-of-imminency.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/runes-of-imminency.png"
   },
   {
     "id": "demons-horseshoe",
     "name": "Demon's Horseshoe",
-    "slot": "MISC",
+    "slot": "misc",
     "rarity": "treasure",
+    "combo": false,
     "cost": 2000,
-    "effect": "-1 enemy Luck",
+    "effects": [
+      "-1 enemy Luck"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -2997,18 +3292,19 @@
         "source": "-1 enemy Luck"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/demons-horseshoe.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/demons-horseshoe.png"
   },
   {
     "id": "shamans-puppet",
     "name": "Shaman's Puppet",
-    "slot": "MISC",
+    "slot": "misc",
     "rarity": "minor",
+    "combo": false,
     "cost": 4000,
-    "effect": "-2 enemy Luck",
+    "effects": [
+      "-2 enemy Luck"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -3018,18 +3314,19 @@
         "source": "-2 enemy Luck"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/shamans-puppet.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/shamans-puppet.png"
   },
   {
     "id": "glyph-of-gallantry",
     "name": "Glyph of Gallantry",
-    "slot": "MISC",
+    "slot": "misc",
     "rarity": "treasure",
+    "combo": false,
     "cost": 1000,
-    "effect": "+1 Morale",
+    "effects": [
+      "+1 Morale"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -3039,18 +3336,19 @@
         "source": "+1 Morale"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/glyph-of-gallantry.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/glyph-of-gallantry.png"
   },
   {
     "id": "crest-of-valor",
     "name": "Crest of Valor",
-    "slot": "MISC",
+    "slot": "misc",
     "rarity": "treasure",
+    "combo": false,
     "cost": 1000,
-    "effect": "+1 Morale",
+    "effects": [
+      "+1 Morale"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -3060,18 +3358,19 @@
         "source": "+1 Morale"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/crest-of-valor.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/crest-of-valor.png"
   },
   {
     "id": "badge-of-courage",
     "name": "Badge of Courage",
-    "slot": "MISC",
+    "slot": "misc",
     "rarity": "treasure",
+    "combo": false,
     "cost": 1000,
-    "effect": "+1 Morale",
+    "effects": [
+      "+1 Morale"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -3081,18 +3380,19 @@
         "source": "+1 Morale Bug: immunity to Mind spells (fixed in Horn of the Abyss)"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/badge-of-courage.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/badge-of-courage.png"
   },
   {
     "id": "spirit-of-oppression",
     "name": "Spirit of Oppression",
-    "slot": "MISC",
+    "slot": "misc",
     "rarity": "treasure",
+    "combo": false,
     "cost": 2000,
-    "effect": "Negates positive Morale",
+    "effects": [
+      "Negates positive Morale"
+    ],
     "bonuses": [
       {
         "kind": "special",
@@ -3102,18 +3402,19 @@
         "source": "Negates positive Morale"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/spirit-of-oppression.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/spirit-of-oppression.png"
   },
   {
     "id": "hideous-mask",
     "name": "Hideous Mask",
-    "slot": "MISC",
+    "slot": "misc",
     "rarity": "minor",
+    "combo": false,
     "cost": 4000,
-    "effect": "-1 enemy Morale",
+    "effects": [
+      "-1 enemy Morale"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -3123,18 +3424,19 @@
         "source": "-1 enemy Morale"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/hideous-mask.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/hideous-mask.png"
   },
   {
     "id": "spyglass",
     "name": "Spyglass",
-    "slot": "MISC",
+    "slot": "misc",
     "rarity": "treasure",
+    "combo": false,
     "cost": 1000,
-    "effect": "+1 Scouting radius",
+    "effects": [
+      "+1 Scouting radius"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -3144,18 +3446,19 @@
         "source": "+1 Scouting radius"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/spyglass.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/spyglass.png"
   },
   {
     "id": "speculum",
     "name": "Speculum",
-    "slot": "MISC",
+    "slot": "misc",
     "rarity": "treasure",
+    "combo": false,
     "cost": 1000,
-    "effect": "+1 Scouting radius",
+    "effects": [
+      "+1 Scouting radius"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -3165,18 +3468,19 @@
         "source": "+1 Scouting radius"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/speculum.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/speculum.png"
   },
   {
     "id": "golden-bow",
     "name": "Golden Bow",
-    "slot": "MISC",
+    "slot": "misc",
     "rarity": "major",
+    "combo": false,
     "cost": 8000,
-    "effect": "No range and obstacle penalty",
+    "effects": [
+      "No range and obstacle penalty"
+    ],
     "bonuses": [
       {
         "kind": "special",
@@ -3193,18 +3497,19 @@
         "source": "obstacle penalty"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/golden-bow.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/golden-bow.png"
   },
   {
     "id": "bow-of-elven-cherrywood",
     "name": "Bow of Elven Cherrywood",
-    "slot": "MISC",
+    "slot": "misc",
     "rarity": "treasure",
+    "combo": false,
     "cost": 2000,
-    "effect": "+5% Archery",
+    "effects": [
+      "+5% Archery"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -3214,18 +3519,21 @@
         "source": "+5% Archery"
       }
     ],
-    "combinationRaw": "Part of Bow of the Sharpshooter",
-    "leadsTo": ["Bow of the Sharpshooter"],
-    "image": "/images/artifacts/bow-of-elven-cherrywood.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Bow of the Sharpshooter"
+    ],
+    "image": "/images/artifacts/bow-of-elven-cherrywood.png"
   },
   {
     "id": "bowstring-of-the-unicorns-mane",
     "name": "Bowstring of the Unicorn's Mane",
-    "slot": "MISC",
+    "slot": "misc",
     "rarity": "minor",
+    "combo": false,
     "cost": 4000,
-    "effect": "+10% Archery",
+    "effects": [
+      "+10% Archery"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -3235,18 +3543,21 @@
         "source": "+10% Archery"
       }
     ],
-    "combinationRaw": "Part of Bow of the Sharpshooter",
-    "leadsTo": ["Bow of the Sharpshooter"],
-    "image": "/images/artifacts/bowstring-of-the-unicorns-mane.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Bow of the Sharpshooter"
+    ],
+    "image": "/images/artifacts/bowstring-of-the-unicorns-mane.png"
   },
   {
     "id": "angel-feather-arrows",
     "name": "Angel Feather Arrows",
-    "slot": "MISC",
+    "slot": "misc",
     "rarity": "major",
+    "combo": false,
     "cost": 6000,
-    "effect": "+15% Archery",
+    "effects": [
+      "+15% Archery"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -3256,18 +3567,23 @@
         "source": "+15% Archery"
       }
     ],
-    "combinationRaw": "Part of Bow of the Sharpshooter",
-    "leadsTo": ["Bow of the Sharpshooter"],
-    "image": "/images/artifacts/angel-feather-arrows.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Bow of the Sharpshooter"
+    ],
+    "image": "/images/artifacts/angel-feather-arrows.png"
   },
   {
     "id": "bow-of-the-sharpshooter",
     "name": "Bow of the Sharpshooter",
-    "slot": "COMBO",
+    "slot": "misc",
     "rarity": "relic",
+    "combo": true,
     "cost": 12000,
-    "effect": "+30% Archery, No range and obstacle penalty, Allied shooters may shoot while adjacent to enemies",
+    "effects": [
+      "+30% Archery",
+      "No range and obstacle penalty",
+      "Allied shooters may shoot while adjacent to enemies"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -3284,18 +3600,19 @@
         "source": "obstacle penalty• Allied shooters may shoot while adjacent to enemies"
       }
     ],
-    "combinationRaw": "Misc/Misc/Misc",
     "leadsTo": [],
-    "image": "/images/artifacts/bow-of-the-sharpshooter.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/bow-of-the-sharpshooter.png"
   },
   {
     "id": "vial-of-lifeblood",
     "name": "Vial of Lifeblood",
-    "slot": "MISC",
+    "slot": "misc",
     "rarity": "major",
+    "combo": false,
     "cost": 10000,
-    "effect": "+2 Unit health",
+    "effects": [
+      "+2 Unit health"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -3305,18 +3622,23 @@
         "source": "+2 Unit health"
       }
     ],
-    "combinationRaw": "Part of Elixir of Life",
-    "leadsTo": ["Elixir of Life"],
-    "image": "/images/artifacts/vial-of-lifeblood.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Elixir of Life"
+    ],
+    "image": "/images/artifacts/vial-of-lifeblood.png"
   },
   {
     "id": "elixir-of-life",
     "name": "Elixir of Life",
-    "slot": "COMBO",
+    "slot": "misc",
     "rarity": "relic",
+    "combo": true,
     "cost": 20000,
-    "effect": "+4 Unit health, +25% Unit health, Allied units gain Regeneration",
+    "effects": [
+      "+4 Unit health",
+      "+25% Unit health",
+      "Allied units gain Regeneration"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -3326,18 +3648,19 @@
         "source": "• +4 Unit health• +25% Unit health• Allied units gain Regeneration"
       }
     ],
-    "combinationRaw": "Misc/Ring/Ring",
     "leadsTo": [],
-    "image": "/images/artifacts/elixir-of-life.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/elixir-of-life.png"
   },
   {
     "id": "endless-purse-of-gold",
     "name": "Endless Purse of Gold",
-    "slot": "MISC",
+    "slot": "misc",
     "rarity": "major",
+    "combo": false,
     "cost": 5000,
-    "effect": "+500 Gold/day",
+    "effects": [
+      "+500 Gold/day"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -3347,18 +3670,21 @@
         "source": "+500 Gold/day"
       }
     ],
-    "combinationRaw": "Part of Golden Goose",
-    "leadsTo": ["Golden Goose"],
-    "image": "/images/artifacts/endless-purse-of-gold.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Golden Goose"
+    ],
+    "image": "/images/artifacts/endless-purse-of-gold.png"
   },
   {
     "id": "endless-bag-of-gold",
     "name": "Endless Bag of Gold",
-    "slot": "MISC",
+    "slot": "misc",
     "rarity": "major",
+    "combo": false,
     "cost": 7500,
-    "effect": "+750 Gold/day",
+    "effects": [
+      "+750 Gold/day"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -3368,18 +3694,21 @@
         "source": "+750 Gold/day"
       }
     ],
-    "combinationRaw": "Part of Golden Goose",
-    "leadsTo": ["Golden Goose"],
-    "image": "/images/artifacts/endless-bag-of-gold.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Golden Goose"
+    ],
+    "image": "/images/artifacts/endless-bag-of-gold.png"
   },
   {
     "id": "endless-sack-of-gold",
     "name": "Endless Sack of Gold",
-    "slot": "MISC",
+    "slot": "misc",
     "rarity": "relic",
+    "combo": false,
     "cost": 10000,
-    "effect": "+1000 Gold/day",
+    "effects": [
+      "+1000 Gold/day"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -3389,18 +3718,21 @@
         "source": "+1000 Gold/day"
       }
     ],
-    "combinationRaw": "Part of Golden Goose",
-    "leadsTo": ["Golden Goose"],
-    "image": "/images/artifacts/endless-sack-of-gold.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Golden Goose"
+    ],
+    "image": "/images/artifacts/endless-sack-of-gold.png"
   },
   {
     "id": "golden-goose",
     "name": "Golden Goose",
-    "slot": "COMBO",
+    "slot": "misc",
     "rarity": "relic",
+    "combo": true,
     "cost": 22500,
-    "effect": "+7000 Gold/day",
+    "effects": [
+      "+7000 Gold/day"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -3410,18 +3742,19 @@
         "source": "+7000 Gold/day"
       }
     ],
-    "combinationRaw": "Misc/Misc/Misc",
     "leadsTo": [],
-    "image": "/images/artifacts/golden-goose.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/golden-goose.png"
   },
   {
     "id": "inexhaustible-cart-of-lumber",
     "name": "Inexhaustible Cart of Lumber",
-    "slot": "MISC",
+    "slot": "misc",
     "rarity": "minor",
+    "combo": false,
     "cost": 5000,
-    "effect": "+1 Wood/day",
+    "effects": [
+      "+1 Wood/day"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -3431,18 +3764,19 @@
         "source": "+1 Wood/day"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/inexhaustible-cart-of-lumber.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/inexhaustible-cart-of-lumber.png"
   },
   {
     "id": "inexhaustible-cart-of-ore",
     "name": "Inexhaustible Cart of Ore",
-    "slot": "MISC",
+    "slot": "misc",
     "rarity": "minor",
+    "combo": false,
     "cost": 5000,
-    "effect": "+1 Ore/day",
+    "effects": [
+      "+1 Ore/day"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -3452,18 +3786,19 @@
         "source": "+1 Ore/day"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/inexhaustible-cart-of-ore.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/inexhaustible-cart-of-ore.png"
   },
   {
     "id": "everpouring-vial-of-mercury",
     "name": "Everpouring Vial of Mercury",
-    "slot": "MISC",
+    "slot": "misc",
     "rarity": "major",
+    "combo": false,
     "cost": 5000,
-    "effect": "+1 Mercury/day",
+    "effects": [
+      "+1 Mercury/day"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -3473,18 +3808,21 @@
         "source": "+1 Mercury/day"
       }
     ],
-    "combinationRaw": "Part of Cornucopia",
-    "leadsTo": ["Cornucopia"],
-    "image": "/images/artifacts/everpouring-vial-of-mercury.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Cornucopia"
+    ],
+    "image": "/images/artifacts/everpouring-vial-of-mercury.png"
   },
   {
     "id": "cornucopia",
     "name": "Cornucopia",
-    "slot": "COMBO",
+    "slot": "misc",
     "rarity": "relic",
+    "combo": true,
     "cost": 20000,
-    "effect": "+5 Mercury, Sulfur, Crystal, and Gems/day",
+    "effects": [
+      "+5 Mercury, Sulfur, Crystal and Gems/day"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -3515,18 +3853,19 @@
         "source": "Gems/day"
       }
     ],
-    "combinationRaw": "Misc/Cape/Ring/Ring",
     "leadsTo": [],
-    "image": "/images/artifacts/cornucopia.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/cornucopia.png"
   },
   {
     "id": "legs-of-legion",
     "name": "Legs of Legion",
-    "slot": "MISC",
+    "slot": "misc",
     "rarity": "treasure",
+    "combo": false,
     "cost": 5000,
-    "effect": "+5 level 2 Creature growth/week",
+    "effects": [
+      "+5 level 2 Creature growth/week"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -3536,18 +3875,21 @@
         "source": "+5 level 2 Creature growth/week"
       }
     ],
-    "combinationRaw": "Part of Statue of Legion",
-    "leadsTo": ["Statue of Legion"],
-    "image": "/images/artifacts/legs-of-legion.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Statue of Legion"
+    ],
+    "image": "/images/artifacts/legs-of-legion.png"
   },
   {
     "id": "loins-of-legion",
     "name": "Loins of Legion",
-    "slot": "MISC",
+    "slot": "misc",
     "rarity": "minor",
+    "combo": false,
     "cost": 5000,
-    "effect": "+4 level 3 Creature growth/week",
+    "effects": [
+      "+4 level 3 Creature growth/week"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -3557,18 +3899,21 @@
         "source": "+4 level 3 Creature growth/week"
       }
     ],
-    "combinationRaw": "Part of Statue of Legion",
-    "leadsTo": ["Statue of Legion"],
-    "image": "/images/artifacts/loins-of-legion.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Statue of Legion"
+    ],
+    "image": "/images/artifacts/loins-of-legion.png"
   },
   {
     "id": "torso-of-legion",
     "name": "Torso of Legion",
-    "slot": "MISC",
+    "slot": "misc",
     "rarity": "minor",
+    "combo": false,
     "cost": 5000,
-    "effect": "+3 level 4 Creature growth/week",
+    "effects": [
+      "+3 level 4 Creature growth/week"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -3578,18 +3923,21 @@
         "source": "+3 level 4 Creature growth/week"
       }
     ],
-    "combinationRaw": "Part of Statue of Legion",
-    "leadsTo": ["Statue of Legion"],
-    "image": "/images/artifacts/torso-of-legion.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Statue of Legion"
+    ],
+    "image": "/images/artifacts/torso-of-legion.png"
   },
   {
     "id": "arms-of-legion",
     "name": "Arms of Legion",
-    "slot": "MISC",
+    "slot": "misc",
     "rarity": "major",
+    "combo": false,
     "cost": 5000,
-    "effect": "+2 level 5 Creature growth/week",
+    "effects": [
+      "+2 level 5 Creature growth/week"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -3599,18 +3947,21 @@
         "source": "+2 level 5 Creature growth/week"
       }
     ],
-    "combinationRaw": "Part of Statue of Legion",
-    "leadsTo": ["Statue of Legion"],
-    "image": "/images/artifacts/arms-of-legion.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Statue of Legion"
+    ],
+    "image": "/images/artifacts/arms-of-legion.png"
   },
   {
     "id": "head-of-legion",
     "name": "Head of Legion",
-    "slot": "MISC",
+    "slot": "misc",
     "rarity": "major",
+    "combo": false,
     "cost": 5000,
-    "effect": "+1 level 6 Creature growth/week",
+    "effects": [
+      "+1 level 6 Creature growth/week"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -3620,18 +3971,22 @@
         "source": "+1 level 6 Creature growth/week"
       }
     ],
-    "combinationRaw": "Part of Statue of Legion",
-    "leadsTo": ["Statue of Legion"],
-    "image": "/images/artifacts/head-of-legion.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "leadsTo": [
+      "Statue of Legion"
+    ],
+    "image": "/images/artifacts/head-of-legion.png"
   },
   {
     "id": "statue-of-legion",
     "name": "Statue of Legion",
-    "slot": "COMBO",
+    "slot": "misc",
     "rarity": "relic",
+    "combo": true,
     "cost": 25000,
-    "effect": "+50% Creature growth/week, Gain component effects while the equipped hero is in town",
+    "effects": [
+      "+50% Creature growth/week",
+      "Gain component effects while the equipped hero is in town"
+    ],
     "bonuses": [
       {
         "kind": "secondary",
@@ -3641,18 +3996,19 @@
         "source": "• +50% Creature growth/week• Gain component effects while the equipped hero is in town"
       }
     ],
-    "combinationRaw": "Misc/Misc/Misc/Misc/Misc",
     "leadsTo": [],
-    "image": "/images/artifacts/statue-of-legion.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/statue-of-legion.png"
   },
   {
     "id": "shackles-of-war",
     "name": "Shackles of War",
-    "slot": "MISC",
+    "slot": "misc",
     "rarity": "major",
+    "combo": false,
     "cost": 5000,
-    "effect": "Prevents retreat and surrender",
+    "effects": [
+      "Prevents retreat and surrender"
+    ],
     "bonuses": [
       {
         "kind": "special",
@@ -3669,18 +4025,19 @@
         "source": "surrender"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/shackles-of-war.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/shackles-of-war.png"
   },
   {
     "id": "vial-of-dragon-blood",
     "name": "Vial of Dragon Blood",
-    "slot": "MISC",
+    "slot": "misc",
     "rarity": "relic",
+    "combo": false,
     "cost": 20000,
-    "effect": "+5 Attack skill, +5 Defense skill to allied Dragons",
+    "effects": [
+      "+5 Attack skill, +5 Defense skill to allied Dragons"
+    ],
     "bonuses": [
       {
         "kind": "primary",
@@ -3697,18 +4054,19 @@
         "source": "+5 Defense skill to allied Dragons"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/vial-of-dragon-blood.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/vial-of-dragon-blood.png"
   },
   {
     "id": "sleepkeeper",
     "name": "Sleepkeeper",
-    "slot": "MISC",
+    "slot": "misc",
     "rarity": "relic",
+    "combo": false,
     "cost": 50000,
-    "effect": "Immunity to Mind spells",
+    "effects": [
+      "Immunity to Mind spells"
+    ],
     "bonuses": [
       {
         "kind": "special",
@@ -3718,18 +4076,19 @@
         "source": "Immunity to Mind spells"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/sleepkeeper.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/sleepkeeper.png"
   },
   {
     "id": "horn-of-the-abyss",
     "name": "Horn of the Abyss",
-    "slot": "MISC",
+    "slot": "misc",
     "rarity": "relic",
+    "combo": false,
     "cost": 50000,
-    "effect": "Raises Fangarms from slain stacks of living creatures",
+    "effects": [
+      "Raises Fangarms from slain stacks of living creatures"
+    ],
     "bonuses": [
       {
         "kind": "special",
@@ -3739,9 +4098,7 @@
         "source": "Raises Fangarms from slain stacks of living creatures"
       }
     ],
-    "combinationRaw": "",
     "leadsTo": [],
-    "image": "/images/artifacts/horn-of-the-abyss.png",
-    "source": "List_of_artifacts (HTML dump)"
+    "image": "/images/artifacts/horn-of-the-abyss.png"
   }
 ]
