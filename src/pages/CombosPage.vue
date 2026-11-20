@@ -206,16 +206,6 @@ function confirmReset() {
   color: var(--c-muted);
 }
 
-/* карточка, поменявшая место, плавно переезжает; новые при поиске проявляются */
-.combo-move {
-  transition: transform var(--dur-slow) cubic-bezier(0.65, 0, 0.35, 1);
-}
-.combo-enter-active {
-  transition: opacity var(--dur) var(--ease);
-}
-.combo-enter-from {
-  opacity: 0;
-}
 .combo-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr));
@@ -228,6 +218,23 @@ function confirmReset() {
   border: 1px solid var(--c-border);
   border-radius: 14px;
   padding: 10px 10px 6px;
+}
+/*
+ * Карточка, поменявшая место, плавно переезжает; новые при поиске проявляются.
+ * Селекторы с .combo-card, чтобы не перебивались его собственным transition.
+ */
+.combo-card.combo-move {
+  transition:
+    transform var(--dur-slow) cubic-bezier(0.65, 0, 0.35, 1),
+    border-color var(--dur) var(--ease);
+}
+.combo-card.combo-enter-active {
+  transition:
+    opacity var(--dur) var(--ease),
+    border-color var(--dur) var(--ease);
+}
+.combo-card.combo-enter-from {
+  opacity: 0;
 }
 .combo-card.ready {
   border-color: var(--s-owned);

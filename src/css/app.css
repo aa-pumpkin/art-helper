@@ -26,14 +26,6 @@
   --dur-slow: 900ms;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  :root {
-    --dur-fast: 0ms;
-    --dur: 0ms;
-    --dur-slow: 0ms;
-  }
-}
-
 html,
 body {
   background: var(--c-bg);
