@@ -1,470 +1,1015 @@
 {
-  "admirals-hat": {
-    "name": "Шляпа Адмирала"
-  },
-  "ambassadors-sash": {
-    "name": "Пояс Посланника"
-  },
-  "amulet-of-the-undertaker": {
-    "name": "Амулет Undertaker"
-  },
-  "angel-feather-arrows": {
-    "name": "Ангела Feather Стрелы"
-  },
-  "angel-wings": {
-    "name": "Ангела Wings"
-  },
-  "angelic-alliance": {
-    "name": "Ангельский Союз"
-  },
-  "armageddons-blade": {
-    "name": "Клинок Армагеддона"
-  },
-  "armor-of-the-damned": {
-    "name": "Доспехи Проклятых"
-  },
-  "armor-of-wonder": {
-    "name": "Доспехи of Wonder"
-  },
-  "arms-of-legion": {
-    "name": "Arms of Legion"
-  },
-  "badge-of-courage": {
-    "name": "Знак of Отваги"
-  },
-  "bird-of-perception": {
-    "name": "Bird of Perception"
+  "centaurs-axe": {
+    "name": "Секира кентавра",
+    "effects": [
+      "+2 к атаке"
+    ]
   },
   "blackshard-of-the-dead-knight": {
-    "name": "Blackshard Dead Knight"
-  },
-  "boots-of-levitation": {
-    "name": "Сапоги of Левитации"
-  },
-  "boots-of-polarity": {
-    "name": "Сапоги of Polarity"
-  },
-  "boots-of-speed": {
-    "name": "Сапоги of Скорости"
-  },
-  "bow-of-elven-cherrywood": {
-    "name": "Лук of Elven Cherrywood"
-  },
-  "bow-of-the-sharpshooter": {
-    "name": "Лук Снайпера"
-  },
-  "bowstring-of-the-unicorns-mane": {
-    "name": "Mane Bowstring of the Unicornа"
-  },
-  "breastplate-of-brimstone": {
-    "name": "Нагрудник of Серного Камня"
-  },
-  "breastplate-of-petrified-wood": {
-    "name": "Нагрудник of Petrified Wood"
-  },
-  "buckler-of-the-gnoll-king": {
-    "name": "Buckler Gnoll King"
-  },
-  "cape-of-conjuring": {
-    "name": "Плащ of Conjuring"
-  },
-  "cape-of-silence": {
-    "name": "Плащ of Silence"
-  },
-  "cape-of-velocity": {
-    "name": "Плащ of Стремительности"
-  },
-  "cards-of-prophecy": {
-    "name": "Cards of Prophecy"
-  },
-  "celestial-necklace-of-bliss": {
-    "name": "Небесное Ожерелье of Блаженства"
-  },
-  "centaurs-axe": {
-    "name": "Топор Кентавра"
-  },
-  "charm-of-eclipse": {
-    "name": "Charm of Eclipse"
-  },
-  "charm-of-mana": {
-    "name": "Charm of Mana"
-  },
-  "cloak-of-the-undead-king": {
-    "name": "Плащ Короля Нежити"
-  },
-  "clover-of-fortune": {
-    "name": "Clover of Fortune"
-  },
-  "collar-of-conjuring": {
-    "name": "Collar of Conjuring"
-  },
-  "cornucopia": {
-    "name": "Рог Изобилия"
-  },
-  "crest-of-valor": {
-    "name": "Герб of Доблести"
-  },
-  "crown-of-dragontooth": {
-    "name": "Корона of Dragontooth"
-  },
-  "crown-of-the-five-seas": {
-    "name": "Корона Five Seas"
-  },
-  "crown-of-the-supreme-magi": {
-    "name": "Корона Supreme Magi"
-  },
-  "dead-mans-boots": {
-    "name": "Сапоги Dead Manа"
-  },
-  "demons-horseshoe": {
-    "name": "Horseshoe Demonа"
-  },
-  "diplomats-cloak": {
-    "name": "Плащ Дипломата"
-  },
-  "diplomats-ring": {
-    "name": "Кольцо Дипломата"
-  },
-  "dragon-scale-armor": {
-    "name": "Дракона Scale Доспехи"
-  },
-  "dragon-scale-shield": {
-    "name": "Дракона Scale Щит"
-  },
-  "dragon-wing-tabard": {
-    "name": "Дракона Wing Плащ"
-  },
-  "dragonbone-greaves": {
-    "name": "Драконьей Кости Наколенники"
-  },
-  "elixir-of-life": {
-    "name": "Эликсир Жизни"
-  },
-  "emblem-of-cognizance": {
-    "name": "Emblem of Cognizance"
-  },
-  "endless-bag-of-gold": {
-    "name": "Бесконечный Мешок of Gold"
-  },
-  "endless-purse-of-gold": {
-    "name": "Бесконечный Кошель of Gold"
-  },
-  "endless-sack-of-gold": {
-    "name": "Бесконечный Sack of Gold"
-  },
-  "equestrians-gloves": {
-    "name": "Перчатки Equestrianа"
-  },
-  "everflowing-crystal-cloak": {
-    "name": "Бесконечного Crystal Плащ"
-  },
-  "everpouring-vial-of-mercury": {
-    "name": "Бесконечной Сосуд of Mercury"
-  },
-  "eversmoking-ring-of-sulfur": {
-    "name": "Eversmoking Кольцо of Sulfur"
-  },
-  "garniture-of-interference": {
-    "name": "Garniture of Interference"
-  },
-  "glyph-of-gallantry": {
-    "name": "Знак of Рыцарства"
-  },
-  "golden-bow": {
-    "name": "Golden Лук"
-  },
-  "golden-goose": {
-    "name": "Golden Goose"
+    "name": "Блэкшард мёртвого рыцаря",
+    "effects": [
+      "+3 к атаке"
+    ]
   },
   "greater-gnolls-flail": {
-    "name": "Кистень Greater Gnollа"
-  },
-  "head-of-legion": {
-    "name": "Head of Legion"
-  },
-  "hellstorm-helmet": {
-    "name": "Сатанинской Ярости Шлем"
-  },
-  "helm-of-chaos": {
-    "name": "Шлем of Хаоса"
-  },
-  "helm-of-heavenly-enlightenment": {
-    "name": "Шлем of Небесного Просвещения"
-  },
-  "helm-of-the-alabaster-unicorn": {
-    "name": "Шлем Alabaster Unicorn"
-  },
-  "hideous-mask": {
-    "name": "Hideous Mask"
-  },
-  "horn-of-the-abyss": {
-    "name": "Рог Бездны"
-  },
-  "hourglass-of-the-evil-hour": {
-    "name": "Hourglass Evil Hour"
-  },
-  "inexhaustible-cart-of-lumber": {
-    "name": "Неиссякаемая Телега of Lumber"
-  },
-  "inexhaustible-cart-of-ore": {
-    "name": "Неиссякаемая Телега of Ore"
-  },
-  "ironfist-of-the-ogre": {
-    "name": "Ironfist Огр"
-  },
-  "ladybird-of-luck": {
-    "name": "Ladybird of Luck"
-  },
-  "legs-of-legion": {
-    "name": "Legs of Legion"
-  },
-  "lions-shield-of-courage": {
-    "name": "Shield of Courage Lionа"
-  },
-  "loins-of-legion": {
-    "name": "Loins of Legion"
-  },
-  "mystic-orb-of-mana": {
-    "name": "Mystic Сфера of Mana"
-  },
-  "necklace-of-dragonteeth": {
-    "name": "Ожерелье of Зубов Дракона"
-  },
-  "necklace-of-ocean-guidance": {
-    "name": "Ожерелье of Океана Guidance"
-  },
-  "necklace-of-swiftness": {
-    "name": "Ожерелье of Быстроты"
+    "name": "Кистень великого гнолла",
+    "effects": [
+      "+4 к атаке"
+    ]
   },
   "ogres-club-of-havoc": {
-    "name": "Club of Havoc Огра"
-  },
-  "orb-of-driving-rain": {
-    "name": "Сфера of Driving Rain"
-  },
-  "orb-of-inhibition": {
-    "name": "Сфера of Запрещения"
-  },
-  "orb-of-silt": {
-    "name": "Сфера of Илистого Озера"
-  },
-  "orb-of-tempestuous-fire": {
-    "name": "Сфера of Tempestuous Огня"
-  },
-  "orb-of-the-firmament": {
-    "name": "Сфера Небесного Свода"
-  },
-  "orb-of-vulnerability": {
-    "name": "Сфера of Уязвимости"
-  },
-  "pendant-of-courage": {
-    "name": "Амулет of Отваги"
-  },
-  "pendant-of-death": {
-    "name": "Амулет of Смерти"
-  },
-  "pendant-of-dispassion": {
-    "name": "Амулет of Dispassion"
-  },
-  "pendant-of-downfall": {
-    "name": "Амулет of Downfall"
-  },
-  "pendant-of-free-will": {
-    "name": "Амулет of Free Will"
-  },
-  "pendant-of-holiness": {
-    "name": "Амулет of Holiness"
-  },
-  "pendant-of-life": {
-    "name": "Амулет of Жизни"
-  },
-  "pendant-of-negativity": {
-    "name": "Амулет of Отрицательности"
-  },
-  "pendant-of-reflection": {
-    "name": "Амулет of Reflection"
-  },
-  "pendant-of-second-sight": {
-    "name": "Амулет of Second Sight"
-  },
-  "pendant-of-total-recall": {
-    "name": "Амулет of Total Recall"
-  },
-  "plate-of-dying-light": {
-    "name": "Латы of Dying Light"
-  },
-  "power-of-the-dragon-father": {
-    "name": "Сила Отца Драконов"
-  },
-  "quiet-eye-of-the-dragon": {
-    "name": "Quiet Eye Дракона"
-  },
-  "recanters-cloak": {
-    "name": "Плащ Recanterа"
-  },
-  "red-dragon-flame-tongue": {
-    "name": "Red Дракона Flame Tongue"
-  },
-  "rib-cage": {
-    "name": "Rib Cage"
-  },
-  "ring-of-conjuring": {
-    "name": "Кольцо of Conjuring"
-  },
-  "ring-of-infinite-gems": {
-    "name": "Кольцо of Бесконечных Gems"
-  },
-  "ring-of-life": {
-    "name": "Кольцо of Жизни"
-  },
-  "ring-of-oblivion": {
-    "name": "Кольцо of Oblivion"
-  },
-  "ring-of-suppression": {
-    "name": "Кольцо of Suppression"
-  },
-  "ring-of-the-magi": {
-    "name": "Кольцо Мага"
-  },
-  "ring-of-the-wayfarer": {
-    "name": "Кольцо Wayfarer"
-  },
-  "ring-of-vitality": {
-    "name": "Кольцо of Жизненной Силы"
-  },
-  "royal-armor-of-nix": {
-    "name": "Royal Доспехи of Nix"
-  },
-  "runes-of-imminency": {
-    "name": "Runes of Imminency"
-  },
-  "sandals-of-the-saint": {
-    "name": "Sandals Saint"
-  },
-  "scales-of-the-greater-basilisk": {
-    "name": "Scales Greater Basilisk"
-  },
-  "sea-captains-hat": {
-    "name": "Шляпа Sea Captainа"
-  },
-  "seal-of-sunset": {
-    "name": "Seal of Sunset"
-  },
-  "sentinels-shield": {
-    "name": "Щит Sentinelа"
-  },
-  "shackles-of-war": {
-    "name": "Shackles of War"
-  },
-  "shamans-puppet": {
-    "name": "Puppet Shamanа"
-  },
-  "shield-of-naval-glory": {
-    "name": "Щит of Naval Glory"
-  },
-  "shield-of-the-damned": {
-    "name": "Щит Проклятых"
-  },
-  "shield-of-the-dwarven-lords": {
-    "name": "Щит Dwarven Lords"
-  },
-  "shield-of-the-yawning-dead": {
-    "name": "Щит Yawning Dead"
-  },
-  "skull-helmet": {
-    "name": "Skull Шлем"
-  },
-  "sleepkeeper": {
-    "name": "Sleepkeeper"
-  },
-  "speculum": {
-    "name": "Speculum"
-  },
-  "spellbinders-hat": {
-    "name": "Шляпа Заклинателя"
-  },
-  "sphere-of-permanence": {
-    "name": "Сфера of Постоянства"
-  },
-  "spirit-of-oppression": {
-    "name": "Spirit of Oppression"
-  },
-  "spyglass": {
-    "name": "Подзорная труба"
-  },
-  "statesmans-medal": {
-    "name": "Медаль Государственника"
-  },
-  "statue-of-legion": {
-    "name": "Statue of Legion"
-  },
-  "still-eye-of-the-dragon": {
-    "name": "Still Eye Дракона"
-  },
-  "stoic-watchman": {
-    "name": "Stoic Watchman"
-  },
-  "surcoat-of-counterpoise": {
-    "name": "Surcoat of Counterpoise"
+    "name": "Карающая дубина огра",
+    "effects": [
+      "+5 к атаке"
+    ]
   },
   "sword-of-hellfire": {
-    "name": "Меч of Ада"
-  },
-  "sword-of-judgement": {
-    "name": "Меч of Judgement"
-  },
-  "talisman-of-mana": {
-    "name": "Talisman of Mana"
-  },
-  "targ-of-the-rampaging-ogre": {
-    "name": "Targ Rampaging Ogre"
-  },
-  "thunder-helmet": {
-    "name": "Небесного Грома Шлем"
-  },
-  "titans-cuirass": {
-    "name": "Кираса Титана"
-  },
-  "titans-gladius": {
-    "name": "Гладиус Титана"
-  },
-  "titans-thunder": {
-    "name": "Гром Титана"
-  },
-  "tome-of-air": {
-    "name": "Книга of Воздуха"
-  },
-  "tome-of-earth": {
-    "name": "Книга of Земли"
-  },
-  "tome-of-fire": {
-    "name": "Книга of Огня"
-  },
-  "tome-of-water": {
-    "name": "Книга of Воды"
-  },
-  "torso-of-legion": {
-    "name": "Torso of Legion"
+    "name": "Меч адского пламени",
+    "effects": [
+      "+6 к атаке"
+    ]
   },
   "trident-of-dominion": {
-    "name": "Trident of Dominion"
+    "name": "Трезубец могущества",
+    "effects": [
+      "+7 к атаке"
+    ]
+  },
+  "red-dragon-flame-tongue": {
+    "name": "Языки пламени красного дракона",
+    "effects": [
+      "+2 к атаке",
+      "+2 к защите"
+    ]
+  },
+  "titans-gladius": {
+    "name": "Гладиус титана",
+    "effects": [
+      "+12 к атаке",
+      "−3 к защите"
+    ]
+  },
+  "sword-of-judgement": {
+    "name": "Меч правосудия",
+    "effects": [
+      "+5 к атаке",
+      "+5 к защите",
+      "+5 к силе магии",
+      "+5 к знанию"
+    ]
+  },
+  "armageddons-blade": {
+    "name": "Клинок Армагеддона",
+    "effects": [
+      "+3 к атаке",
+      "+3 к защите",
+      "+3 к силе магии",
+      "+6 к знанию",
+      "Армагеддон (эксперт)",
+      "Иммунитет к заклинанию «Армагеддон»"
+    ]
+  },
+  "ironfist-of-the-ogre": {
+    "name": "Железный кулак огра",
+    "effects": [
+      "+5 к атаке",
+      "+5 к защите",
+      "+4 к силе магии",
+      "+4 к знанию",
+      "Жажда крови, Контрудар, Огненный щит и Ускорение (эксперт) на всех союзников на 50 раундов"
+    ]
+  },
+  "titans-thunder": {
+    "name": "Гром титана",
+    "effects": [
+      "+9 к атаке",
+      "+9 к защите",
+      "+8 к силе магии",
+      "+8 к знанию",
+      "Заклинание «Гром титана» (600 урона, без маны)",
+      "Даёт постоянную книгу заклинаний"
+    ]
+  },
+  "angelic-alliance": {
+    "name": "Альянс Ангелов",
+    "effects": [
+      "+21 к атаке",
+      "+21 к защите",
+      "+21 к силе магии",
+      "+21 к знанию",
+      "Молитва (эксперт) на всех союзников на 10 раундов",
+      "Нет штрафа к боевому духу за смешивание существ добрых и нейтральных городов"
+    ]
+  },
+  "shield-of-the-dwarven-lords": {
+    "name": "Щит короля гномов",
+    "effects": [
+      "+2 к защите"
+    ]
+  },
+  "shield-of-the-yawning-dead": {
+    "name": "Щит тоскующих мертвецов",
+    "effects": [
+      "+3 к защите"
+    ]
+  },
+  "buckler-of-the-gnoll-king": {
+    "name": "Щит короля гноллов",
+    "effects": [
+      "+4 к защите"
+    ]
+  },
+  "targ-of-the-rampaging-ogre": {
+    "name": "Щит яростного огра",
+    "effects": [
+      "+5 к защите"
+    ]
+  },
+  "shield-of-the-damned": {
+    "name": "Щит проклятых",
+    "effects": [
+      "+6 к защите"
+    ]
+  },
+  "shield-of-naval-glory": {
+    "name": "Щит морской славы",
+    "effects": [
+      "+7 к защите"
+    ]
+  },
+  "dragon-scale-shield": {
+    "name": "Щит из чешуи дракона",
+    "effects": [
+      "+3 к атаке",
+      "+3 к защите"
+    ]
+  },
+  "lions-shield-of-courage": {
+    "name": "Щит львиной храбрости",
+    "effects": [
+      "+4 к атаке",
+      "+4 к защите",
+      "+4 к силе магии",
+      "+4 к знанию"
+    ]
+  },
+  "sentinels-shield": {
+    "name": "Щит часового",
+    "effects": [
+      "−3 к атаке",
+      "+12 к защите"
+    ]
+  },
+  "breastplate-of-petrified-wood": {
+    "name": "Нагрудник из окаменелого дерева",
+    "effects": [
+      "+1 к силе магии"
+    ]
+  },
+  "rib-cage": {
+    "name": "Рёбра",
+    "effects": [
+      "+2 к силе магии"
+    ]
+  },
+  "scales-of-the-greater-basilisk": {
+    "name": "Кольчуга великого василиска",
+    "effects": [
+      "+3 к силе магии"
+    ]
   },
   "tunic-of-the-cyclops-king": {
-    "name": "Туника Cyclops King"
+    "name": "Туника короля циклопов",
+    "effects": [
+      "+4 к силе магии"
+    ]
   },
-  "vampires-cowl": {
-    "name": "Cowl Vampireа"
+  "breastplate-of-brimstone": {
+    "name": "Доспехи самородной серы",
+    "effects": [
+      "+5 к силе магии"
+    ]
   },
-  "vial-of-dragon-blood": {
-    "name": "Сосуд of Дракона Blood"
+  "royal-armor-of-nix": {
+    "name": "Королевские доспехи никсов",
+    "effects": [
+      "+6 к силе магии"
+    ]
   },
-  "vial-of-lifeblood": {
-    "name": "Сосуд Крови Жизни"
+  "armor-of-wonder": {
+    "name": "Магические доспехи",
+    "effects": [
+      "+1 к атаке",
+      "+1 к защите",
+      "+1 к силе магии",
+      "+1 к знанию"
+    ]
+  },
+  "plate-of-dying-light": {
+    "name": "Латы гаснущих светил",
+    "effects": [
+      "−25% к силе магии врага"
+    ]
+  },
+  "dragon-scale-armor": {
+    "name": "Доспех из чешуи дракона",
+    "effects": [
+      "+4 к атаке",
+      "+4 к защите"
+    ]
+  },
+  "titans-cuirass": {
+    "name": "Кираса титана",
+    "effects": [
+      "+10 к силе магии",
+      "−2 к знанию"
+    ]
+  },
+  "armor-of-the-damned": {
+    "name": "Доспехи проклятого",
+    "effects": [
+      "+3 к атаке",
+      "+3 к защите",
+      "+2 к силе магии",
+      "+2 к знанию",
+      "Проклятие, Неудача, Замедление и Слабость (эксперт) на всех врагов на 50 раундов"
+    ]
+  },
+  "power-of-the-dragon-father": {
+    "name": "Мощь Отца драконов",
+    "effects": [
+      "+16 к атаке",
+      "+16 к защите",
+      "+16 к силе магии",
+      "+16 к знанию",
+      "+1 к удаче",
+      "+1 к боевому духу",
+      "Иммунитет к заклинаниям 1–4 уровня"
+    ]
+  },
+  "helm-of-the-alabaster-unicorn": {
+    "name": "Шлем белого единорога",
+    "effects": [
+      "+1 к знанию"
+    ]
+  },
+  "skull-helmet": {
+    "name": "Шлем-череп",
+    "effects": [
+      "+2 к знанию"
+    ]
+  },
+  "helm-of-chaos": {
+    "name": "Шлем Хаоса",
+    "effects": [
+      "+3 к знанию"
+    ]
+  },
+  "crown-of-the-supreme-magi": {
+    "name": "Корона верховного мага",
+    "effects": [
+      "+4 к знанию"
+    ]
+  },
+  "hellstorm-helmet": {
+    "name": "Шлем сатанинской ярости",
+    "effects": [
+      "+5 к знанию"
+    ]
+  },
+  "crown-of-the-five-seas": {
+    "name": "Корона пяти морей",
+    "effects": [
+      "+6 к знанию"
+    ]
+  },
+  "crown-of-dragontooth": {
+    "name": "Корона из зубов дракона",
+    "effects": [
+      "+4 к силе магии",
+      "+4 к знанию"
+    ]
+  },
+  "thunder-helmet": {
+    "name": "Шлем небесного грома",
+    "effects": [
+      "−2 к силе магии",
+      "+10 к знанию"
+    ]
+  },
+  "sea-captains-hat": {
+    "name": "Шляпа морского капитана",
+    "effects": [
+      "+500 очков передвижения по морю",
+      "Заклинание «Вызов корабля»",
+      "Заклинание «Затопление корабля»",
+      "Защита армии от водоворотов"
+    ]
+  },
+  "helm-of-heavenly-enlightenment": {
+    "name": "Шлем небесного просветления",
+    "effects": [
+      "+6 к атаке",
+      "+6 к защите",
+      "+6 к силе магии",
+      "+6 к знанию"
+    ]
+  },
+  "spellbinders-hat": {
+    "name": "Шляпа волшебника",
+    "effects": [
+      "Все заклинания 5 уровня"
+    ]
+  },
+  "admirals-hat": {
+    "name": "Шляпа адмирала",
+    "effects": [
+      "+1500 очков передвижения по морю",
+      "Заклинание «Вызов корабля»",
+      "Заклинание «Затопление корабля»",
+      "Защита армии от водоворотов",
+      "Нет штрафа за посадку на корабль и высадку"
+    ]
+  },
+  "dragonbone-greaves": {
+    "name": "Поножи из кости дракона",
+    "effects": [
+      "+1 к силе магии",
+      "+1 к знанию"
+    ]
+  },
+  "sandals-of-the-saint": {
+    "name": "Сандалии святого",
+    "effects": [
+      "+2 к атаке",
+      "+2 к защите",
+      "+2 к силе магии",
+      "+2 к знанию"
+    ]
+  },
+  "boots-of-speed": {
+    "name": "Сапоги-скороходы",
+    "effects": [
+      "+400 очков передвижения"
+    ]
   },
   "wayfarers-boots": {
-    "name": "Сапоги Wayfarerа"
+    "name": "Сапоги странника",
+    "effects": [
+      "Нет штрафа передвижения по бездорожью"
+    ]
+  },
+  "dead-mans-boots": {
+    "name": "Сапоги мертвеца",
+    "effects": [
+      "+7.5% к Некромантии"
+    ]
+  },
+  "boots-of-polarity": {
+    "name": "Сапоги полярности",
+    "effects": [
+      "+15% к Сопротивлению"
+    ]
+  },
+  "boots-of-levitation": {
+    "name": "Сапоги левитации",
+    "effects": [
+      "Постоянное «Хождение по воде»"
+    ]
+  },
+  "dragon-wing-tabard": {
+    "name": "Плащ из крыльев дракона",
+    "effects": [
+      "+2 к силе магии",
+      "+2 к знанию"
+    ]
+  },
+  "cape-of-conjuring": {
+    "name": "Магическая накидка",
+    "effects": [
+      "+3 к длительности заклинаний"
+    ]
+  },
+  "vampires-cowl": {
+    "name": "Мантия вампира",
+    "effects": [
+      "+5% к Некромантии"
+    ]
+  },
+  "surcoat-of-counterpoise": {
+    "name": "Туника равновесия",
+    "effects": [
+      "+10% к Сопротивлению"
+    ]
+  },
+  "ambassadors-sash": {
+    "name": "Лента посла",
+    "effects": [
+      "−10% к цене откупа"
+    ]
+  },
+  "everflowing-crystal-cloak": {
+    "name": "Плащ бесконечных кристаллов",
+    "effects": [
+      "+1 кристалл в день"
+    ]
+  },
+  "recanters-cloak": {
+    "name": "Плащ отречения",
+    "effects": [
+      "Запрещает заклинания 3+ уровня"
+    ]
+  },
+  "cape-of-velocity": {
+    "name": "Накидка скорости",
+    "effects": [
+      "+2 к скорости отрядов"
+    ]
+  },
+  "cape-of-silence": {
+    "name": "Накидка молчания",
+    "effects": [
+      "Запрещает заклинания 1–2 уровня"
+    ]
+  },
+  "angel-wings": {
+    "name": "Крылья ангела",
+    "effects": [
+      "Постоянный «Полёт»"
+    ]
+  },
+  "cloak-of-the-undead-king": {
+    "name": "Плащ короля нежити",
+    "effects": [
+      "+15% к Некромантии",
+      "Поднимает скелетов, зомби, привидений или личей в зависимости от уровня Некромантии"
+    ]
+  },
+  "diplomats-cloak": {
+    "name": "Мантия дипломата",
+    "effects": [
+      "−30% к цене откупа",
+      "Можно бежать и откупаться в боях с нейтралами и при обороне города",
+      "Сила армии для Дипломатии ×3"
+    ]
+  },
+  "necklace-of-dragonteeth": {
+    "name": "Ожерелье из зубов дракона",
+    "effects": [
+      "+3 к силе магии",
+      "+3 к знанию"
+    ]
+  },
+  "celestial-necklace-of-bliss": {
+    "name": "Ожерелье Божественной благодати",
+    "effects": [
+      "+3 к атаке",
+      "+3 к защите",
+      "+3 к силе магии",
+      "+3 к знанию"
+    ]
+  },
+  "collar-of-conjuring": {
+    "name": "Магический ошейник",
+    "effects": [
+      "+1 к длительности заклинаний"
+    ]
+  },
+  "pendant-of-dispassion": {
+    "name": "Амулет бесстрастия",
+    "effects": [
+      "Иммунитет к заклинанию «Берсерк»"
+    ]
+  },
+  "pendant-of-free-will": {
+    "name": "Кулон свободной воли",
+    "effects": [
+      "Иммунитет к заклинанию «Гипноз»"
+    ]
+  },
+  "pendant-of-holiness": {
+    "name": "Кулон святости",
+    "effects": [
+      "Иммунитет к заклинанию «Проклятие»"
+    ]
+  },
+  "amulet-of-the-undertaker": {
+    "name": "Амулет гробовщика",
+    "effects": [
+      "+2.5% к Некромантии"
+    ]
+  },
+  "pendant-of-life": {
+    "name": "Кулон жизни",
+    "effects": [
+      "Иммунитет к заклинанию «Волна смерти»"
+    ]
+  },
+  "pendant-of-death": {
+    "name": "Кулон смерти",
+    "effects": [
+      "Иммунитет к заклинанию «Уничтожить нежить»"
+    ]
+  },
+  "pendant-of-total-recall": {
+    "name": "Кулон абсолютной памяти",
+    "effects": [
+      "Иммунитет к заклинанию «Забывчивость»"
+    ]
+  },
+  "garniture-of-interference": {
+    "name": "Колье неприступности",
+    "effects": [
+      "+5% к Сопротивлению"
+    ]
+  },
+  "pendant-of-second-sight": {
+    "name": "Кулон ясновидения",
+    "effects": [
+      "Иммунитет к заклинанию «Слепота»"
+    ]
+  },
+  "pendant-of-negativity": {
+    "name": "Кулон отрицательности",
+    "effects": [
+      "Иммунитет к заклинанию «Удар молнии»",
+      "Иммунитет к заклинанию «Цепная молния»"
+    ]
+  },
+  "statesmans-medal": {
+    "name": "Медаль чиновника",
+    "effects": [
+      "−10% к цене откупа"
+    ]
+  },
+  "necklace-of-swiftness": {
+    "name": "Ожерелье стремительности",
+    "effects": [
+      "+1 к скорости отрядов"
+    ]
+  },
+  "pendant-of-courage": {
+    "name": "Кулон смелости",
+    "effects": [
+      "+3 к удаче",
+      "+3 к боевому духу"
+    ]
+  },
+  "pendant-of-downfall": {
+    "name": "Кулон разорения",
+    "effects": [
+      "−2 к боевому духу врага"
+    ]
+  },
+  "necklace-of-ocean-guidance": {
+    "name": "Ожерелье морского провидения",
+    "effects": [
+      "+1000 очков передвижения по морю"
+    ]
+  },
+  "pendant-of-reflection": {
+    "name": "Кулон отражения",
+    "effects": [
+      "+50% к Сопротивлению"
+    ]
+  },
+  "still-eye-of-the-dragon": {
+    "name": "Застывший глаз дракона",
+    "effects": [
+      "+1 к удаче",
+      "+1 к боевому духу"
+    ]
+  },
+  "quiet-eye-of-the-dragon": {
+    "name": "Неподвижный глаз дракона",
+    "effects": [
+      "+1 к атаке",
+      "+1 к защите"
+    ]
+  },
+  "ring-of-conjuring": {
+    "name": "Магическое кольцо",
+    "effects": [
+      "+2 к длительности заклинаний"
+    ]
+  },
+  "ring-of-suppression": {
+    "name": "Кольцо подавления",
+    "effects": [
+      "−1 к боевому духу врага"
+    ]
+  },
+  "equestrians-gloves": {
+    "name": "Перчатки всадника",
+    "effects": [
+      "+200 очков передвижения"
+    ]
+  },
+  "seal-of-sunset": {
+    "name": "Печать заката",
+    "effects": [
+      "−10% к силе магии врага"
+    ]
+  },
+  "diplomats-ring": {
+    "name": "Кольцо дипломата",
+    "effects": [
+      "−10% к цене откупа"
+    ]
+  },
+  "ring-of-the-wayfarer": {
+    "name": "Кольцо странника",
+    "effects": [
+      "+1 к скорости отрядов"
+    ]
+  },
+  "ring-of-vitality": {
+    "name": "Кольцо жизненной силы",
+    "effects": [
+      "+1 к здоровью отрядов"
+    ]
+  },
+  "ring-of-life": {
+    "name": "Кольцо жизни",
+    "effects": [
+      "+1 к здоровью отрядов"
+    ]
+  },
+  "ring-of-infinite-gems": {
+    "name": "Кольцо драгоценных камней",
+    "effects": [
+      "+1 самоцвет в день"
+    ]
+  },
+  "eversmoking-ring-of-sulfur": {
+    "name": "Вечное кольцо серы",
+    "effects": [
+      "+1 сера в день"
+    ]
+  },
+  "ring-of-oblivion": {
+    "name": "Кольцо забвения",
+    "effects": [
+      "Все потери в бою невосполнимы"
+    ]
+  },
+  "ring-of-the-magi": {
+    "name": "Кольцо мага",
+    "effects": [
+      "+56 к длительности заклинаний"
+    ]
+  },
+  "charm-of-eclipse": {
+    "name": "Амулет затмения",
+    "effects": [
+      "−10% к силе магии врага"
+    ]
+  },
+  "charm-of-mana": {
+    "name": "Амулет маны",
+    "effects": [
+      "+1 маны в день"
+    ]
+  },
+  "talisman-of-mana": {
+    "name": "Талисман маны",
+    "effects": [
+      "+2 маны в день"
+    ]
+  },
+  "mystic-orb-of-mana": {
+    "name": "Волшебная сфера маны",
+    "effects": [
+      "+3 маны в день"
+    ]
   },
   "wizards-well": {
-    "name": "Источник Волшебника"
+    "name": "Колодец волшебника",
+    "effects": [
+      "Полное восстановление маны каждый день"
+    ]
+  },
+  "orb-of-silt": {
+    "name": "Сфера илистого озера",
+    "effects": [
+      "+50% к урону магии Земли"
+    ]
+  },
+  "orb-of-the-firmament": {
+    "name": "Сфера небесного свода",
+    "effects": [
+      "+50% к урону магии Воздуха"
+    ]
+  },
+  "orb-of-driving-rain": {
+    "name": "Сфера проливного дождя",
+    "effects": [
+      "+50% к урону магии Воды"
+    ]
+  },
+  "orb-of-tempestuous-fire": {
+    "name": "Сфера бушующего огня",
+    "effects": [
+      "+50% к урону магии Огня"
+    ]
+  },
+  "tome-of-earth": {
+    "name": "Книга магии Земли",
+    "effects": [
+      "Все заклинания магии Земли"
+    ]
+  },
+  "tome-of-air": {
+    "name": "Книга магии Воздуха",
+    "effects": [
+      "Все заклинания магии Воздуха"
+    ]
+  },
+  "tome-of-water": {
+    "name": "Книга магии Воды",
+    "effects": [
+      "Все заклинания магии Воды"
+    ]
+  },
+  "tome-of-fire": {
+    "name": "Книга магии Огня",
+    "effects": [
+      "Все заклинания магии Огня"
+    ]
+  },
+  "sphere-of-permanence": {
+    "name": "Сфера постоянства",
+    "effects": [
+      "Иммунитет к заклинанию «Снятие заклинаний»"
+    ]
+  },
+  "orb-of-inhibition": {
+    "name": "Сфера запрещения",
+    "effects": [
+      "Запрещает все заклинания"
+    ]
+  },
+  "orb-of-vulnerability": {
+    "name": "Сфера уязвимости",
+    "effects": [
+      "Снимает иммунитет существ к магии"
+    ]
+  },
+  "bird-of-perception": {
+    "name": "Птица проницательности",
+    "effects": [
+      "+5% к Орлиному глазу"
+    ]
+  },
+  "stoic-watchman": {
+    "name": "Стойкий часовой",
+    "effects": [
+      "+10% к Орлиному глазу"
+    ]
+  },
+  "emblem-of-cognizance": {
+    "name": "Символ знания",
+    "effects": [
+      "+15% к Орлиному глазу"
+    ]
+  },
+  "clover-of-fortune": {
+    "name": "Клевер удачи",
+    "effects": [
+      "+1 к удаче"
+    ]
+  },
+  "ladybird-of-luck": {
+    "name": "Голубка удачи",
+    "effects": [
+      "+1 к удаче"
+    ]
+  },
+  "cards-of-prophecy": {
+    "name": "Карты пророчества",
+    "effects": [
+      "+1 к удаче"
+    ]
+  },
+  "hourglass-of-the-evil-hour": {
+    "name": "Песочные часы недоброго часа",
+    "effects": [
+      "Отменяет положительную удачу"
+    ]
+  },
+  "runes-of-imminency": {
+    "name": "Руны неизбежности",
+    "effects": [
+      "−1 к удаче врага"
+    ]
+  },
+  "demons-horseshoe": {
+    "name": "Подкова демона",
+    "effects": [
+      "−1 к удаче врага"
+    ]
+  },
+  "shamans-puppet": {
+    "name": "Кукла шамана",
+    "effects": [
+      "−2 к удаче врага"
+    ]
+  },
+  "glyph-of-gallantry": {
+    "name": "Глиф доблести",
+    "effects": [
+      "+1 к боевому духу"
+    ]
+  },
+  "crest-of-valor": {
+    "name": "Знак отваги",
+    "effects": [
+      "+1 к боевому духу"
+    ]
+  },
+  "badge-of-courage": {
+    "name": "Медаль мужества",
+    "effects": [
+      "+1 к боевому духу"
+    ]
+  },
+  "spirit-of-oppression": {
+    "name": "Дух уныния",
+    "effects": [
+      "Отменяет положительный боевой дух"
+    ]
+  },
+  "hideous-mask": {
+    "name": "Устрашающая маска",
+    "effects": [
+      "−1 к боевому духу врага"
+    ]
+  },
+  "spyglass": {
+    "name": "Подзорная труба",
+    "effects": [
+      "+1 к радиусу обзора"
+    ]
+  },
+  "speculum": {
+    "name": "Телескоп",
+    "effects": [
+      "+1 к радиусу обзора"
+    ]
+  },
+  "golden-bow": {
+    "name": "Золотой лук",
+    "effects": [
+      "Нет штрафа за дальность и препятствия"
+    ]
+  },
+  "bow-of-elven-cherrywood": {
+    "name": "Лук из вишнёвого дерева эльфов",
+    "effects": [
+      "+5% к Стрельбе"
+    ]
+  },
+  "bowstring-of-the-unicorns-mane": {
+    "name": "Тетива из гривы единорога",
+    "effects": [
+      "+10% к Стрельбе"
+    ]
+  },
+  "angel-feather-arrows": {
+    "name": "Стрелы из ангельских перьев",
+    "effects": [
+      "+15% к Стрельбе"
+    ]
+  },
+  "bow-of-the-sharpshooter": {
+    "name": "Лук снайпера",
+    "effects": [
+      "+30% к Стрельбе",
+      "Нет штрафа за дальность и препятствия",
+      "Стрелки союзника стреляют даже в упор"
+    ]
+  },
+  "vial-of-lifeblood": {
+    "name": "Склянка жизненной силы",
+    "effects": [
+      "+2 к здоровью отрядов"
+    ]
+  },
+  "elixir-of-life": {
+    "name": "Эликсир жизни",
+    "effects": [
+      "+4 к здоровью отрядов",
+      "+25% к здоровью отрядов",
+      "Союзные отряды получают регенерацию"
+    ]
+  },
+  "endless-purse-of-gold": {
+    "name": "Неиссякаемая мошна золота",
+    "effects": [
+      "+500 золота в день"
+    ]
+  },
+  "endless-bag-of-gold": {
+    "name": "Неиссякаемая сума золота",
+    "effects": [
+      "+750 золота в день"
+    ]
+  },
+  "endless-sack-of-gold": {
+    "name": "Неиссякаемый мешок золота",
+    "effects": [
+      "+1000 золота в день"
+    ]
+  },
+  "golden-goose": {
+    "name": "Золотой гусь",
+    "effects": [
+      "+7000 золота в день"
+    ]
+  },
+  "inexhaustible-cart-of-lumber": {
+    "name": "Неиссякаемая подвода древесины",
+    "effects": [
+      "+1 дерево в день"
+    ]
+  },
+  "inexhaustible-cart-of-ore": {
+    "name": "Неистощимая подвода с рудой",
+    "effects": [
+      "+1 руда в день"
+    ]
+  },
+  "everpouring-vial-of-mercury": {
+    "name": "Неиссякаемая склянка ртути",
+    "effects": [
+      "+1 ртуть в день"
+    ]
+  },
+  "cornucopia": {
+    "name": "Рог изобилия",
+    "effects": [
+      "+5 ртути, серы, кристаллов и самоцветов в день"
+    ]
+  },
+  "legs-of-legion": {
+    "name": "Ноги Легионера",
+    "effects": [
+      "+5 к приросту существ 2-го уровня в неделю"
+    ]
+  },
+  "loins-of-legion": {
+    "name": "Поясница Легионера",
+    "effects": [
+      "+4 к приросту существ 3-го уровня в неделю"
+    ]
+  },
+  "torso-of-legion": {
+    "name": "Торс Легионера",
+    "effects": [
+      "+3 к приросту существ 4-го уровня в неделю"
+    ]
+  },
+  "arms-of-legion": {
+    "name": "Руки Легионера",
+    "effects": [
+      "+2 к приросту существ 5-го уровня в неделю"
+    ]
+  },
+  "head-of-legion": {
+    "name": "Голова Легионера",
+    "effects": [
+      "+1 к приросту существ 6-го уровня в неделю"
+    ]
+  },
+  "statue-of-legion": {
+    "name": "Статуя Легионера",
+    "effects": [
+      "+50% к приросту существ",
+      "Эффекты частей действуют, пока герой в городе"
+    ]
+  },
+  "shackles-of-war": {
+    "name": "Оковы войны",
+    "effects": [
+      "Запрещает бегство и откуп"
+    ]
+  },
+  "vial-of-dragon-blood": {
+    "name": "Пузырёк с кровью дракона",
+    "effects": [
+      "+5 к атаке и защите союзным драконам"
+    ]
+  },
+  "sleepkeeper": {
+    "name": "Хранитель снов",
+    "effects": [
+      "Иммунитет к заклинаниям разума"
+    ]
+  },
+  "horn-of-the-abyss": {
+    "name": "Рог бездны",
+    "effects": [
+      "Поднимает фангармов из павших живых отрядов"
+    ]
   }
 }

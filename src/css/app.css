@@ -1,1 +1,131 @@
-/* app global css */
+/* ===== тема ===== */
+:root {
+  --c-bg: #12151c;
+  --c-surface: #1a1f28;
+  --c-surface-2: #232a35;
+  --c-border: #2d3543;
+  --c-text: #ece6d8;
+  --c-muted: #9aa3b2;
+  --c-gold: #d9ad55;
+  --c-gold-light: #f0cf86;
+  --c-negative: #e0605a;
+
+  /* класс артефакта */
+  --r-treasure: #8f9baa;
+  --r-minor: #3fb4a6;
+  --r-major: #5b8def;
+  --r-relic: #b77cf0;
+
+  /* отмечено «есть» */
+  --s-owned: #57c46a;
+}
+
+html,
+body {
+  background: var(--c-bg);
+  color: var(--c-text);
+  -webkit-tap-highlight-color: transparent;
+  /* без «пружины» и растягивания при прокрутке до упора */
+  overscroll-behavior: none;
+  /* страница целиком не прокручивается — только .app-main */
+  height: 100%;
+  overflow: hidden;
+}
+body {
+  font-family: 'Roboto', system-ui, sans-serif;
+}
+
+.text-muted {
+  color: var(--c-muted) !important;
+}
+.text-gold {
+  color: var(--c-gold) !important;
+}
+.rarity-text-treasure {
+  color: var(--r-treasure);
+}
+.rarity-text-minor {
+  color: var(--r-minor);
+}
+.rarity-text-major {
+  color: var(--r-major);
+}
+.rarity-text-relic {
+  color: var(--r-relic);
+}
+
+/* ===== раскладка ===== */
+.page-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.tile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(104px, 1fr));
+  gap: 4px;
+}
+
+.state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 48px 16px;
+  color: var(--c-muted);
+  text-align: center;
+}
+
+/* ===== фильтр-чипы ===== */
+.chip-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  overflow-x: auto;
+  padding: 2px 0 6px;
+  scrollbar-width: none;
+}
+.chip-row::-webkit-scrollbar {
+  display: none;
+}
+.filter-chip {
+  all: unset;
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--c-muted);
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    background 120ms ease,
+    color 120ms ease,
+    border-color 120ms ease;
+}
+.filter-chip:focus-visible {
+  outline: 2px solid var(--c-gold);
+}
+.filter-chip .q-icon {
+  font-size: 16px;
+}
+.filter-chip.active {
+  color: #1a1408;
+  background: var(--c-gold);
+  border-color: var(--c-gold);
+}
+/* ===== поля ввода Quasar на тёмном фоне ===== */
+.q-field--outlined .q-field__control {
+  border-radius: 12px;
+  background: var(--c-surface);
+}
+.q-field--outlined .q-field__control:before {
+  border-color: var(--c-border);
+}

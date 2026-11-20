@@ -1,8 +1,8 @@
 {
   "name": "art-helper",
   "version": "0.0.1",
-  "description": "A Quasar Project",
-  "productName": "Quasar App",
+  "description": "Heroes 3 HotA artifact guide and combo tracker",
+  "productName": "HotA Artifacts",
   "author": "Andrei Kamkin <dafhiwi34@email.uni-kiel.de>",
   "type": "module",
   "private": true,
