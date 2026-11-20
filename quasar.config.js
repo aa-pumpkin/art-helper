@@ -3,7 +3,7 @@
 
 import { defineConfig } from '#q-app/wrappers'
 
-export default defineConfig((/* ctx */) => {
+export default defineConfig((ctx) => {
   return {
     // https://v2.quasar.dev/quasar-cli-vite/prefetch-feature
     // preFetch: true,
@@ -44,7 +44,8 @@ export default defineConfig((/* ctx */) => {
 
       // rebuildCache: true, // rebuilds Vite/linter/etc cache on startup
 
-      // publicPath: '/',
+      // веб-версия на GitHub Pages живёт в подпапке /art-helper/ (PUBLIC_PATH задаёт CI)
+      publicPath: ctx.mode.pwa ? process.env.PUBLIC_PATH || '/' : '/',
       // analyze: true,
       // env: {},
       // rawDefine: {}
@@ -156,7 +157,8 @@ export default defineConfig((/* ctx */) => {
       // manifestFilename: 'manifest.json',
       // extendManifestJson (json) {},
       // useCredentialsForManifestTag: true,
-      // injectPwaMetaTags: false,
+      // свои мета-теги для iOS — в index.html
+      injectPwaMetaTags: false,
       // extendPWACustomSWConf (esbuildConf) {},
       // extendGenerateSWOptions (cfg) {},
       // extendInjectManifestOptions (cfg) {}

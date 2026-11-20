@@ -1,7 +1,7 @@
 # Артефактор (art-helper)
 
 Справочник артефактов Heroes of Might and Magic III: Horn of the Abyss и трекер сборных артефактов.
-Quasar (Vue 3), собирается как веб-приложение и как Android-приложение через Capacitor.
+Quasar (Vue 3), собирается как веб-приложение (PWA) и как Android-приложение через Capacitor.
 
 ## Структура
 
@@ -27,11 +27,14 @@ npm test         # проверка данных: leadsTo, переводы, к�
 
 ## Сборка
 
-Веб:
+Веб-версия (PWA — ставится на экран «Домой», в том числе на iPhone через Safari, и работает без сети):
 
 ```bash
-npm run build    # результат в dist/spa
+npx quasar build -m pwa                              # результат в dist/pwa
+PUBLIC_PATH=/art-helper/ npx quasar build -m pwa     # для GitHub Pages (подпапка)
 ```
+
+Публикуется автоматически на GitHub Pages при пуше в `master` (`.github/workflows/pages.yml`).
 
 Android:
 
