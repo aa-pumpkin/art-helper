@@ -1,50 +1,45 @@
-# Quasar App (art-helper)
+# HotA Артефакты (art-helper)
 
-A Quasar Project
+Справочник артефактов Heroes of Might and Magic III: Horn of the Abyss и трекер сборных артефактов.
+Quasar (Vue 3), собирается как веб-приложение и как Android-приложение через Capacitor.
 
-## Install the dependencies
+## Структура
+
+- `public/artifacts.json` — данные артефактов (англ.): слот, класс, цена, эффекты, `bonuses` (разобранные эффекты, пока не используются в интерфейсе), `leadsTo` — в какие сборники входит
+- `public/i18n/artifacts.ru.json` — русские названия и эффекты по `id`
+- `public/images/artifacts/` — иконки артефактов
+- `src/i18n/index.js` — строки интерфейса (ru/en)
+- `src/composables/useArtifacts.js` — загрузка данных, индексы сборников, переводы
+- `src/composables/useProgress.js` — отмеченные артефакты (localStorage)
+- `scripts/check-data.js` — проверка согласованности данных
+
+## Разработка
 
 ```bash
-yarn
-# or
 npm install
+npm run dev      # dev-сервер с hot reload
+npm run lint     # ESLint
+npm run format   # Prettier
+npm test         # проверка данных: leadsTo, переводы, картинки
 ```
 
-### Start the app in development mode (hot-code reloading, error reporting, etc.)
+После правки `artifacts.json` или переводов запускайте `npm test`.
+
+## Сборка
+
+Веб:
 
 ```bash
-quasar dev
+npm run build    # результат в dist/spa
 ```
 
-### Lint the files
+Android:
 
 ```bash
-yarn lint
-# or
-npm run lint
-```
-
-### Format the files
-
-```bash
-yarn format
-# or
-npm run format
-```
-
-### Build the app for production
-
-```bash
-quasar build
-```
-
-### Customize the configuration
-
-See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-config-js).
-
-# прод-сборка веба + синк + открыть студию
-
 quasar build -m capacitor -T android
 cd src-capacitor
 npx cap sync android
-npx cap open android
+npx cap open android   # открыть в Android Studio
+```
+
+Конфигурация Quasar: [quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-config-js).

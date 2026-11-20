@@ -5,7 +5,8 @@ export const SLOTS = ['weapon', 'shield', 'torso', 'head', 'feet', 'cape', 'neck
 export const RARITIES = ['treasure', 'minor', 'major', 'relic']
 
 const BASE = import.meta.env.BASE_URL || '/'
-const asset = (path) => BASE + String(path).replace(/^\//, '')
+/** Путь к файлу из public/ с учётом BASE_URL (сборка в подпапку, Capacitor) */
+export const asset = (path) => BASE + String(path).replace(/^\//, '')
 
 /* Общее состояние: грузится один раз на всё приложение */
 const list = shallowRef([])
@@ -63,9 +64,12 @@ async function loadTranslations(lang) {
   try {
     const res = await fetch(asset(`i18n/artifacts.${lang}.json`))
     if (!res.ok) throw new Error(`HTTP ${res.status}`)
-    translations.value = await res.json()
+    const data = await res.json()
+    // язык успели переключить, пока шёл запрос — этот ответ уже не нужен
+    if (lang !== i18n.global.locale.value) return
+    translations.value = data
   } catch {
-    translations.value = {}
+    if (lang === i18n.global.locale.value) translations.value = {}
   }
 }
 
