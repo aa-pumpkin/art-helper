@@ -39,10 +39,13 @@ PUBLIC_PATH=/art-helper/ npx quasar build -m pwa     # для GitHub Pages (по
 Android:
 
 ```bash
-quasar build -m capacitor -T android
-cd src-capacitor
-npx cap sync android
-npx cap open android   # открыть в Android Studio
+npm run build:android
 ```
+
+Скрипт `scripts/build-android.sh` использует JDK, Android SDK и Gradle из папки проекта (`.jdk`, `.android-sdk`, `.gradle-home`, вне git). Он кладёт debug-APK в `~/artificer.apk`, а если есть ключ `.signing/keystore.properties`, ещё и подписанный AAB для Google Play в `release/artificer-<версия>.aab`. Версия Android-приложения берётся из `version` в `package.json` (1.2.3 → versionCode 10203): перед каждой загрузкой в Play её нужно поднимать.
+
+Ключ загрузки (`.signing/upload.jks` и пароль в `keystore.properties`) не коммитится. Храните резервную копию: без неё обновление в Play придётся подписывать новым ключом через сброс ключа загрузки в Play Console.
+
+Тексты, скриншоты и баннер для Google Play лежат в `store/`, политика конфиденциальности — в `public/privacy.html` (публикуется вместе с веб-версией).
 
 Конфигурация Quasar: [quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-config-js).

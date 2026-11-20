@@ -1,6 +1,6 @@
 {
   "name": "art-helper",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Heroes 3 HotA artifact guide and combo tracker",
   "productName": "Artificer",
   "author": "Andrei Kamkin",
@@ -12,6 +12,8 @@
     "test": "node scripts/check-data.js",
     "dev": "quasar dev",
     "build": "quasar build",
+    "build:pwa": "quasar build -m pwa",
+    "build:android": "sh scripts/build-android.sh",
     "postinstall": "quasar prepare"
   },
   "dependencies": {

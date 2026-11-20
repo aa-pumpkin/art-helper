@@ -36,3 +36,8 @@ yarn-error.log*
 .android-sdk/
 .gradle-home/
 .jdk/
+
+# ключ подписи для Google Play — никогда не коммитить
+.signing/
+# готовые сборки для магазина
+/release/
