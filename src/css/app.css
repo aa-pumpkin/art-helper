@@ -18,6 +18,20 @@
 
   /* отмечено «есть» */
   --s-owned: #57c46a;
+
+  /* анимации: мягкий разгон и торможение */
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-fast: 220ms;
+  --dur: 400ms;
+  --dur-slow: 900ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 0ms;
+    --dur: 0ms;
+    --dur-slow: 0ms;
+  }
 }
 
 html,
@@ -106,9 +120,9 @@ body {
   cursor: pointer;
   white-space: nowrap;
   transition:
-    background 120ms ease,
-    color 120ms ease,
-    border-color 120ms ease;
+    background var(--dur-fast) var(--ease),
+    color var(--dur-fast) var(--ease),
+    border-color var(--dur-fast) var(--ease);
 }
 .filter-chip:focus-visible {
   outline: 2px solid var(--c-gold);

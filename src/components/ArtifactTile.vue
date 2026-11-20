@@ -41,8 +41,8 @@ const name = computed(() => nameOf(props.art))
   min-width: 0;
   -webkit-tap-highlight-color: transparent;
   transition:
-    background 120ms ease,
-    transform 120ms ease;
+    background var(--dur-fast) var(--ease),
+    transform var(--dur-fast) var(--ease);
 }
 .art-tile:focus-visible {
   outline: 2px solid var(--c-gold);

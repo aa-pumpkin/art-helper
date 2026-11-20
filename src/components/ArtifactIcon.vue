@@ -54,8 +54,9 @@ watch(
   border: 2px solid var(--rarity, var(--c-border));
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.6);
   transition:
-    opacity 120ms ease,
-    filter 120ms ease;
+    opacity var(--dur) var(--ease),
+    filter var(--dur) var(--ease),
+    border-color var(--dur) var(--ease);
 }
 .size-sm {
   --px: 44px;
