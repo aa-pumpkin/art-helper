@@ -13,6 +13,7 @@ const readJson = (p) => JSON.parse(readFileSync(join(publicDir, p), 'utf8'))
 const SLOTS = ['weapon', 'shield', 'torso', 'head', 'feet', 'cape', 'neck', 'ring', 'misc']
 const RARITIES = ['treasure', 'minor', 'major', 'relic']
 const TRANSLATIONS = ['i18n/artifacts.ru.json']
+const NOTES = ['notAssembled', 'banned', 'disabled', 'notRandom', 'noWater']
 
 const artifacts = readJson('artifacts.json')
 const errors = []
@@ -31,6 +32,7 @@ for (const a of artifacts) {
   if (!RARITIES.includes(a.rarity)) err(a.id, `неизвестный класс «${a.rarity}»`)
   if (typeof a.combo !== 'boolean') err(a.id, 'combo должен быть true/false')
   if (!Array.isArray(a.effects) || !a.effects.length) err(a.id, 'нет эффектов')
+  if (a.note !== undefined && !NOTES.includes(a.note)) err(a.id, `неизвестная пометка «${a.note}»`)
   if (!a.image || !existsSync(join(publicDir, a.image))) err(a.id, `нет картинки ${a.image}`)
 }
 

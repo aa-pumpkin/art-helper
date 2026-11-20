@@ -5,6 +5,7 @@ const en = {
     aboutText:
       'A companion for Heroes of Might and Magic III: Horn of the Abyss. Mark the parts you pick up and see which combination artifacts you can assemble.',
     aboutData: 'Progress is stored on this device only.',
+    dataVersion: 'Data checked against HotA {version}.',
     close: 'Close',
     language: 'Language',
   },
@@ -13,7 +14,7 @@ const en = {
     all: 'All artifacts',
   },
   common: {
-    search: 'Search by name…',
+    search: 'Name or effect…',
     loadError: 'Failed to load artifact data',
     retry: 'Retry',
     nothingFound: 'Nothing found',
@@ -48,6 +49,18 @@ const en = {
     combo: 'Combination artifact',
     parts: 'Assembled from',
     partOf: 'Part of',
+    comboTotal: 'Total, including the parts',
+  },
+  note: {
+    notAssembled: 'Cannot be assembled by default — only on some templates and scenarios',
+    banned: 'Banned by default on random maps',
+    disabled: 'Disabled by default on random maps',
+    notRandom: 'Does not appear on random maps unless the template enables it',
+    noWater: 'Not generated on random maps without water',
+  },
+  all: {
+    needed: 'needed',
+    neededHint: 'Gold “needed” marks parts of combos you have started',
   },
   own: {
     mark: 'I have it',
@@ -68,6 +81,7 @@ const ru = {
     aboutText:
       'Помощник для Heroes of Might and Magic III: Horn of the Abyss. Отмечай подобранные части и смотри, какие сборные артефакты можно собрать.',
     aboutData: 'Прогресс хранится только на этом устройстве.',
+    dataVersion: 'Данные сверены с HotA {version}.',
     close: 'Закрыть',
     language: 'Язык',
   },
@@ -76,7 +90,7 @@ const ru = {
     all: 'Все артефакты',
   },
   common: {
-    search: 'Поиск по названию…',
+    search: 'Название или эффект…',
     loadError: 'Не удалось загрузить данные артефактов',
     retry: 'Повторить',
     nothingFound: 'Ничего не найдено',
@@ -111,6 +125,18 @@ const ru = {
     combo: 'Сборный артефакт',
     parts: 'Собирается из',
     partOf: 'Входит в',
+    comboTotal: 'Итог вместе с бонусами частей',
+  },
+  note: {
+    notAssembled: 'По умолчанию не собирается — только на некоторых шаблонах и в сценариях',
+    banned: 'По умолчанию запрещён на случайных картах',
+    disabled: 'По умолчанию отключён на случайных картах',
+    notRandom: 'Не появляется на случайных картах, если не включён в шаблоне',
+    noWater: 'Не появляется на случайных картах без воды',
+  },
+  all: {
+    needed: 'нужен',
+    neededHint: 'Золотым «нужен» отмечены части начатых сборников',
   },
   own: {
     mark: 'У меня есть',

@@ -66,6 +66,10 @@
               <q-icon name="chevron_right" class="text-muted" />
             </button>
 
+            <div v-if="byId[row.id].note" class="combo-note">
+              <q-icon name="info" />{{ $t(`note.${byId[row.id].note}`) }}
+            </div>
+
             <div class="progress">
               <span class="bar" :style="{ width: `${(row.owned / row.total) * 100}%` }" />
             </div>
@@ -243,6 +247,14 @@ function confirmReset() {
   white-space: nowrap;
 }
 
+.combo-note {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 6px 2px 0;
+  font-size: 12.5px;
+  color: var(--c-gold-light);
+}
 .progress {
   height: 4px;
   margin: 8px 2px 4px;
