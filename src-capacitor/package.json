@@ -2,7 +2,7 @@
   "name": "art-helper",
   "version": "0.0.1",
   "description": "Heroes 3 HotA artifact guide and combo tracker",
-  "author": "Andrei Kamkin <dafhiwi34@email.uni-kiel.de>",
+  "author": "Andrei Kamkin",
   "private": true,
   "dependencies": {
     "@capacitor/android": "^7.4.3",
