@@ -99,11 +99,22 @@ function sortIds(ids) {
   return [...ids].sort((a, b) => compareByName(a, b))
 }
 
-/** Поиск по переведённому и английскому названию */
+/** Поиск по названию и эффектам — на текущем языке и по-английски */
 function matches(art, query) {
   const q = query.trim().toLowerCase()
   if (!q) return true
-  return nameOf(art).toLowerCase().includes(q) || art.name.toLowerCase().includes(q)
+  const texts = [nameOf(art), art.name, ...effectsOf(art), ...(art.effects || [])]
+  return texts.some((t) => t.toLowerCase().includes(q))
+}
+
+/** Начатые сборники: часть, которой ещё нет, нужна, если что-то из её сборника уже отмечено */
+function neededParts(isOwned) {
+  const needed = new Set()
+  for (const parts of Object.values(partsOf.value)) {
+    if (!parts.some(isOwned)) continue
+    for (const id of parts) if (!isOwned(id)) needed.add(id)
+  }
+  return needed
 }
 
 export function useArtifacts() {
@@ -121,5 +132,6 @@ export function useArtifacts() {
     compareByName,
     sortIds,
     matches,
+    neededParts,
   }
 }

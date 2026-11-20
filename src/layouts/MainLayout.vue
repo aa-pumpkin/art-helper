@@ -72,6 +72,7 @@
         <q-card-section class="q-pt-none about-text">
           <p>{{ $t('app.aboutText') }}</p>
           <p class="text-muted">{{ $t('app.aboutData') }}</p>
+          <p class="text-muted">{{ $t('app.dataVersion', { version: '1.8.1' }) }}</p>
         </q-card-section>
         <q-card-actions align="right">
           <q-btn flat no-caps color="primary" :label="$t('app.close')" v-close-popup />

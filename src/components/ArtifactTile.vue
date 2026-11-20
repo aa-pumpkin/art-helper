@@ -2,7 +2,7 @@
   <button type="button" class="art-tile" :class="{ compact }" @click="$emit('select', art)">
     <ArtifactIcon :art="art" :alt="name" :size="compact ? 'md' : 'lg'" :owned="owned" :dim="dim" />
     <div class="tile-name">{{ name }}</div>
-    <div v-if="caption" class="tile-caption">{{ caption }}</div>
+    <div v-if="caption" class="tile-caption" :class="{ 'is-accent': accent }">{{ caption }}</div>
   </button>
 </template>
 
@@ -16,6 +16,8 @@ const props = defineProps({
   owned: { type: Boolean, default: false },
   caption: { type: String, default: '' },
   compact: { type: Boolean, default: false },
+  /** подсветить подпись (часть начатого сборника) */
+  accent: { type: Boolean, default: false },
   dim: { type: Boolean, default: false },
 })
 defineEmits(['select'])
@@ -77,5 +79,13 @@ const name = computed(() => nameOf(props.art))
 .tile-caption {
   font-size: 11px;
   color: var(--c-muted);
+}
+.tile-caption.is-accent {
+  margin-top: -2px;
+  padding: 1px 7px;
+  border-radius: 999px;
+  font-weight: 700;
+  color: #1a1408;
+  background: var(--c-gold);
 }
 </style>

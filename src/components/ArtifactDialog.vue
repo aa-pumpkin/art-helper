@@ -47,6 +47,11 @@
           </div>
         </div>
 
+        <!-- правила HotA по умолчанию -->
+        <div v-if="art.note" class="note">
+          <q-icon name="info" size="18px" />{{ $t(`note.${art.note}`) }}
+        </div>
+
         <!-- отметка «есть» — только для частей сборников -->
         <button
           v-if="partOf.length"
@@ -61,7 +66,10 @@
 
         <!-- эффекты -->
         <section class="section">
-          <div class="section-title">{{ $t('fields.effect') }}</div>
+          <div class="section-title">
+            {{ $t('fields.effect') }}
+            <span v-if="art.combo" class="section-sub">· {{ $t('fields.comboTotal') }}</span>
+          </div>
           <ul class="effects">
             <li v-for="(e, i) in effectsOf(art)" :key="i" :class="effectClass(e)">{{ e }}</li>
           </ul>
@@ -267,6 +275,28 @@ function effectClass(e) {
   letter-spacing: 0.08em;
   color: var(--c-muted);
   margin-bottom: 8px;
+}
+.section-sub {
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 500;
+}
+.note {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 13.5px;
+  line-height: 1.4;
+  color: var(--c-gold-light);
+  background: rgba(217, 173, 85, 0.1);
+  border: 1px solid rgba(217, 173, 85, 0.35);
+}
+.note .q-icon {
+  flex: none;
+  margin-top: 1px;
 }
 .section-count {
   margin-left: 6px;

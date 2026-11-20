@@ -55,6 +55,10 @@
       </div>
 
       <template v-else>
+        <div v-if="needed.size" class="legend">
+          <span class="legend-chip">{{ $t('all.needed') }}</span
+          >{{ $t('all.neededHint') }}
+        </div>
         <section v-for="group in groups" :key="group.slot" class="group">
           <div class="group-title">
             <q-icon :name="slotIcon(group.slot)" />{{ $t(`slot.${group.slot}`) }}
@@ -66,6 +70,8 @@
               :key="art.id"
               :art="art"
               :owned="isOwned(art.id)"
+              :caption="needed.has(art.id) ? $t('all.needed') : ''"
+              accent
               @select="open(art.id)"
             />
           </div>
@@ -85,11 +91,14 @@ import { useArtifacts, SLOTS } from 'src/composables/useArtifacts'
 import { useProgress } from 'src/composables/useProgress'
 import { slotIcon } from 'src/composables/format'
 
-const { list, loading, error, reload, matches, compareByName } = useArtifacts()
+const { list, loading, error, reload, matches, compareByName, neededParts } = useArtifacts()
 const { isOwned } = useProgress()
 
 const search = ref('')
 const slot = ref(null)
+
+/* части сборников, которые уже начаты, но этой части ещё нет */
+const needed = computed(() => neededParts(isOwned))
 
 /* всегда группами по слотам, внутри — сборные первыми, затем по названию */
 const groups = computed(() => {
@@ -117,6 +126,22 @@ function open(id) {
 
 .group {
   margin-top: 18px;
+}
+.legend {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  font-size: 13px;
+  color: var(--c-muted);
+}
+.legend-chip {
+  padding: 1px 7px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #1a1408;
+  background: var(--c-gold);
 }
 .group-title {
   display: flex;
