@@ -32,6 +32,8 @@ for (const a of artifacts) {
   if (!RARITIES.includes(a.rarity)) err(a.id, `неизвестный класс «${a.rarity}»`)
   if (typeof a.combo !== 'boolean') err(a.id, 'combo должен быть true/false')
   if (!Array.isArray(a.effects) || !a.effects.length) err(a.id, 'нет эффектов')
+  if (a.combo && !a.bonus?.length) err(a.id, 'у сборного нет bonus — что даёт сама сборка')
+  if (!a.combo && a.bonus) err(a.id, 'bonus бывает только у сборных')
   if (a.note !== undefined && !NOTES.includes(a.note)) err(a.id, `неизвестная пометка «${a.note}»`)
   if (!a.image || !existsSync(join(publicDir, a.image))) err(a.id, `нет картинки ${a.image}`)
 }
@@ -57,6 +59,8 @@ for (const file of TRANSLATIONS) {
     if (!t?.name) err(a.id, `${file}: нет перевода названия`)
     else if (!Array.isArray(t.effects) || t.effects.length !== a.effects.length)
       err(a.id, `${file}: число эффектов не совпадает с оригиналом`)
+    if ((t?.bonus?.length || 0) !== (a.bonus?.length || 0))
+      err(a.id, `${file}: bonus не совпадает с оригиналом`)
   }
   for (const id of Object.keys(tr))
     if (!ids.has(id)) err(id, `${file}: перевод для неизвестного id`)

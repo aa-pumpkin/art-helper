@@ -64,15 +64,33 @@
           {{ isOwned(art.id) ? $t('own.have') : $t('own.mark') }}
         </button>
 
+        <!-- что даёт сама сборка -->
+        <section v-if="art.combo" class="section">
+          <div class="section-title">{{ $t('fields.bonus') }}</div>
+          <ul class="effects is-bonus">
+            <li v-for="(e, i) in bonusOf(art)" :key="i">{{ e }}</li>
+          </ul>
+        </section>
+
         <!-- эффекты -->
         <section class="section">
           <div class="section-title">
-            {{ $t('fields.effect') }}
-            <span v-if="art.combo" class="section-sub">· {{ $t('fields.comboTotal') }}</span>
+            {{ art.combo ? $t('fields.comboTotal') : $t('fields.effect') }}
           </div>
           <ul class="effects">
             <li v-for="(e, i) in effectsOf(art)" :key="i" :class="effectClass(e)">{{ e }}</li>
           </ul>
+        </section>
+
+        <!-- какие слоты займёт собранный артефакт -->
+        <section v-if="art.combo" class="section">
+          <div class="section-title">{{ $t('fields.occupies') }}</div>
+          <div class="slot-row">
+            <span v-for="s in slotsOf(art.id)" :key="s.slot" class="meta-chip">
+              <q-icon :name="slotIcon(s.slot)" />{{ $t(`slot.${s.slot}`) }}
+              <b v-if="s.count > 1">×{{ s.count }}</b>
+            </span>
+          </div>
         </section>
 
         <!-- части комбо -->
@@ -127,7 +145,7 @@ const props = defineProps({
 defineEmits(['update:modelValue'])
 
 const { locale } = useI18n()
-const { byId, partsOf, combosOf, nameOf, effectsOf, sortIds } = useArtifacts()
+const { byId, partsOf, combosOf, nameOf, effectsOf, bonusOf, slotsOf, sortIds } = useArtifacts()
 const { isOwned, toggleOwned } = useProgress()
 
 /* история переходов внутри диалога (комбо ⇄ части) */
@@ -276,10 +294,17 @@ function effectClass(e) {
   color: var(--c-muted);
   margin-bottom: 8px;
 }
-.section-sub {
-  text-transform: none;
-  letter-spacing: 0;
-  font-weight: 500;
+.slot-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.effects.is-bonus li {
+  color: var(--c-gold-light);
+  background: rgba(217, 173, 85, 0.1);
+}
+.effects.is-bonus li::before {
+  background: var(--c-gold);
 }
 .note {
   display: flex;

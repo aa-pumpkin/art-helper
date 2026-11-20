@@ -34,6 +34,21 @@
               <q-icon :name="slotIcon(s)" />{{ $t(`slot.${s}`) }}
             </button>
           </div>
+
+          <!-- класс артефакта: цвет рамки и фильтр одновременно -->
+          <div class="chip-row rarity-row">
+            <button
+              v-for="r in RARITIES"
+              :key="r"
+              type="button"
+              class="rarity-chip"
+              :class="[`rarity-${r}`, { active: rarity === r }]"
+              :aria-pressed="rarity === r"
+              @click="rarity = rarity === r ? null : r"
+            >
+              <span class="dot" />{{ $t(`rarity.${r}`) }}
+            </button>
+          </div>
         </div>
       </div>
     </Teleport>
@@ -87,7 +102,7 @@
 import { ref, computed } from 'vue'
 import ArtifactTile from 'components/ArtifactTile.vue'
 import ArtifactDialog from 'components/ArtifactDialog.vue'
-import { useArtifacts, SLOTS } from 'src/composables/useArtifacts'
+import { useArtifacts, SLOTS, RARITIES } from 'src/composables/useArtifacts'
 import { useProgress } from 'src/composables/useProgress'
 import { slotIcon } from 'src/composables/format'
 
@@ -96,6 +111,7 @@ const { isOwned } = useProgress()
 
 const search = ref('')
 const slot = ref(null)
+const rarity = ref(null)
 
 /* части сборников, которые уже начаты, но этой части ещё нет */
 const needed = computed(() => neededParts(isOwned))
@@ -104,7 +120,12 @@ const needed = computed(() => neededParts(isOwned))
 const groups = computed(() => {
   const q = search.value || ''
   const items = list.value
-    .filter((a) => (!slot.value || a.slot === slot.value) && matches(a, q))
+    .filter(
+      (a) =>
+        (!slot.value || a.slot === slot.value) &&
+        (!rarity.value || a.rarity === rarity.value) &&
+        matches(a, q),
+    )
     .sort((a, b) => b.combo - a.combo || compareByName(a, b))
   return SLOTS.map((s) => ({ slot: s, items: items.filter((a) => a.slot === s) })).filter(
     (g) => g.items.length,
@@ -126,6 +147,52 @@ function open(id) {
 
 .group {
   margin-top: 18px;
+}
+.rarity-row {
+  gap: 4px;
+  padding-top: 0;
+}
+.rarity-chip {
+  all: unset;
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  color: var(--c-muted);
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+.rarity-chip:focus-visible {
+  outline: 2px solid var(--c-gold);
+}
+.rarity-chip .dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 3px;
+  border: 2px solid var(--rarity);
+}
+.rarity-chip.active {
+  color: var(--c-text);
+  border-color: var(--rarity);
+  background: var(--c-surface-2);
+}
+.rarity-chip.active .dot {
+  background: var(--rarity);
+}
+.rarity-treasure {
+  --rarity: var(--r-treasure);
+}
+.rarity-minor {
+  --rarity: var(--r-minor);
+}
+.rarity-major {
+  --rarity: var(--r-major);
+}
+.rarity-relic {
+  --rarity: var(--r-relic);
 }
 .legend {
   display: flex;

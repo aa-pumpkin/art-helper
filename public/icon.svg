@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="12 12 84 84" width="84" height="84"><defs><clipPath id="r"><rect x="12" y="12" width="84" height="84" rx="19"/></clipPath></defs><g clip-path="url(#r)"><defs><radialGradient id="bg" cx=".5" cy=".38" r=".75"><stop offset="0" stop-color="#2a3243"/><stop offset="1" stop-color="#11141b"/></radialGradient></defs>
+<rect width="108" height="108" fill="url(#bg)"/><defs>
+  <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#ffe7a3"/><stop offset=".45" stop-color="#e7b85a"/><stop offset="1" stop-color="#9b6a24"/>
+  </linearGradient>
+  <linearGradient id="gem" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#e2c2ff"/><stop offset=".5" stop-color="#a25ef0"/><stop offset="1" stop-color="#5a23a6"/>
+  </linearGradient>
+  <radialGradient id="glow"><stop offset="0" stop-color="#b77cf0" stop-opacity=".55"/><stop offset="1" stop-color="#b77cf0" stop-opacity="0"/></radialGradient>
+</defs>
+<circle cx="54" cy="54" r="24" fill="url(#glow)"/>
+<g fill="url(#gold)" stroke="#5c3d12" stroke-width="1.2" stroke-linejoin="round"><path transform="translate(0.00 -0.00)" d="M55.89 23.06 A31 31 0 0 1 81.74 67.83 L71.00 62.48 A19 19 0 0 0 55.16 35.04 Z"/><path transform="translate(0.00 3.20)" d="M79.85 71.11 A31 31 0 0 1 28.15 71.11 L38.16 64.49 A19 19 0 0 0 69.84 64.49 Z"/><path transform="translate(-0.00 -0.00)" d="M26.26 67.83 A31 31 0 0 1 52.11 23.06 L52.84 35.04 A19 19 0 0 0 37.00 62.48 Z"/></g>
+<polygon points="54.00,41.00 65.26,47.50 65.26,60.50 54.00,67.00 42.74,60.50 42.74,47.50" fill="url(#gem)" stroke="#3d1670" stroke-width="1.2" stroke-linejoin="round"/>
+<polygon points="54.00,47.50 59.63,50.75 59.63,57.25 54.00,60.50 48.37,57.25 48.37,50.75" fill="#ffffff" fill-opacity=".18"/>
+<path d="M48 46 L53 43.5 L51 50 Z" fill="#fff" fill-opacity=".75"/>
+<g fill="#fff3cf"><path d="M80 21 Q80 26 85 26 Q80 26 80 31 Q80 26 75 26 Q80 26 80 21 Z"/><path d="M88 34.4 Q88 37 90.6 37 Q88 37 88 39.6 Q88 37 85.4 37 Q88 37 88 34.4 Z"/></g></g></svg>
