@@ -34,6 +34,18 @@
           @click="toggleLocale"
         />
         <q-btn
+          v-if="showDonate"
+          flat
+          round
+          dense
+          icon="favorite_border"
+          class="donate-btn"
+          :href="DONATE_URL"
+          target="_blank"
+          rel="noopener"
+          :aria-label="$t('app.support')"
+        />
+        <q-btn
           flat
           round
           dense
@@ -73,8 +85,21 @@
           <p>{{ $t('app.aboutText') }}</p>
           <p class="text-muted">{{ $t('app.aboutData') }}</p>
           <p class="text-muted">{{ $t('app.dataVersion', { version: '1.8.1' }) }}</p>
+          <p v-if="showDonate">{{ $t('app.supportText') }}</p>
         </q-card-section>
         <q-card-actions align="right">
+          <q-btn
+            v-if="showDonate"
+            unelevated
+            no-caps
+            color="primary"
+            text-color="dark"
+            icon="favorite"
+            :label="$t('app.support')"
+            :href="DONATE_URL"
+            target="_blank"
+            rel="noopener"
+          />
           <q-btn flat no-caps color="primary" :label="$t('app.close')" v-close-popup />
         </q-card-actions>
       </q-card>
@@ -91,6 +116,13 @@ import { asset } from 'src/composables/useArtifacts'
 const brandIcon = asset('icon.svg')
 
 const showInfo = ref(false)
+
+/*
+ * Донаты — только в веб-версии: правила Google Play запрещают в приложении
+ * ссылки на оплату мимо Play Billing, в том числе чаевые разработчику.
+ */
+const DONATE_URL = 'https://www.donationalerts.com/r/pumpkin_aa'
+const showDonate = process.env.MODE !== 'capacitor'
 const { locale } = useI18n()
 
 /* при переключении вкладок начинать сверху */
@@ -206,6 +238,9 @@ watch(
   font-size: 18px;
   font-weight: 700;
   color: var(--c-gold-light);
+}
+.donate-btn {
+  color: var(--c-gold);
 }
 .about-text p {
   margin: 0 0 10px;

@@ -5,6 +5,8 @@ const en = {
     aboutText:
       'A companion for Heroes of Might and Magic III: Horn of the Abyss. Mark the parts you pick up and see which combination artifacts you can assemble.',
     aboutData: 'Progress is stored on this device only.',
+    support: 'Support',
+    supportText: 'The app is free and ad-free. If it helps you, you can support the author.',
     dataVersion: 'Names and effects are checked against the game files, HotA {version}.',
     close: 'Close',
     language: 'Language',
@@ -83,6 +85,9 @@ const ru = {
     aboutText:
       'Помощник для Heroes of Might and Magic III: Horn of the Abyss. Отмечай подобранные части и смотри, какие сборные артефакты можно собрать.',
     aboutData: 'Прогресс хранится только на этом устройстве.',
+    support: 'Поддержать',
+    supportText:
+      'Приложение бесплатное и без рекламы. Если оно тебе помогает, можешь поддержать автора.',
     dataVersion: 'Названия и эффекты сверены с файлами игры, HotA {version}.',
     close: 'Закрыть',
     language: 'Язык',
