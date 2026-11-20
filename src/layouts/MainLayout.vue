@@ -4,7 +4,7 @@
     <header class="app-header">
       <q-toolbar class="page-container header-bar">
         <router-link to="/" class="brand">
-          <img src="/images/artifacts/horn-of-the-abyss.png" alt="" class="brand-icon" />
+          <img :src="brandIcon" alt="" class="brand-icon" />
           <span class="brand-title">{{ $t('app.title') }}</span>
         </router-link>
 
@@ -66,7 +66,7 @@
     <q-dialog v-model="showInfo">
       <q-card class="about-card">
         <q-card-section class="row items-center no-wrap q-gutter-md">
-          <img src="/images/artifacts/horn-of-the-abyss.png" alt="" class="about-icon" />
+          <img :src="brandIcon" alt="" class="about-icon" />
           <div class="about-title">{{ $t('app.title') }}</div>
         </q-card-section>
         <q-card-section class="q-pt-none about-text">
@@ -85,6 +85,9 @@
 import { ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { useI18n } from 'vue-i18n'
+import { asset } from 'src/composables/useArtifacts'
+
+const brandIcon = asset('images/artifacts/horn-of-the-abyss.png')
 
 const showInfo = ref(false)
 const { locale } = useI18n()
