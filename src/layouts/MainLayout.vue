@@ -34,11 +34,10 @@
           @click="toggleLocale"
         />
         <q-btn
-          v-if="showDonate"
           flat
           round
           dense
-          icon="favorite_border"
+          icon="favorite"
           class="donate-btn"
           :href="DONATE_URL"
           target="_blank"
@@ -85,11 +84,10 @@
           <p>{{ $t('app.aboutText') }}</p>
           <p class="text-muted">{{ $t('app.aboutData') }}</p>
           <p class="text-muted">{{ $t('app.dataVersion', { version: '1.8.1' }) }}</p>
-          <p v-if="showDonate">{{ $t('app.supportText') }}</p>
+          <p>{{ $t('app.supportText') }}</p>
         </q-card-section>
         <q-card-actions align="right">
           <q-btn
-            v-if="showDonate"
             unelevated
             no-caps
             color="primary"
@@ -117,12 +115,8 @@ const brandIcon = asset('icon.svg')
 
 const showInfo = ref(false)
 
-/*
- * Донаты — только в веб-версии: правила Google Play запрещают в приложении
- * ссылки на оплату мимо Play Billing, в том числе чаевые разработчику.
- */
+/* в Android-приложении внешние ссылки Capacitor открывает в системном браузере */
 const DONATE_URL = 'https://www.donationalerts.com/r/pumpkin_aa'
-const showDonate = process.env.MODE !== 'capacitor'
 const { locale } = useI18n()
 
 /* при переключении вкладок начинать сверху */
@@ -239,8 +233,55 @@ watch(
   font-weight: 700;
   color: var(--c-gold-light);
 }
-.donate-btn {
-  color: var(--c-gold);
+/*
+ * Сердечко «поддержать»: раз в 8 секунд по нему медленно проходит блик
+ * и оно один раз мягко «бьётся»; остальное время стоит спокойно.
+ */
+.donate-btn :deep(.q-icon) {
+  color: transparent;
+  background: linear-gradient(
+    115deg,
+    var(--c-gold) 0%,
+    var(--c-gold) 38%,
+    #fff3d1 47%,
+    #f08a7e 53%,
+    var(--c-gold) 62%,
+    var(--c-gold) 100%
+  );
+  background-size: 300% 100%;
+  background-position: 100% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation:
+    heart-shimmer 8s ease-in-out infinite,
+    heart-beat 8s ease-in-out infinite;
+}
+@keyframes heart-shimmer {
+  0%,
+  10% {
+    background-position: 100% 0;
+  }
+  45%,
+  100% {
+    background-position: 0% 0;
+  }
+}
+@keyframes heart-beat {
+  0%,
+  24%,
+  40%,
+  100% {
+    transform: scale(1);
+  }
+  29% {
+    transform: scale(1.14);
+  }
+  33% {
+    transform: scale(0.98);
+  }
+  36% {
+    transform: scale(1.06);
+  }
 }
 .about-text p {
   margin: 0 0 10px;
