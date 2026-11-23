@@ -1,51 +1,30 @@
-# Артефактор (art-helper)
+# Artificer
 
-Справочник артефактов Heroes of Might and Magic III: Horn of the Abyss и трекер сборных артефактов.
-Quasar (Vue 3), собирается как веб-приложение (PWA) и как Android-приложение через Capacitor.
+Artifact reference and combination-artifact tracker for *Heroes of Might and Magic III: Horn of the Abyss*. Runs as a web app (PWA) and as an Android app, in English and Russian.
 
-## Структура
+**Live:** <https://aa-pumpkin.github.io/art-helper/> · [Русская версия](README.ru.md)
 
-- `public/artifacts.json` — данные артефактов (англ.): слот, класс, цена, эффекты (у сборных — итог вместе с частями), `bonus` — что даёт сама сборка сверх частей, `leadsTo` — в какие сборники входит, `note` — правило HotA по умолчанию (запрещён, не на случайных картах и т. п.; тексты в `src/i18n`). Русские названия и эффекты сверены с текстами игры HotA 1.8.1 (`artraits.txt` из `HotA_lng.lod` и `HotA.dat`), правила по умолчанию — с h3hota.com/documentation и changelog
-- `public/i18n/artifacts.ru.json` — русские названия и эффекты по `id`
-- `public/images/artifacts/` — иконки артефактов
-- `src/i18n/index.js` — строки интерфейса (ru/en)
-- `src/composables/useArtifacts.js` — загрузка данных, индексы сборников, переводы
-- `src/composables/useProgress.js` — отмеченные артефакты (localStorage)
-- `scripts/check-data.js` — проверка согласованности данных
+## Features
 
-## Разработка
+- Tracker: mark the parts you have picked up and see which combination artifacts you can assemble
+- Reference for 156 artifacts with search by name or effect and filters
+- Shows what a combination adds on top of its parts, the total effect and the slots it takes
+- Names and effects checked against the game texts of HotA 1.8.1
+- Works offline; progress is stored on the device
+
+## Stack
+
+Vue 3, Quasar, JavaScript, PWA (Workbox), Capacitor (Android), GitHub Actions → GitHub Pages
+
+## Development
 
 ```bash
 npm install
-npm run dev      # dev-сервер с hot reload
-npm run lint     # ESLint
-npm run format   # Prettier
-npm test         # проверка данных: leadsTo, переводы, картинки
-```
-
-После правки `artifacts.json` или переводов запускайте `npm test`.
-
-## Сборка
-
-Веб-версия (PWA — ставится на экран «Домой», в том числе на iPhone через Safari, и работает без сети):
-
-```bash
-npx quasar build -m pwa                              # результат в dist/pwa
-PUBLIC_PATH=/art-helper/ npx quasar build -m pwa     # для GitHub Pages (подпапка)
-```
-
-Публикуется автоматически на GitHub Pages при пуше в `master` (`.github/workflows/pages.yml`).
-
-Android:
-
-```bash
+npm run dev      # dev server
+npm run lint
+npm test         # data consistency check
+npx quasar build -m pwa
 npm run build:android
 ```
 
-Скрипт `scripts/build-android.sh` использует JDK, Android SDK и Gradle из папки проекта (`.jdk`, `.android-sdk`, `.gradle-home`, вне git). Он кладёт debug-APK в `~/artificer.apk`, а если есть ключ `.signing/keystore.properties`, ещё и подписанный AAB для Google Play в `release/artificer-<версия>.aab`. Версия Android-приложения берётся из `version` в `package.json` (1.2.3 → versionCode 10203): перед каждой загрузкой в Play её нужно поднимать.
-
-Ключ загрузки (`.signing/upload.jks` и пароль в `keystore.properties`) не коммитится. Храните резервную копию: без неё обновление в Play придётся подписывать новым ключом через сброс ключа загрузки в Play Console.
-
-Тексты, скриншоты и баннер для Google Play лежат в `store/`, политика конфиденциальности — в `public/privacy.html` (публикуется вместе с веб-версией).
-
-Конфигурация Quasar: [quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-config-js).
+The project is unofficial and not affiliated with the rights holders of the game.
